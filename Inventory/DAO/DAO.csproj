@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A54CECD-989A-4CCA-9647-62244AD865D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddUser.cs" />
+    <Compile Include="Admin\ComboSet.cs" />
+    <Compile Include="Admin\SellingPriceSetup.cs" />
+    <Compile Include="Admin\StoreCash.cs" />
+    <Compile Include="Basic\AddressType.cs" />
+    <Compile Include="Basic\CFAgent.cs" />
+    <Compile Include="Basic\Customer.cs" />
+    <Compile Include="Basic\Employee.cs" />
+    <Compile Include="Basic\FOBPriceSet.cs" />
+    <Compile Include="Basic\ItemCategory.cs" />
+    <Compile Include="Basic\ItemEntry.cs" />
+    <Compile Include="Basic\ItemHead.cs" />
+    <Compile Include="Basic\Location.cs" />
+    <Compile Include="Basic\ShippingAgent.cs" />
+    <Compile Include="Basic\ManufacturerInfo.cs" />
+    <Compile Include="Basic\Supplier.cs" />
+    <Compile Include="Basic\TradingTerm.cs" />
+    <Compile Include="Basic\WareHouse.cs" />
+    <Compile Include="Inventory\ItemCheckOut.cs" />
+    <Compile Include="Inventory\ItemDispatch.cs" />
+    <Compile Include="Inventory\ItemMove.cs" />
+    <Compile Include="Inventory\StockTransfer.cs" />
+    <Compile Include="Inventory\ManualBooing.cs" />
+    <Compile Include="Inventory\ReceivePayments.cs" />
+    <Compile Include="Inventory\RemoveStock.cs" />
+    <Compile Include="Inventory\StockAdjustment.cs" />
+    <Compile Include="Inventory\StockIn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase\PortofLoading.cs" />
+    <Compile Include="Purchase\PurchaseOrder.cs" />
+    <Compile Include="Purchase\PurchaseReceive.cs" />
+    <Compile Include="Reports\CustomerReports.cs" />
+    <Compile Include="Reports\InventoryReport.cs" />
+    <Compile Include="Reports\SalesReports.cs" />
+    <Compile Include="SaleReturn\SalesReturnBooking.cs" />
+    <Compile Include="SaleReturn\SaleReturnReceive.cs" />
+    <Compile Include="Sale\SaleApproval.cs" />
+    <Compile Include="Sale\InvoiceCancellation.cs" />
+    <Compile Include="Sale\SalesDAO.cs" />
+    <Compile Include="Sale\TakeCount.cs" />
+    <Compile Include="SearchBoard\ItemHistory.cs" />
+    <Compile Include="UserOperation\ChildMenuName.cs" />
+    <Compile Include="UserOperation\LoginUser.cs" />
+    <Compile Include="UserOperation\MainMenuOperation.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{587ACB14-3020-4676-BBB9-69180E0FF13A}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\DAO.Reports.InventoryReport.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

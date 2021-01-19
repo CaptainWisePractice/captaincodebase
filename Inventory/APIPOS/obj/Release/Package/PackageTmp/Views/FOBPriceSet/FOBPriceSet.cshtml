@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "FOBPriceSet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainHome").addClass("active open");
+        $("#childFOBPriceSet").addClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-accessibility"></i><a href="@Url.Action("Index", "Admin")">Administrator</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            FOB Price Set
+
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>FOB Price Set</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span2"> </div>
+                            <div class="span8">
+                                <label class="control-label" for="ddlItemHead">Item Code <span class="required">★</span></label>
+                                <div class="controls">
+                                    <select id="ddlItemHead" class="span10"></select>
+                                </div>
+                            </div>
+                            <div class="span2"> </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span1"> </div>
+                            <div class="span5">
+                                <label class="control-label" for="txtLastPrice">Last Update Price </label>
+                                <div class="controls">
+                                    <input type="text" id="txtLastPrice" readonly class="span10">
+                                </div>
+                            </div>
+                            <div class="span5">
+                                <label class="control-label" for="txtPrice">Price <span class="required">★</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtPrice" class="span10">
+                                </div>
+                            </div>
+                            <div class="span1"> </div>
+
+                        </div>
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_layoutPageButton")
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Basic/FOBPriceSet.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

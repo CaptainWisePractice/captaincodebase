@@ -1,0 +1,284 @@
+﻿
+@{
+    ViewBag.Title = "StockTransfer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/App_Js/CommonJs/jquery.inputpicker.js"></script>
+<link href="~/CSS/jquery.inputpicker.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.mcautocomplete.js"></script>
+<script src="~/App_Theme/custom-plugins/bootstrap-inputmask.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainInventory").addClass("active open");
+        $("#childStockTransfer").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-bag"></i> <a href="@Url.Action("Index", "Inventory")">Inventory</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Stock Transfer
+        </li>
+
+    </ul>
+    @*<h1 id="main-heading">
+            Manufacturer <span>This page shows the Site  </span>
+        </h1>*@
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget" style="margin-left: 0px; background: #8080ff url('/Images/ManualBookingbg.png') repeat-x; border: 1px solid #b8dbf9; color: #8080ff !important;">
+
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <input type="hidden" id="hfId" value="0" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="color: black">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px;">
+
+                                    <div class="span4">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td class="control-label"><label class="control-label" style="font-size: larger;">From </label></td>
+                                                <td colspan="3" class="controls"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><label class="control-label">Site</label></td>
+                                                <td colspan="3" class="controls">
+                                                    <select id="ddlFromSite" class="span12 select2"></select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Address </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtFromAddress" name="wizard[txtFromAddress]" readonly class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label">Suburb </label></td>
+                                                <td width="120px" class="controls"><input type="text" id="txtFromSuburb" name="wizard[txtFromSuburb]" readonly class="required span12" style="width:100%;" /></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Post Code </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtFromCode" name="wizard[txtFromCode]" readonly class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label">Contact No </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtFromMobileNo" name="wizard[txtFromMobileNo]" readonly class="required span12" style="width:100%;" /></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="span4">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td class="control-label"><label class="control-label" style="font-size: larger;">To </label></td>
+                                                <td colspan="3" class="controls"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><label class="control-label">Site</label></td>
+                                                <td colspan="3" class="controls">
+                                                    <select id="ddlToSite" class="span12 select2"></select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Address </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtToAddress" name="wizard[txtToAddress]" readonly class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label">Suburb </label></td>
+                                                <td width="120px" class="controls"><input type="text" id="txtToSuburb" name="wizard[txtToSuburb]" readonly class="required span12" style="width:100%;" /></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Post Code </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtToCode" name="wizard[txtToCode]" readonly class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label">Contact No </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtToMobileNo" name="wizard[txtToMobileNo]" readonly class="required span12" style="width:100%;" /></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="span4">
+                                        <table width="100%" align="right" border="0" cellspacing="0" cellpadding="5">
+                                            <tr id="maintrId">
+                                                <td width="136px"><label class="control-label">Order No &nbsp;&nbsp;</label></td>
+                                                <td width="144px"><input type="text" id="txtOrderNo" name="wizard[txtOrderNo]" readonly class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Booking Date &nbsp;&nbsp;<span class="required">★</span></label></td>
+                                                <td><input type="text" id="txtBookingDate" name="wizard[txtBookingDate]" readonly class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Reference No</label></td>
+                                                <td><input type="text" id="txtReferenceNo" class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Transaction Type <span class="required">★</span></label></td>
+                                                <td>
+                                                    <select id="ddlTransactionType" class="span12 select2">
+                                                        @*<option value="-1">---Select---</option>
+                                                            <option value="Delivery">Delivery</option>
+                                                            <option value="Display">Display</option>
+                                                            <option value="Stock">Stock</option>
+                                                            <option value="Collection">Collection</option>*@
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><label class="control-label">Point Of Req. <span class="required">★</span></label></td>
+                                                <td>
+                                                    <select id="ddlReqPoint" class="span12 select2"></select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Order Person <span class="required">★</span></label></td>
+                                                <td>
+                                                    <select id="ddlPerson" class="span12 select2"></select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span12" style="margin-left: 0px;">
+                                <div class="control-group">
+                                    <div class="controls" style="margin-left: 0px">
+                                        <div id="divTable" class="widget-content table-container" style="overflow: hidden;">
+                                            <table class="table table-bordered" id="tbl">
+                                                <thead style="background-color: #83a9ef">
+                                                    <tr>
+                                                        <th width="11%">Action</th>
+                                                        <th width="18%">Item Code<span style="color: red">*</span></th>
+                                                        <th width="23%">Item Description</th>
+                                                        <th width="12%">In Hand Qty</th>
+                                                        <th width="8%">Qty<span style="color: red">*</span></th>
+                                                        <th width="10%">No of Box</th>
+                                                        <th width="10%">Delivery Cost</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="idtbody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span12" style="margin-left: 0px">
+                                <div class="control-group">
+                                    <div class="span1">
+                                    </div>
+                                    <div class="span5">
+                                        <label class="control-label" style="width: auto">Delivery Instruction</label>
+                                        <div class="controls">
+                                            <textarea class="required span12 " id="txtInstruction" rows="2" cols="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="span5">
+                                        <label class="control-label" style="width: auto">Notes</label>
+                                        <div class="controls">
+                                            <textarea class="required span12 " id="txtNotes" rows="2" cols="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="span1">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="span2">
+                                       
+                                    </div>
+                                    <div class="span4">
+                                        <label class="control-label" for="ddlDespatchVia">Despatch Via <span class="required">★</span></label>
+                                        <div class="controls">
+                                            <select id="ddlDespatchVia" class="span12 select2"></select>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="control-label">Required Delivery Date <span class="required">★</span></label>
+                                        <div class="controls">
+                                            <input type="text" class="span12 date" id="txtRequiredDate" />
+                                        </div>
+                                    </div>
+                                    <div class="span2">
+                                        @*<label class="control-label">Delivery Date <span class="required">★</span></label>
+                                            <div class="controls">
+                                                <input type="text" class="span12 date" id="txtDelDate"/>
+                                            </div>*@
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px; background-color: initial; padding: 0px 20px 5px 20px;">
+                                    <div class="span12">
+                                        <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                                            <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width: 85px;" />
+                                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width: 85px;" />
+                                            <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width: 85px;" />
+                                            <input type="button" class="btn btn-primary" value="Print" id="btnPrint" style="width:85px;" />
+                                            <input type="button" class="btn btn-inverse" value="Remove" id="btnRemove" style="width: 85px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/StockTransfer.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}

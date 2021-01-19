@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #tbl tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #tbl td, #tbl th {
+        border: 1px solid #ddd !important;
+    }
+
+    #tbl th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #f2f2f2;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainHome").addClass("active open");
+        $("#childEmployee").addClass("active");
+
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-accessibility"></i><a href="@Url.Action("Index", "Admin")">Administrator</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        
+        <li>
+            Employee Entry
+            @*<a href="@Url.Action("Employee", "Employee")">Employee</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-wand"></i>Employee Setup</span>
+            </div>
+            <div class="widget-content form-container">
+                <form id="wizard-demo-2" class="form-horizontal" data-forward-only="false">
+                    <fieldset class="wizard-step">
+                        <legend class="wizard-label"><i class="icon-book"></i> General</legend>
+                        <div class="control-group">
+                            <div class="span2">
+
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Designation </label>
+                                <div class="controls">
+                                    <select id="ddlDesignation" class="span12 select2"></select>
+                                </div>
+                               
+                            </div>
+                            <div class="span4">
+                                
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Employee No </label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtEmployeeCode" readonly />
+                                    <input type="hidden" id="txtEmployeeId" value="0" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Card Id </label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtCardId" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Last Name <span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtLastName" class="span12">
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">First Name </label>
+                                <div class="controls">
+                                    <input type="text" id="txtFirstName" class="span12">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Phone No. 1 </label>
+                                <div class="controls">
+                                    <input type="text" id="txtPhone1" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Phone No. 2 </label>
+                                <div class="controls">
+                                    <input type="text" id="txtPhone2" class="span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Address </label>
+                                <div class="controls">
+                                    <input type="text" id="txtAddress" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Phone No. 3 </label>
+                                <div class="controls">
+                                    <input type="text" id="txtPhone3" class="span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">City </label>
+                                <div class="controls">
+                                    <input type="text" id="txtCity" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Fax </label>
+                                <div class="controls">
+                                    <input type="text" id="txtFax" class="span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">State </label>
+                                <div class="controls">
+                                    <input type="text" id="txtState" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Email </label>
+                                <div class="controls">
+                                    <input type="text" id="txtEmail" class="span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">PostCode </label>
+                                <div class="controls">
+                                    <input type="text" id="txtPostalCode" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Website </label>
+                                <div class="controls">
+                                    <input type="text" id="txtWebsite" class="span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                           
+                            <div class="span5">
+                                <label class="control-label">Country </label>
+                                <div class="controls">
+                                    <select id="ddlCountry" class="span12 select2"></select>
+                                </div>
+                            </div>
+                            <div class="span5">
+                                <label class="control-label">Salutation </label>
+                                <div class="controls">
+                                    <input type="text" id="txtSalutation" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <label class="checkbox" id="lblcheck">
+                                    <input type="checkbox" id="chkIsActive" value="option1" class="uniform" checked>
+                                    IsActive
+                                </label>
+                            </div> 
+                        </div>
+                        @*<div class="control-group">
+                            <div class="span6">
+                                <label class="checkbox">
+                                    <input type="checkbox" id="chkIsActive" value="option1" class="uniform" checked>
+                                    IsActive
+                                </label>
+                            </div>
+                            <div class="span6">
+                                
+                            </div>
+                        </div>*@
+                    </fieldset>
+
+                    <fieldset class="wizard-step">
+                        <legend class="wizard-label"><i class="icon-pencil"></i> Attachments</legend>
+                        <div class="control-group">
+                            <label for="file" class="control-label">Choose file to upload</label>
+                            <div class="controls">
+                                <input type="file" id="file" name="file" onchange="fileSelected();">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                                <div id="divImgPreview" class="controls">
+                                    
+                                </div>
+                            </div>
+                    </fieldset>
+                </form>
+                <br />
+                @Html.Partial("_layoutPageButton")
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title">
+                    <i class="icol-table"></i>List
+                </span>
+            </div>
+            <div id="divTable" class="widget-content table-container">
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Basic/Employee.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

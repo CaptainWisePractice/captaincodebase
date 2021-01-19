@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "SearchInvoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .widget .form-container .control-group {
+        padding: 6px 20px;
+        border-top: 0px solid #ccc;
+    }
+    #tbl tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #tbl td, #tbl th {
+        border: 1px solid #ddd !important;
+    }
+
+    #tbl th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #f2f2f2;
+    }
+
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childSearchInvoice").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Search Invoice
+            @*<a href="@Url.Action("Sales", "Sales")">Search Invoice</a>*@
+            
+        </li>
+    </ul>
+</div>
+
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            @*<div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>Search Invoice</span>
+            </div>*@
+            <div class="widget-content form-container">
+                <form id="wizard-demo-Register" class="form-horizontal" data-forward-only="false">
+                    <fieldset class="wizard-step">
+                        <legend class="wizard-label" id="Printed"><i class="icon-book"></i>To Be Printed</legend>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label" for="ddlSaleType">Sale Type <span class="required">★</span></label>
+                                <div class="controls">
+                                    <select id="ddlSaleType" class="span10 select2-select-00">
+                                        <option value="Invoice">Invoice</option>
+                                        <option value="Category">Category</option>
+                                        <option value="ItemHead">Item Head</option>
+                                        <option value="Customer">Customer</option>
+                                        @*<option value="RefNo">Ref. No</option>*@
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="span6" style="display: none" id="OthersDiv">
+                                <label class="control-label">Search Type </label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtSearchType" placeholder="Search Type" />
+                                    <input type="hidden" id="hfSearchTypeId" value="" class="required span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span3">
+                                <label class="control-label" style="text-align: right;">From Date: </label>
+                                <div class="controls">
+                                    <input type="text" class="span12 sDate" id="txtDatedFrom" />
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="text-align: right;">To Date:</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 sDate" id="txtDatedTo" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                               
+                            </div>
+                        </div>
+                        <div class="control-group" style="padding-top: 1px;">
+                            <div class="span12">
+                                <div id="divTblPrintInvoice" class="widget-content table-container" style="max-height:350px; overflow:auto">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    @*<fieldset class="wizard-step">
+                            <legend class="wizard-label" id="Emailed"><i class="icon-book"></i> To Be Emailed</legend>
+                     </fieldset>*@
+                </form>
+                <br />
+                <div class="form-actions" style="padding-left: 25%;">
+                    <input type="button" class="btn btn-primary" value="Print" id="btnPrint" style="width:85px;" />
+                    <input type="button" class="btn btn-info" value="Send Mail" id="btnMail" style="width:85px;" />
+                    <input type="button" class="btn btn-warning" value="Delete" id="btnDelete" style="width:85px;" />
+                    <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:85px;" />
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Sale/SearchInvoice.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

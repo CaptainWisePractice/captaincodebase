@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "ItemCheckOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainInventory").addClass("active open");
+        $("#childItemCheckOut").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+       
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-bag"></i> <a href="@Url.Action("Index", "Inventory")">Inventory</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Item CheckOut
+            @*<a href="@Url.Action("ItemCheckOut", "ItemCheckOut")">Item CheckOut</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>Item CheckOut</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        @*<div class="control-group">
+                            <label class="control-label" for="ddlHead">Item Head <span class="required">*</span></label>
+                            <div class="controls">
+                                <select id="ddlHead" class="span10 select2-select-00"></select>
+                            </div>
+                        </div>*@
+                        <div id="divTable" class="widget-content table-container"  style="min-height:250px; overflow:auto;">
+                            <table class="table table-bordered" id="tbl">
+                                <thead style="background-color: #ebebeb">
+                                    <tr>
+                                        <th width="9%">Action</th>
+                                        <th width="12%">Item Code <span style="color:red"> * </span></th>
+                                        <th width="17%">Description</th>
+                                        <th width="19%">Item Number</th>
+                                        <th width="16%">Location <span style="color:red"> * </span></th>
+                                        <th width="8%">InHand Qty</th>
+                                        <th width="9%">CheckOut Qty <span style="color:red"> * </span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="idtbody"></tbody>
+                            </table>
+                        </div>
+                        <div class="control-group" style="background-color:#94dbff33;">
+                            <div class="span4">
+                                <label class="control-label">Customer Name <span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtCustomerName" name="wizard[CustomerName]" class="required span12" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label" for="txtContractNo">Contract No <span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtContractNo" class="required span12" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label" for="txtMail">E-Mail </label>
+                                <div class="controls">
+                                    <input type="text" id="txtMail" class="required span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group" style="background-color:#94dbff33;">
+
+                            <div class="span6">
+                                <label class="control-label">Customer Address <span class="required">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtCustomerInfo" class="required span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label" for="txtDueDate">Due Date </label>
+                                <div class="controls">
+                                    <input type="text" id="txtDueDate" class="span12" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group" style="background-color:#94dbff33;">
+                            <label class="control-label" for="txtNotes">Notes </label>
+                            <div class="controls">
+                                <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: both; height: 80px;"></textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <div class="form-actions">
+                        <div class="span2"></div>
+                        <div class="span10">
+                            <input type="button" class="btn btn-success" id="btnSave" value="CheckOut" style="width:90px;" />
+                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" />
+                            <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/ItemCheckOut.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+

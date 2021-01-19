@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "ItemMove";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+        $("#mainInventory").addClass("active open");
+        $("#childItemMove").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<style type="text/css">
+    scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    scheduler-border {
+        width: inherit; /* Or auto */
+        padding: 0 10px; /* To give a bit of padding on the left and right */
+        border-bottom: none;
+    }
+</style>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-bag"></i> <a href="@Url.Action("Index", "Inventory")">Inventory</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Item Move
+            @*<a href="@Url.Action("ItemMove", "ItemMove")">Item Move</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Item Move</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span2">
+                            </div>
+                            <div class="span8">
+                                <label class="control-label" for="ddlHead">Item Code <span class="required">*</span></label>
+                                <div class="controls">
+                                    <select id="ddlHead" class="span10 select2-select-00"></select>
+                                </div>
+                            </div>
+                            <div class="span2">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @*<div class="span12">*@
+                                <div id="divTable" class="widget-content table-container" style="overflow:auto;max-height:250px;">
+                                    <table class="table table-striped table-checkable" id="tbl">
+                                        <thead style="background-color: #ebebeb">
+                                            <tr>
+                                                <th class="checkbox-column">
+                                                    <input type="checkbox" class="uniform">
+                                                </th>
+                                                <th width="15%">Item Number</th>
+                                                <th width="25%">Item Description</th>
+                                                <th width="20%">From Location</th>
+                                                <th width="10%">Stock Qty</th>
+                                                <th width="20%">To Location</th>
+                                                <th width="10%">Move Qty</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div> 
+                            @*</div>*@
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="txtNotes">Notes </label>
+                            <div class="controls">
+                                <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: both; height: 70px;"></textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <div class="form-actions">
+                        <div class="span2"></div>
+                        <div class="span10">
+                            <input type="button" class="btn btn-success" id="btnSave" value="Move" style="width:90px;" />
+                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width:90px;" />
+                            <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:90px;" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/ItemMove.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

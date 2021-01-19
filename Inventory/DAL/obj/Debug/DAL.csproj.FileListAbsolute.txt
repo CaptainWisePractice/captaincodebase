@@ -1,0 +1,282 @@
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+F:\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+F:\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+F:\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+F:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\20180709\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\EPPlus.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\itextsharp.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\EPPlus.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\itextsharp.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\EPPlus.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\itextsharp.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\EPPlus.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\itextsharp.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAL.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\DAO.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\obj\Debug\DAL.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\DAL.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\DAL.pdb
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Common.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\DAO.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+F:\Melb_Work\APIPOS\DAL\bin\Debug\Common.pdb
+F:\Melb_Work\APIPOS\DAL\bin\Debug\DAO.pdb
+F:\Melb_Work\APIPOS\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\Melb_Work\APIPOS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\Melb_Work\APIPOS\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\Melb_Work\APIPOS\DAL\obj\Debug\DAL.dll
+F:\Melb_Work\APIPOS\DAL\obj\Debug\DAL.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\DAL.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\DAL.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\DAO.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\bin\Debug\DAO.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\obj\Debug\DAL.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\DAL.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\DAL.pdb
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Common.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\DAO.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\Common.pdb
+G:\Working\Get Smart\APIPOS\DAL\bin\Debug\DAO.pdb
+G:\Working\Get Smart\APIPOS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+G:\Working\Get Smart\APIPOS\DAL\obj\Debug\DAL.dll
+G:\Working\Get Smart\APIPOS\DAL\obj\Debug\DAL.pdb
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\DAL.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\DAL.pdb
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Common.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\DAO.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\Common.pdb
+G:\Working\Get Smart\LocalWork\DAL\bin\Debug\DAO.pdb
+G:\Working\Get Smart\LocalWork\DAL\obj\Debug\DAL.dll
+G:\Working\Get Smart\LocalWork\DAL\obj\Debug\DAL.pdb
+G:\Working\Get Smart\LocalWork\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

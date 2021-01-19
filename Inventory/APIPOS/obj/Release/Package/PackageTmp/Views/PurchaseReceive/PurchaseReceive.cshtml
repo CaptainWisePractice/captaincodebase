@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "PurchaseReceive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .txtAmount {
+        text-align: right;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainPurchase").addClass("active open");
+        $("#childPurchaseReceive").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-shopping-cart"></i><a href="@Url.Action("Index", "Purchase")">Purchase</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Purchase Order Receive
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-arrow-in"></i> Purchase Receive</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span4">
+                                <label class="control-label">From Date :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 date" id="txtFromDate" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">To Date :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 date" id="txtToDate" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                @*<label class="control-label">Date :</label>*@
+                                <div class="controls">
+                                    <input type="button" class="btn btn-primary" value="Show Order" id="btnShowOrder" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group" style="background-color:#94dbff33;">
+                            <div class="span12" style="min-height:150px;">
+                                <table class="table table-bordered table-responsive" id="tbl">
+                                    <thead style="background-color: #ebebeb">
+                                        <tr>
+                                            <th>PO No</th>
+                                            <th>PI No</th>
+                                            <th>PO Date</th>
+                                            <th>Manufacture</th>
+                                            <th>Status</th>
+                                            <th>Received Date</th>
+                                            <th>Receive</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        
+                    </fieldset>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Purchase/PurchaseReceive.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+
+
+

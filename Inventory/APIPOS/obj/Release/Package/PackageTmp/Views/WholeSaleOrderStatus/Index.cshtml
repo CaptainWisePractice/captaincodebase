@@ -1,0 +1,211 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<title>View</title>*@
+    <link rel="stylesheet" href="~/App_Theme/bootstrap/css/bootstrap.min.css" media="all">
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <!-- jquery-ui Stylesheets -->
+    <link rel="stylesheet" href="~/App_Theme/assets/jui/css/jquery-ui.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/assets/jui/jquery-ui.custom.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/assets/jui/timepicker/jquery-ui-timepicker.css" media="screen">
+
+    <!-- Uniform Stylesheet -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/uniform/css/uniform.default.css" media="screen">
+
+    <!-- Plugin Stylsheets first to ease overrides -->
+    <!-- iButton -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/ibutton/jquery.ibutton.css" media="screen">
+
+    <!-- Circular Stat -->
+    <link rel="stylesheet" href="~/App_Theme/custom-plugins/circular-stat/circular-stat.css">
+
+    <!-- Fullcalendar -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/fullcalendar/fullcalendar.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/plugins/fullcalendar/fullcalendar.print.css" media="print">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/select2/select2.css" media="screen">
+    <!-- msgBox -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/msgbox/jquery.msgbox.css" media="screen">
+
+    <!-- pnotify -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/pnotify/jquery.pnotify.css" media="screen">
+    <!-- Wizard Stylesheet -->
+    <link rel="stylesheet" href="~/App_Theme/custom-plugins/wizard/wizard.css">
+
+    <!-- End Plugin Stylesheets -->
+    <!-- Main Layout Stylesheet -->
+    <link rel="stylesheet" href="~/App_Theme/assets/css/fonts/icomoon/style.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/assets/css/main-style.css" media="screen">
+
+    <!-- multipleSelect -->
+    <link href="~/App_Theme/plugins/multipleselect/multiple-select.css" rel="stylesheet" />
+
+    <script src="~/App_Theme/assets/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var $331 = $.noConflict(true);
+    </script>
+    <script src="~/App_Theme/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/App_Theme/assets/js/libs/jquery.placeholder.min.js"></script>
+    <script src="~/App_Theme/assets/js/libs/jquery.mousewheel.min.js"></script>
+
+    <!-- Template Script -->
+    <script src="~/App_Theme/assets/js/template.js"></script>
+    <script src="~/App_Theme/assets/js/setup.js"></script>
+
+
+    <!-- Uniform Script -->
+    <script src="~/App_Theme/plugins/uniform/jquery.uniform.min.js"></script>
+
+    <!-- jquery-ui Scripts -->
+    <script src="~/App_Theme/assets/jui/js/jquery-ui-1.9.2.min.js"></script>
+    <script src="~/App_Theme/assets/jui/jquery-ui.custom.min.js"></script>
+    <script src="~/App_Theme/assets/jui/timepicker/jquery-ui-timepicker.min.js"></script>
+    <script src="~/App_Theme/assets/jui/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <!-- Flot -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/libs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="~/App_Theme/plugins/flot/jquery.flot.min.js"></script>
+    <script src="~/App_Theme/plugins/flot/plugins/jquery.flot.tooltip.min.js"></script>
+    <script src="~/App_Theme/plugins/flot/plugins/jquery.flot.pie.min.js"></script>
+    <script src="~/App_Theme/plugins/flot/plugins/jquery.flot.resize.min.js"></script>
+
+    <!-- Circular Stat -->
+    <script src="~/App_Theme/custom-plugins/circular-stat/circular-stat.min.js"></script>
+
+    <!-- Full Calendar -->
+    <script src="~/App_Theme/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="~/App_Theme/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/TableTools/js/TableTools.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/FixedColumns/FixedColumns.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/App_Theme/plugins/datatables/jquery.dataTables.columnFilter.js"></script>
+    <script src="~/App_Theme/plugins/datatables/FixedHeader/FixedHeader.min.js"></script>
+    <!-- Select2 -->
+    <script src="~/App_Theme/plugins/select2/select2.min.js"></script>
+    <!-- msgBox -->
+    <script src="~/App_Theme/plugins/msgbox/jquery.msgbox.min.js"></script>
+
+    <!-- pnotify -->
+    <script src="~/App_Theme/plugins/pnotify/jquery.pnotify.min.js"></script>
+    <!-- Validation -->
+    <script src="~/App_Theme/plugins/validate/jquery.validate.min.js"></script>
+
+    <!-- Wizard -->
+    <script src="~/App_Theme/custom-plugins/wizard/wizard.min.js"></script>
+    <script src="~/App_Theme/custom-plugins/wizard/jquery.form.min.js"></script>
+    <!-- UI Block -->
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+    <!-- multipleSelect -->
+    <script src="~/App_Theme/plugins/multipleselect/jquery.multiple.select.js"></script>
+
+    <!-- for Html table to execl file-->
+    <script src="~/Scripts/Xlsx/xlsx.full.min.js"></script>
+    <script src="~/Scripts/Xlsx/FileSaver.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.3/xlsx.full.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>*@
+
+    <style>
+        #divTable {
+            order: 99;
+            display: flex;
+            width: 100%;
+            padding: .5rem;
+            background: #fff;
+        }
+
+        .Tabmargin {
+            margin-left: -13px;
+            margin-top: -13px;
+        }
+
+        /**
+         * Generic Styling
+        */
+        body {
+            background: #eee;
+            padding: 35px;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            line-height: 1.5;
+            margin: 0 auto;
+            font-size: 11px;
+        }
+
+        .notfound {
+            display: none;
+        }
+
+        #tbldata th, td { white-space: nowrap;max-width:260px !important; }
+       
+
+    </style>
+
+</head>
+<body>
+    <table width="70%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th scope="row">&nbsp;</th>
+            <td><span style="font-weight:bold;">From Date &nbsp;</span></td>
+            <td style="width: 120px;"><input type="text" id="txtFromDate" class="required span12" style="width:105px;" /></td>
+            <td>&nbsp;</td>
+            <td><span style="font-weight:bold;">To Date &nbsp;</span></td>
+            <td style="width: 120px;"><input type="text" id="txtToDate" class="required span12" style="width: 105px;" /></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input type="button" id="btnSearch" class="btn btn-info" style="width:90px;" value="Search" /></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+            <td><span style="font-weight:bold;">Search :</span></td>
+            <td>&nbsp;</td>
+            <td style="width: 200px;"><input type="text" id="txtSearch" placeholder="" class="required span12" style="width: 180px;" /></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>
+                <a href="javascript:" class="btn_style1 excel" onclick="doExcel1()"><span style="font-size:larger;font-weight:bold">Download Excel</span></a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">&nbsp;</th>
+        </tr>
+    </table>
+    <div id="divTable" style="overflow:auto; max-height:500px;">
+    </div>
+</body>
+</html>
+
+<script src="~/App_Js/Sale/WholeSaleOrderStatus.js"></script>
+<script src="~/Scripts/jquery.rowspanizerwholeSales.js"></script>

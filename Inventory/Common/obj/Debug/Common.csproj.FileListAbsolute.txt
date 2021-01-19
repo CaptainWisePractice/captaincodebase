@@ -1,0 +1,109 @@
+F:\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+F:\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+F:\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+F:\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Test Project\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+D:\Test Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Test Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+D:\Test Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\20180709\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\20180709\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\20180709\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\20180709\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\20180709\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+E:\PROGRAM\Inventory\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+D:\Test Project\Inventory\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\EPPlus.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\itextsharp.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+F:\Sayed\Project\10.08.2018\amin\apipos\SRC\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\EPPlus.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\itextsharp.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\EPPlus.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\itextsharp.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\EPPlus.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\itextsharp.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\01-02-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\Common\bin\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\Common\obj\Debug\Common.csprojAssemblyReference.cache
+F:\Melb_Work\APIPOS\Common\bin\Debug\Common.dll
+F:\Melb_Work\APIPOS\Common\bin\Debug\Common.pdb
+F:\Melb_Work\APIPOS\Common\obj\Debug\Common.csprojAssemblyReference.cache
+F:\Melb_Work\APIPOS\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+F:\Melb_Work\APIPOS\Common\obj\Debug\Common.csproj.CopyComplete
+F:\Melb_Work\APIPOS\Common\obj\Debug\Common.dll
+F:\Melb_Work\APIPOS\Common\obj\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\Common\bin\Debug\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\Common\bin\Debug\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\Common\obj\Debug\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\Get Smart\APIPOS\Common\bin\Debug\Common.dll
+G:\Working\Get Smart\APIPOS\Common\bin\Debug\Common.pdb
+G:\Working\Get Smart\APIPOS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+G:\Working\Get Smart\APIPOS\Common\obj\Debug\Common.dll
+G:\Working\Get Smart\APIPOS\Common\obj\Debug\Common.pdb
+G:\Working\Get Smart\LocalWork\Common\bin\Debug\Common.dll
+G:\Working\Get Smart\LocalWork\Common\bin\Debug\Common.pdb
+G:\Working\Get Smart\LocalWork\Common\obj\Debug\Common.dll
+G:\Working\Get Smart\LocalWork\Common\obj\Debug\Common.pdb
+G:\Working\Get Smart\LocalWork\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

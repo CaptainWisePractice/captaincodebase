@@ -1,0 +1,567 @@
+﻿
+@{
+    ViewBag.Title = "PurchaseOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+ 
+    s2id_ddlCFAgent{
+    width: 105% !important;
+    }
+
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainPurchase").addClass("active open");
+        $("#childPurchaseOrder").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-shopping-cart"></i><a href="@Url.Action("Index", "Purchase")">Purchase</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Purchase Order
+            @*<a href="@Url.Action("Index", "Purchase")">Purchase Order</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12" style="margin-left: 0px;">
+            <div class="widget-content form-container">
+                <form class="form-horizontal" style="margin: 0px">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group" style="margin-bottom: 10px;">
+                                <div class="span2">
+                                </div>
+                                <div class="span2">
+                                    <label id="Status" style="color:green; font-size:16px;">Update</label>
+                                </div>
+                                <div class="span1">
+                                    <label class="radio">
+                                        Import
+                                        <input type="radio" name="r1" value="Import" checked>
+                                    </label>
+                                </div>
+                                <div class="span1">
+                                    <label class="radio">
+                                        Local
+                                        <input type="radio" name="r1" value="Local">
+                                    </label>
+                                </div>
+                                <div class="span6">
+                                    <input type="hidden" id="hfId" value="" />
+                                </div>
+                                @*<div class="span4" style="margin-left: 10px;">
+                                        <label class="control-label" style="float: left; color: black;width: auto"></label>
+                                        <div class="controls" style="margin-left: 80px;">
+
+
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="span12 widget" style="margin-left: 0px; background: #b8dbf9 url('/Images/SaleDesignbg.png') repeat-x; border: 1px solid #b8dbf9; color: #ffffff !important;">
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12" style="margin-left: 0px; margin-bottom:-1%;">
+                                <div class="control-group">
+                                    <div class="span5">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="width:auto; float: left; color: black;">Manufacturer&nbsp;&nbsp; <span class="required">★</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlManufacturer" class="span12 select2-select-00"></select>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width:auto;float:left; color:black;float: left;">Manufacturer Details</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <textarea class="span12 " id="txtManufacturerDets" rows="3" cols="3" readonly></textarea>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width:auto;float:left;float: left; color: black;">
+                                                    Trading Terms
+                                                </label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtTradingTerms" class="span12" readonly>
+                                                </div>
+
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width:auto;float: left; color: black;">Order Status&nbsp;&nbsp; <span class="required">★</span></label>
+                                                <div class="controls" style="margin-bottom:5px">
+                                                    <select id="ddlOrderStatus" class="span12 select2">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width:auto;float: left; color: black;">Shiping Agent</label>
+                                                <div class="controls" style="margin-bottom:5px">
+                                                    <select id="ddlShipingAgent" class="span12 select2"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span4" style="margin-left: -5px;">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="float: left; color: black;">Date of Order</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtOrderDate" class="required span12">
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">PO Number</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtPONumber" class="required span12">
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">PI Number &nbsp; &nbsp;<span class="required">★</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtPINumber" class="required span12">
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Description of Order</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <textarea class="span12 " id="txtDescription" rows="3" cols="3"></textarea>
+                                                </div>
+                                            </div>
+                                           
+
+                                        </div>
+                                    </div>
+                                    <div class="span3" margin-left 0px;">
+                                        <div class="span12" style="width: 125%;">
+                                            <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px; margin-left: -28px;">
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="width:auto;float:left;float: left; color: black;">
+                                                        Production Time
+                                                    </label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtProductionTime" class="span12" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="width:auto;float:left;float: left; color: black;">
+                                                        Production End Date
+                                                    </label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtProductionEndDate" class="span12">
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;">Date of Loading</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtDateLoading" class="required span12">
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;">Currency</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <select id="ddlCurrency" class="span12">
+                                                            <option value="1">USD</option>
+                                                            <option value="2">AUD</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;">Port Of Loading</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        @*<input type="text" id="txtPortLoading" class="required span12">*@
+                                                        <select id="ddlPortLoading" class="span12"></select>
+                                                        @*<textarea class="span12 " id="txtTradingTerms" rows="3" cols="3"></textarea>*@
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;">Bill Of Lading</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtBillofLading" class="required span12">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="color: black">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12" style="margin-left: 0px;">
+                                <div class="control-group">
+                                    <div class="controls" style="margin-left: -15px; margin-right: -15px;">
+                                        <div id="divTable" class="widget-content table-container" style="min-height:150px; overflow:auto;">
+                                            <table class="table table-bordered" id="tbl">
+                                                <thead style="background-color: #f7e5e6">
+                                                    <tr>
+                                                        <th width="8%">Action</th>
+                                                        <th width="18%">Item Code <span style="color:red"> * </span></th>
+                                                        <th width="22%">Description</th>
+                                                        <th width="5%">Box</th>
+                                                        <th width="6%">CBM</th>
+                                                        <th width="8%">Order Qty</th>
+                                                        <th width="9%">Unit Price ($)</th>
+                                                        <th width="9%">Total Price ($)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                        <td style="font-weight: bold; text-align: right;"> Total </td>
+                                                        <td><label id="totaqt"></label></td>
+                                                        <td><label id="totalcbm"></label></td>
+                                                        <td><label id="totalqt"></label></td>
+                                                        <td><label id="totalpr"></label></td>
+                                                        <td><label id="totalval"></label></td>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody id="idtbody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12" style="margin-left: 0px; margin-bottom:-1%;">
+                                <div class="control-group">
+                                    <div class="span3">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px; width: 92%;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Deposit Amount</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <div class="input-append input-prepend">
+                                                        <span class="add-on" style="color: black;">$</span><input type="text" id="txtDepUSD" class="number span12">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">BOP</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <div class="input-append input-prepend">
+                                                        <span class="add-on" style="color: black;">$</span><input type="text" id="txtBOPUSD" readonly class="number span12">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Shipping Rate </label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <div class="input-append input-prepend">
+                                                        <span class="add-on" style="color: black;">$</span><input type="text" id="txtShipUSD" class="number span12">
+                                                    </div>
+                                                 </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px; width:92%;">
+                                            <div class="span12">
+                                                <label class="control-label" style="float: left; color: black;">USD &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  AUD</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <div class="input-append input-prepend">
+                                                        <span class="add-on" style="color: black;">$</span><input type="text" id="txtDepAUD" class="number span12">
+                                                    </div>
+                                                 </div>
+                                            </div>
+
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">USD &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">USD &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; AUD</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <div class="input-append input-prepend">
+                                                        <span class="add-on" style="color: black;">$</span><input type="text" id="txtShipAUD" class="number span12">
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span3" margin-left 0px;">
+                                        <div class="span12">
+                                            <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px; width: 98%;">
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="width:auto;float:left;float: left; color: black;">
+                                                        Deposit Date
+                                                    </label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtDepositDate" class="span12">
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                   
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;">ETD</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtETD" class="required span12">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="span3" margin-left 0px;">
+                                        <div class="span12">
+                                            <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px; width: 98%;">
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;"> Conversion Rate</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtConversionRate" class="required span12" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+
+                                                </div>
+                                                <div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label" style="float: left; color: black;"> &nbsp;&nbsp; &nbsp;&nbsp; ETA</label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtETA" class="span12">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12" style="margin-left: 0px; margin-bottom:-1%;">
+                                <div class="control-group">
+                                    <div class="span3" margin-left 0px;">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Due Date</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtDueDate" class="span12" style="width:120%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Transit Time</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                 <input type="text" id="txtTransitTime" class="required span12" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="float: left; color: black;"> Free Days</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                 <input type="text" id="txtFreeDays" style="margin-left:-10px; width:130%;" class="required span12">
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="span3" margin-left 0px;">
+                                        <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px; width:92%;">
+                                            <div class="span12">
+                                                <label class="control-label" style="float: left; color: black;">ETA (Warehouse)</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtETAWarehouse" class="required span12">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12" style="margin-left: 0px; margin-bottom:-1%;">
+                                <div class="control-group">
+                                    <div class="span4" margin-left 0px;">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Documentation</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlDocument" class="span12" style="margin-left:-20px;"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Production Picture</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlProductionPic" class="span12" style="margin-left:-20px;"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="float: left; color: black;">Container Number</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtContainerNumber" class="required span12">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12" style="margin-left: 0px; margin-bottom:-1%;">
+                                <div class="control-group">
+                                    <div class="span5" margin-left 0px;">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">Notes</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: both; height: 35px; width:290px;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="float: left; color: black;">C & F Agent</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlCFAgent" class="span12" style="margin-left:-20px;"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span3">
+                                        <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="float: left; color: black;">C & F Rate (AUD)</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <div class="input-append input-prepend">
+                                                        <span class="add-on" style="color: black;">$</span>
+                                                        <input type="text" id="txtCFAgentRate" class="required span12 number">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px; background-color: initial; padding: 0px 70px 5px 20px;">
+                                    <div class="span12">
+                                        <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                                            <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width:80px;" />
+                                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width:80px;" />
+                                            <input type="button" class="btn btn-inverse" value="Goto Register" id="btnFind" style="width:100px;" />
+                                            @*<input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:80px;" />*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+      
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Purchase/PurchaseOrder.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+
+
+

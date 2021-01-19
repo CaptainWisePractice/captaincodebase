@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script src="~/App_Theme/assets/js/libs/jquery-1.8.3.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    var $331 = $.noConflict(true);
+</script>
+<script src="~/Scripts/jquery.blockUI.js"></script>
+<script src="~/App_Theme/bootstrap/js/bootstrap.min.js"></script>
+
+<html>
+<head>
+    <style type="text/css">
+        .style1 {
+            font-weight: bold;
+        }
+
+        .style2 {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body style="">
+    <div id="divSaleReport">
+     
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Report/SalesFBInvoice.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+            });
+</script>

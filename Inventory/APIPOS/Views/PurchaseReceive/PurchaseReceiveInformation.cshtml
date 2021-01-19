@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "PurchaseReceiveInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .txtAmount {
+        text-align: right;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainPurchase").addClass("active open");
+        $("#childPurchaseReceive").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-shopping-cart"></i><a href="@Url.Action("Index", "Purchase")">Purchase</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Purchase Receive
+            @*<a href="@Url.Action("PurchaseReceive", "PurchaseReceive")">Purchase Receive</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-arrow-in"></i> Purchase Receive</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span4">
+                                <label class="control-label">Receive No :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 date" id="txtReceiveNo" readonly />
+                                    <input type="hidden" class="span12" id="hdPOMasterId" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">PO No :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtPONo" readonly />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">PI No :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtPINo" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span2">
+                                <label class="control-label" style="width:84px;">Receive Date :</label>
+                                <div class="controls"style="margin-left:89px;">
+                                    <input type="text" class="span12" id="txtReceiveDate" style="width:90px;"/>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <label class="control-label" style="width:51px;">PO Qty :</label>
+                                <div class="controls" style="margin-left:56px;">
+                                    <input type="text" class="span12" id="txtPOQty" readonly />
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="width:50px;">Lot No :</label>
+                                <div class="controls" style="margin-left:55px;">
+                                    <input type="text" class="span12" id="txtLotNo" />
+                                </div>
+                            </div>
+                            <div class="span5">
+                                <label class="control-label" style="width:80px;">Manufacture :</label>
+                                <div class="controls" style="margin-left:85px;">
+                                    <input type="text" class="span12" id="txtManufacturerName" readonly />
+                                    <input type="hidden" class="span12" id="hdManufacturerId" />
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="control-group" style="background-color:#94dbff33;">
+                            <div class="span12" style="min-height:150px;">
+                                <table class="table table-bordered table-responsive" id="tblReceive">
+                                    <thead style="background-color: #ebebeb">
+                                        <tr>
+                                            <th width="15%">Item Code</th>
+                                            <th width="10%">New Price</th>
+                                            <th width="10%">Item Number</th>
+                                            <th width="30%">Location</th>
+                                            <th width="10%">Purchase Qty.</th>
+                                            <th width="10%">Available Qty.</th>
+                                            <th width="15%">Receive Qty.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*<tr>
+                                            <td class="PONo"></td>
+                                            <td class="PINo"></td>
+                                            <td class="PODate"></td>
+                                            <td class="Manufacture"></td>
+                                            <td class="Status"></td>
+                                            <td><input type="button" class="btn btn-info Receive" value="Receive Order" id="btnReceive" /></td>
+                                        </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                    <br />
+                    <br />
+
+                    <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                        <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width:80px;" />
+                        @*<input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width:80px;" />*@
+                        <input type="button" class="btn btn-inverse" value="Goto Register" id="btnBack" style="width:100px;" />
+                        @*<input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:80px;" />*@
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Purchase/PurchaseReceiveInformation.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+
+
+

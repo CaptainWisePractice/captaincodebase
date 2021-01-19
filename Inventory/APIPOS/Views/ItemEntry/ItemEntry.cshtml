@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "ItemEntry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    scheduler-border {
+        width: inherit; /* Or auto */
+        padding: 0 10px; /* To give a bit of padding on the left and right */
+        border-bottom: none;
+    }
+
+    #tbl tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #tbl td, #tbl th {
+        border: 1px solid #ddd !important;
+    }
+
+    #tbl th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #f2f2f2;
+    }
+
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainGeneral").addClass("active open");
+        $("#childItemEntry").addClass("active");
+       
+    });
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-accessibility"></i><a href="@Url.Action("Index", "Admin")">Administrator</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Item Entry
+            @*<a href="@Url.Action("ItemEntry", "ItemEntry")">Item Entry</a>*@
+        </li>
+    </ul>
+    @*<h1 id="main-heading">
+            Manufacturer <span>This page shows the Site  </span>
+        </h1>*@
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>Item Setup</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Item Code <span class="required">★</span></label>
+                                <div class="controls">
+                                    <select id="ddlHead" class="required span12 select2-select-00"></select>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">UOM  <span class="required">★</span></label>
+                                <div class="controls">
+                                    <select id="ddlUOM" class="span12 select2-select-00">
+                                        <option value="Box">Box</option>
+                                        <option value="Piece">Piece</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Item Number <span class="required">★</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtItemNumber" name="wizard[ItemNumber]" class="required span12">
+                                    <input type="hidden" id="hfId" value="" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Item Description </label>
+                                <div class="controls">
+                                    <input type="text" id="txtItemName" name="wizard[ItemName]" class="required span12" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">                         
+                            <div class="span3">
+                                <label class="control-label" style="text-align:center;">Length <span class="required"></span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtLength" name="wizard[Length]" class="span12">
+                                </div>
+                            </div>
+
+                            <div class="span3">
+                                <label class="control-label" style="text-align:center;">Width <span class="required"></span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtWidth" name="wizard[Width]" class="span12">
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="text-align:center;">Height <span class="required"></span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtHeight" name="wizard[Height]" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="text-align:center;">CBM <span class="required">★</span></label>
+                                <div class="controls">
+                                    <input type="text" id="txtCBM" name="wizard[Height]" class="span12" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+                            <div class="span4">
+                                <label class="control-label" style="text-align:center;">Weight</label>
+                                <div class="controls">
+                                    <input type="text" id="txtWeight" name="wizard[Weight]" class="span12" />
+                                </div>
+                            </div>
+
+                            <div class="span4">
+                                <label class="control-label">Min Level</label>
+                                <div class="controls">
+                                    <input type="text" id="txtMOrderLabel" name="wizard[MOrderLabel]" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">Max Level</label>
+                                <div class="controls">
+                                    <input type="text" id="txtMaxOrderLabel" name="wizard[MaxOrderLabel]" class="span12" />
+                                </div>
+                            </div>
+                          
+                        </div>
+
+                        @*<div class="control-group">
+                          
+                            <div class="span12">
+                                <label class="checkbox">
+                                    <input type="checkbox" id="chkIsActive" value="option1" class="uniform" checked>
+                                    IsActive
+                                </label>
+                            </div>
+                        </div>*@
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_layoutPageButton")
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title">
+                    <i class="icol-table"></i>List
+                </span>
+            </div>
+            <div id="divTable" class="widget-content table-container">
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Basic/ItemEntry.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

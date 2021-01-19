@@ -1,0 +1,202 @@
+﻿
+@{
+    ViewBag.Title = "SaleApproved";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>Sales
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            <a href="@Url.Action("SaleApproved", "SaleApproved")">Sale Approval</a>
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-graph"></i> Approval</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                <div class="span6">
+                                    <label class="control-label">Sale Invoice <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select id="ddlSalesInvoice" class="span12 select2-select-00"></select>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                   
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Approval Date </label>
+                                    <div class="controls">
+                                        <input type="text" id="txtApprovalDate" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">Sales Type </label>
+                                    <div class="controls">
+                                        <input type="text" id="txtSaleTye" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Due Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtDueDate" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Payment Mode</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtPaymentMode" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">Customer Name</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtCustomer" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Ship To</label>
+                                    <div class="controls">
+                                        <textarea rows="2" cols="2" id="txtShipTo" readonly="readonly"></textarea>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Ship Via</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtShipVia" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group">
+                                <div class="controls" style="margin-left: 0px">
+                                    <div id="divTable" class="widget-content table-container">
+                                        <table class="table table-bordered" id="tbl">
+                                            <thead>
+                                                <tr>
+                                                    <th width="7%">SL#</th>
+                                                    <th width="15%">Item</th>
+                                                    <th width="25%">Item Description</th>
+                                                    <th width="10%">Sale Quantity</th>
+                                                    <th width="10%">Sale Price</th>
+                                                    <th width="5%">Disc(%)</th>
+                                                    <th width="15%">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span12" style="margin-left: 0px">
+                            <div class="control-group">
+                                <div class="span4" style="border:1px solid #ccc">
+                                    <div class="control-group" style="border-top: 0px;">
+                                        <label class="control-label" style="width: auto">Sales Person</label>
+                                        <div class="controls" style="margin-left: 30%">
+                                            <input type="text" id="txtSalesPerson" name="wizard[SalesPerson]" class="required span12" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" style="width: auto">Comments</label>
+                                        <div class="controls" style="margin-left: 30%">
+                                            <textarea rows="3" cols="3" id="txtComments"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span8" style="border:1px solid #ccc">
+                                    <div class="span6">
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;border-top: 0px;">
+                                            <label class="control-label" style="text-align: center; width: auto;">Total</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtTotal" class="span12">
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;">
+                                            <label class="control-label" style="text-align: center; width: auto;">Paid Amount</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtPaid" class="span12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="span4" style="margin-left:0px;">
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;border-top: 0px;">
+                                            <label class="control-label" style="text-align: center; width: auto;">Prev.Due</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtPrevDue" name="wizard[PrevDue]" class="required span12">
+                                            </div>
+                                        </div>
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;">
+                                            <label class="control-label" style="text-align: center;width: auto;">Tax</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtTax" name="wizard[Tax]" class="required span12">
+                                            </div>
+                                        </div>
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;">
+                                            <label class="control-label" style="text-align: center; width: auto;">Adv</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtAdv" name="wizard[Adv]" class="required span12">
+                                            </div>
+                                        </div>
+
+                                    </div>*@
+                                    <div class="span5" style="margin-left:0px;width: 51%">
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;border-top: 0px;">
+                                            <label class="control-label" style="text-align: center; width: auto;">Due Amount</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtDueAmount" class="span12">
+                                            </div>
+                                        </div>
+                                        <div class="control-group" style="padding: 16px 5px 16px 5px;">
+                                            <label class="control-label" style="text-align: center; width: auto;">Receive Amount</label>
+                                            <div class="controls" style="margin-left: 30%;">
+                                                <input type="text" id="txtRecAmount" class="span12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_layoutPageButton")
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Sale/SaleApproval.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}
+
+
+
+

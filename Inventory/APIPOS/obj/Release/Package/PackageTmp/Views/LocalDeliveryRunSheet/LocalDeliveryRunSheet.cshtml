@@ -1,0 +1,890 @@
+﻿
+@{
+    // ViewBag.Title = "LocalDeliveryRunSheet";
+    Layout = null;  //"~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<title>View</title>*@
+    <link rel="stylesheet" href="~/App_Theme/bootstrap/css/bootstrap.min.css" media="all">
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <!-- jquery-ui Stylesheets -->
+    <link rel="stylesheet" href="~/App_Theme/assets/jui/css/jquery-ui.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/assets/jui/jquery-ui.custom.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/assets/jui/timepicker/jquery-ui-timepicker.css" media="screen">
+
+    <!-- Uniform Stylesheet -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/uniform/css/uniform.default.css" media="screen">
+
+    <!-- Plugin Stylsheets first to ease overrides -->
+    <!-- iButton -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/ibutton/jquery.ibutton.css" media="screen">
+
+    <!-- Circular Stat -->
+    <link rel="stylesheet" href="~/App_Theme/custom-plugins/circular-stat/circular-stat.css">
+
+    <!-- Fullcalendar -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/fullcalendar/fullcalendar.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/plugins/fullcalendar/fullcalendar.print.css" media="print">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/select2/select2.css" media="screen">
+    <!-- msgBox -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/msgbox/jquery.msgbox.css" media="screen">
+
+    <!-- pnotify -->
+    <link rel="stylesheet" href="~/App_Theme/plugins/pnotify/jquery.pnotify.css" media="screen">
+    <!-- Wizard Stylesheet -->
+    <link rel="stylesheet" href="~/App_Theme/custom-plugins/wizard/wizard.css">
+
+    <!-- End Plugin Stylesheets -->
+    <!-- Main Layout Stylesheet -->
+    <link rel="stylesheet" href="~/App_Theme/assets/css/fonts/icomoon/style.css" media="screen">
+    <link rel="stylesheet" href="~/App_Theme/assets/css/main-style.css" media="screen">
+
+    <!-- multipleSelect -->
+    <link href="~/App_Theme/plugins/multipleselect/multiple-select.css" rel="stylesheet" />
+
+    <script src="~/App_Theme/assets/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var $331 = $.noConflict(true);
+    </script>
+    <script src="~/App_Theme/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/App_Theme/assets/js/libs/jquery.placeholder.min.js"></script>
+    <script src="~/App_Theme/assets/js/libs/jquery.mousewheel.min.js"></script>
+
+    <!-- Template Script -->
+    <script src="~/App_Theme/assets/js/template.js"></script>
+    <script src="~/App_Theme/assets/js/setup.js"></script>
+
+    <!-- Customizer, remove if not needed -->
+    @*<script src="~/App_Theme/assets/js/customizer.js"></script>*@
+
+    <!-- Uniform Script -->
+    <script src="~/App_Theme/plugins/uniform/jquery.uniform.min.js"></script>
+
+    <!-- jquery-ui Scripts -->
+    <script src="~/App_Theme/assets/jui/js/jquery-ui-1.9.2.min.js"></script>
+    <script src="~/App_Theme/assets/jui/jquery-ui.custom.min.js"></script>
+    <script src="~/App_Theme/assets/jui/timepicker/jquery-ui-timepicker.min.js"></script>
+    <script src="~/App_Theme/assets/jui/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <!-- Flot -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/libs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="~/App_Theme/plugins/flot/jquery.flot.min.js"></script>
+    <script src="~/App_Theme/plugins/flot/plugins/jquery.flot.tooltip.min.js"></script>
+    <script src="~/App_Theme/plugins/flot/plugins/jquery.flot.pie.min.js"></script>
+    <script src="~/App_Theme/plugins/flot/plugins/jquery.flot.resize.min.js"></script>
+
+    <!-- Circular Stat -->
+    <script src="~/App_Theme/custom-plugins/circular-stat/circular-stat.min.js"></script>
+
+    <!-- SparkLine -->
+    @*<script src="~/App_Theme/plugins/sparkline/jquery.sparkline.min.js"></script>*@
+
+    <!-- iButton -->
+    @*<script src="~/App_Theme/plugins/ibutton/jquery.ibutton.min.js"></script>*@
+
+    <!-- Full Calendar -->
+    <script src="~/App_Theme/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="~/App_Theme/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/TableTools/js/TableTools.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/FixedColumns/FixedColumns.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/App_Theme/plugins/datatables/jquery.dataTables.columnFilter.js"></script>
+    <script src="~/App_Theme/plugins/datatables/FixedHeader/FixedHeader.min.js"></script>
+    <!-- Select2 -->
+    <script src="~/App_Theme/plugins/select2/select2.min.js"></script>
+    <!-- msgBox -->
+    <script src="~/App_Theme/plugins/msgbox/jquery.msgbox.min.js"></script>
+
+    <!-- pnotify -->
+    <script src="~/App_Theme/plugins/pnotify/jquery.pnotify.min.js"></script>
+    <!-- Validation -->
+    <script src="~/App_Theme/plugins/validate/jquery.validate.min.js"></script>
+
+    <!-- Wizard -->
+    <script src="~/App_Theme/custom-plugins/wizard/wizard.min.js"></script>
+    <script src="~/App_Theme/custom-plugins/wizard/jquery.form.min.js"></script>
+    <!-- UI Block -->
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+    <!-- multipleSelect -->
+    <script src="~/App_Theme/plugins/multipleselect/jquery.multiple.select.js"></script>
+
+    <!-- for Html table to execl file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+
+    <style>
+                /**
+         * Tabs
+         */
+                .tabs {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    // make sure it wraps;
+                }
+
+                    .tabs label {
+                        order: 1;
+                        // Put the labels first display: block;
+                        padding: 1rem 2rem;
+                        margin-right: 0.2rem;
+                        cursor: pointer;
+                        background: #90CAF9;
+                        font-weight: bold;
+                        transition: background ease 0.2s;
+                    }
+
+                    .tabs .tab {
+                        order: 99;
+                        // Put the tabs last flex-grow: 1;
+                        width: 100%;
+                        display: none;
+                        padding: 1rem;
+                        background: #fff;
+                    }
+
+                    .tabs input[type="radio"] {
+                        display: none;
+                    }
+
+                        .tabs input[type="radio"]:checked + label {
+                            background: #fff;
+                        }
+
+                            .tabs input[type="radio"]:checked + label + .tab {
+                                display: block;
+                            }
+
+                .Tabmargin {
+                    margin-left: -13px;
+                    margin-top: -13px;
+                }
+
+                /**
+         * Generic Styling
+        */
+                body {
+                    background: #eee;
+                    padding: 35px;
+                    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    margin: 0 auto;
+                    font-size: 11px;
+                }
+    </style>
+</head>
+<body>
+    <table width="70%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th scope="row">&nbsp;</th>
+            <td><span style="font-weight:bold;">From Date</span></td>
+            <td><input type="text" id="txtFromDate" class="required span12" style="width:105px;" /></td>
+            <td>&nbsp;</td>
+            <td><span style="font-weight:bold;">To Date</span></td>
+            <td><input type="text" id="txtToDate" class="required span12" style="width: 105px;" /></td>
+            <td>&nbsp;</td>
+            <td><input type="button" id="btnSearch" class="btn btn-info" style="width:90px;" value="Search" /></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>
+                <a href="javascript:" class="btn_style1 excel" onclick="doExcel1()"><span style="font-size:larger;font-weight:bold">Download Excel</span></a>
+            </td>
+        </tr>
+    </table><br> <br>
+
+    <div class="tabs">
+        <input type="radio" name="tabs" id="Monday" checked="checked">
+        <label for="Monday">Monday</label>
+        <div class="tab">
+            <div id="MondayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="Tuesday">
+        <label for="Tuesday">Tuesday</label>
+        <div class="tab">
+            <div id="TuesdayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="Wednesday">
+        <label for="Wednesday">Wednesday</label>
+        <div class="tab">
+            <div id="WednesdayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="Thursday">
+        <label for="Thursday">Thursday</label>
+        <div class="tab">
+            <div id="ThursdayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="Friday">
+        <label for="Friday">Friday</label>
+        <div class="tab">
+            <div id="FridayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="Saturday">
+        <label for="Saturday">Saturday</label>
+        <div class="tab">
+            <div id="SaturdayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="Sunday">
+        <label for="Sunday">Sunday</label>
+        <div class="tab">
+            <div id="SundayTable" class="Tabmargin">
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="DeliveryZone">
+        <label for="DeliveryZone">Delivery Zone</label>
+        <div class="tab">
+            <div id="DeliveryZoneTable" class="Tabmargin">
+                <table border="1" cellpadding="7" cellspacing="0" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="background-color:#feefd0">West on Monday</td>
+                            <td style="background-color:#ffe3a9">North on Tuesday</td>
+                            <td style="background-color:#ffcd5a">Inner Melbourne on Wednesday</td>
+                            <td style="background-color:#c8a450">Eastern on Thursday</td>
+                            <td style="background-color:#948157">South Eastern on Friday</td>
+                        </tr>
+                        <tr>
+    <td>Aberfeldie</td>
+    <td>Airport West</td>
+    <td>Abbotsford</td>
+    <td>Ashburton</td>
+    <td>Beaconsfield</td>
+  </tr>
+  <tr>
+    <td>Albanvale</td>
+    <td>Bell Field</td>
+    <td>Albert Park</td>
+    <td>Ashwood</td>
+    <td>Berwick</td>
+  </tr>
+  <tr>
+    <td>Albion</td>
+    <td>Briar Hill</td>
+    <td>Alphington</td>
+    <td>Aspendale</td>
+    <td>Botanic Ridge</td>
+  </tr>
+  <tr>
+    <td>Altona</td>
+    <td>Broadmeadows</td>
+    <td>Armadale</td>
+    <td>Aspendale Gardens</td>
+    <td>Cardinia</td>
+  </tr>
+  <tr>
+    <td>Altona Meadows</td>
+    <td>Bundoora</td>
+    <td>Balaclava</td>
+    <td>Balwyn</td>
+    <td>Carrum</td>
+  </tr>
+  <tr>
+    <td>Altona north</td>
+    <td>Campbellfield</td>
+    <td>Beaumaris</td>
+    <td>Bayswater</td>
+    <td>Carrum downs</td>
+  </tr>
+  <tr>
+    <td>Ardeer</td>
+    <td>Coburg</td>
+    <td>Bentleigh</td>
+    <td>Bayswater North</td>
+    <td>Clayton South</td>
+  </tr>
+  <tr>
+    <td>Ascot Vale</td>
+    <td>Coolaroo</td>
+    <td>Bentleigh East</td>
+    <td>Belgrave</td>
+    <td>Clyde</td>
+  </tr>
+  <tr>
+    <td>Avondale    Heights</td>
+    <td>Craigieburn</td>
+    <td>Black Rock</td>
+    <td>Blackburn</td>
+    <td>Clyde North</td>
+  </tr>
+  <tr>
+    <td>Braybrook</td>
+    <td>Dallas</td>
+    <td>Brighton</td>
+    <td>Blackburn North</td>
+    <td>Cranbourne</td>
+  </tr>
+  <tr>
+    <td>Brooklyn</td>
+    <td>Diamond Creek</td>
+    <td>Brunswick</td>
+    <td>Bonbeach</td>
+    <td>Cranbourne North</td>
+  </tr>
+  <tr>
+    <td>Burnside</td>
+    <td>Doreen</td>
+    <td>Brunswick East</td>
+    <td>Boronia</td>
+    <td>Cranbourne South</td>
+  </tr>
+  <tr>
+    <td>Burnside    Heights</td>
+    <td>Eaglemont</td>
+    <td>Brunswick West</td>
+    <td>Box Hill</td>
+    <td>Cranbourne West</td>
+  </tr>
+  <tr>
+    <td>Cairnlea</td>
+    <td>Eltham</td>
+    <td>Burnley</td>
+    <td>Box Hill North</td>
+    <td>Dandenong</td>
+  </tr>
+  <tr>
+    <td>Caroline    Springs</td>
+    <td>Eltham North</td>
+    <td>Carlton</td>
+    <td>Box Hill South</td>
+    <td>Dandenong North</td>
+  </tr>
+  <tr>
+    <td>Cherry Lake</td>
+    <td>Epping</td>
+    <td>Carlton North</td>
+    <td>Braeside</td>
+    <td>Dandenong South</td>
+  </tr>
+  <tr>
+    <td>Deer Park</td>
+    <td>Fawkner</td>
+    <td>Carnegie</td>
+    <td>Bulleen</td>
+    <td>Devon meadows</td>
+  </tr>
+  <tr>
+    <td>Delahey</td>
+    <td>Gladstone Park</td>
+    <td>Caulfield North</td>
+    <td>Burwood</td>
+    <td>Doveton</td>
+  </tr>
+  <tr>
+    <td>Derrimut</td>
+    <td>Glenroy</td>
+    <td>Caulfield South</td>
+    <td>Burwood East</td>
+    <td>Edithvale</td>
+  </tr>
+  <tr>
+    <td>Essendon</td>
+    <td>Gowanbrae</td>
+    <td>Caulfield&nbsp;</td>
+    <td>Camberwell</td>
+    <td>Eumemmerring</td>
+  </tr>
+  <tr>
+    <td>fdgdfgdfg</td>
+    <td>Greensborough</td>
+    <td>Chadstone</td>
+    <td>Canterbury&nbsp;</td>
+    <td>Frankston</td>
+  </tr>
+  <tr>
+    <td>Flemington</td>
+    <td>Greenvale</td>
+    <td>Cheltenham</td>
+    <td>Chelsea</td>
+    <td>Frankston North</td>
+  </tr>
+  <tr>
+    <td>Footscray</td>
+    <td>Hadfield</td>
+    <td>Clarinda</td>
+    <td>Chelsea Heights</td>
+    <td>Guys Hill</td>
+  </tr>
+  <tr>
+    <td>Hapton</td>
+    <td>Heidelberg</td>
+    <td>Clayton</td>
+    <td>Chirnside Park</td>
+    <td>Hallam</td>
+  </tr>
+  <tr>
+    <td>Hillside</td>
+    <td>Heidelberg Heights</td>
+    <td>Clifton Hill</td>
+    <td>Clayton</td>
+    <td>Hampton Park</td>
+  </tr>
+  <tr>
+    <td>Hoppers    Crossing</td>
+    <td>Heidelberg West</td>
+    <td>Collingwood</td>
+    <td>Coldstream</td>
+    <td>Harkaway</td>
+  </tr>
+  <tr>
+    <td>Kealba</td>
+    <td>Jacana</td>
+    <td>Cremorne</td>
+    <td>Croydon</td>
+    <td>Junction Village</td>
+  </tr>
+  <tr>
+    <td>Keilor Downs</td>
+    <td>Kingsbury</td>
+    <td>Docklands</td>
+    <td>Croydon Hills</td>
+    <td>Langwarrin</td>
+  </tr>
+  <tr>
+    <td>Keilor East</td>
+    <td>Lalor</td>
+    <td>East Brighton</td>
+    <td>Croydon North</td>
+    <td>Langwarrin South</td>
+  </tr>
+  <tr>
+    <td>Keilor Park</td>
+    <td>Lower Plenty</td>
+    <td>East Melbourne</td>
+    <td>Deepdene</td>
+    <td>Lynbrook</td>
+  </tr>
+  <tr>
+    <td>Kings Park</td>
+    <td>Macleod</td>
+    <td>Elsternwick</td>
+    <td>Dingley Village</td>
+    <td>Lyndhurst</td>
+  </tr>
+  <tr>
+    <td>Kingsville</td>
+    <td>Meadow Heights</td>
+    <td>Elwood</td>
+    <td>Doncaster</td>
+    <td>Narre Warren</td>
+  </tr>
+  <tr>
+    <td>Kingsville    South</td>
+    <td>Mernda</td>
+    <td>Fairfield</td>
+    <td>Doncaster East</td>
+    <td>Narre Warren South</td>
+  </tr>
+  <tr>
+    <td>Laverton</td>
+    <td>Mickleham</td>
+    <td>Fitzroy</td>
+    <td>Donvale</td>
+    <td>Officer</td>
+  </tr>
+  <tr>
+    <td>Laverton north</td>
+    <td>Mill Park</td>
+    <td>Fitzroy North</td>
+    <td>Endeavour Hills</td>
+    <td>Pakenham</td>
+  </tr>
+  <tr>
+    <td>Maidstone</td>
+    <td>Montmorency</td>
+    <td>Gardenvale</td>
+    <td>Ferntree Gully</td>
+    <td>Pearcedale</td>
+  </tr>
+  <tr>
+    <td>Manor Lakes</td>
+    <td>Oak Park</td>
+    <td>Glen Huntly</td>
+    <td>Ferny Creek</td>
+    <td>Sandhurst</td>
+  </tr>
+  <tr>
+    <td>Maribyrnong</td>
+    <td>Oaklans Junction</td>
+    <td>Glen Iris</td>
+    <td>Forest Hill</td>
+    <td>Seaford</td>
+  </tr>
+  <tr>
+    <td>Moone Ponds</td>
+    <td>Pascoe Vale</td>
+    <td>Hampton</td>
+    <td>Glen park</td>
+    <td>Skye</td>
+  </tr>
+  <tr>
+    <td>Moonee Ponds</td>
+    <td>Pascoe Vale South</td>
+    <td>Hampton East</td>
+    <td>Glen Waverley</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Newport</td>
+    <td>Plenty</td>
+    <td>Hawthorn</td>
+    <td>Heathmont</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Niddrie</td>
+    <td>Preston</td>
+    <td>Heartherton</td>
+    <td>Kallista</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Point Cook</td>
+    <td>Research</td>
+    <td>Highett</td>
+    <td>Keysborough</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ravenhall</td>
+    <td>Reservoir</td>
+    <td>Hughesdale</td>
+    <td>Kilsyth</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Seabrook</td>
+    <td>Rosanna</td>
+    <td>Huntingdale</td>
+    <td>Kilsyth South</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Seaholme</td>
+    <td>Roxburgh Park</td>
+    <td>Ivanhoe</td>
+    <td>Knoxfield</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Seddon</td>
+    <td>Somerton</td>
+    <td>Ivanhoe East</td>
+    <td>Lilydale</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Spotswood</td>
+    <td>South Morang</td>
+    <td>Kensington</td>
+    <td>Lysterfield</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>St Albans</td>
+    <td>Templestowe</td>
+    <td>Kew</td>
+    <td>Mitcham</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Strathmore</td>
+    <td>Templestowe Lower</td>
+    <td>Kew East</td>
+    <td>Monbulk</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Sunshine</td>
+    <td>Thomastown</td>
+    <td>Kooyong</td>
+    <td>Mont Albert</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Sunshine North</td>
+    <td>Tullamarine</td>
+    <td>Malvern</td>
+    <td>Montrose</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Sunshine West</td>
+    <td>Viewbank</td>
+    <td>Malvern East</td>
+    <td>Mooroolbark</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Sydenham</td>
+    <td>Watsonia</td>
+    <td>Mckinnon</td>
+    <td>Mount Waverley</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Tarneit</td>
+    <td>Westmeadows</td>
+    <td>Melbourne</td>
+    <td>Mulgrave</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Taylors Hill</td>
+    <td>Wollert</td>
+    <td>Mentone</td>
+    <td>Noble Park</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Taylors Lakes</td>
+    <td>Yallambie</td>
+    <td>Middle Park</td>
+    <td>Notting Hill</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Tottenham</td>
+    <td>Yarrambat</td>
+    <td>Moorabbin</td>
+    <td>Nunawading</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Travancore</td>
+    <td>&nbsp;</td>
+    <td>Mordialloc</td>
+    <td>Olinda</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Truganina</td>
+    <td>&nbsp;</td>
+    <td>Murrumbeena</td>
+    <td>Park Orchards</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Werribee</td>
+    <td>&nbsp;</td>
+    <td>North Melbourne</td>
+    <td>Patterson Lakes</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>West Footscray</td>
+    <td>&nbsp;</td>
+    <td>Northcote</td>
+    <td>Ringwood</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Williams    Landing</td>
+    <td>&nbsp;</td>
+    <td>Oakleigh</td>
+    <td>Ringwood East</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Williamstown</td>
+    <td>&nbsp;</td>
+    <td>Oakleigh East</td>
+    <td>Ringwood North</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Wyndham Vale</td>
+    <td>&nbsp;</td>
+    <td>Oakleigh South</td>
+    <td>Rowville</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Yarraville</td>
+    <td>&nbsp;</td>
+    <td>Ormond</td>
+    <td>Sassafras</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Parkdale</td>
+    <td>Scoresby</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Parkville</td>
+    <td>Selby</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Port Melbourne</td>
+    <td>Silvan</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Prahran</td>
+    <td>Springvale</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Princes Hill</td>
+    <td>Springvale South</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Richmond</td>
+    <td>Surrey Hills</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Ripponlea</td>
+    <td>Tecoma</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Sandringham</td>
+    <td>Tremont</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>South Melbourne</td>
+    <td>Upper Ferntreegully</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>South Wharf</td>
+    <td>Upwey</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>South Yarra</td>
+    <td>Vermont</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Southbank</td>
+    <td>Vermont South</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>St kilda</td>
+    <td>Wandin</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>St Kilda East</td>
+    <td>Wantirna</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>St Kilda West</td>
+    <td>Wantirna South</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Thornbury</td>
+    <td>Warrandyte</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Toorak</td>
+    <td>Warranwood</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>West Melbourne</td>
+    <td>Waterways</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Windsor</td>
+    <td>Wheelers Hill</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Wonga Park</td>
+    <td>&nbsp;</td>
+  </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="~/App_Js/Inventory/LocalDeliveryRunSheet.js"></script>
+<script src="~/Scripts/jquery.rowspanizer.js"></script>
+
+

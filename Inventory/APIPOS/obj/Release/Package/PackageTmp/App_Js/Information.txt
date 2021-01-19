@@ -1,0 +1,113 @@
+﻿$(document).ready(function () {
+    console.log("ready!");
+});
+//// Click Event
+$('#btnCancel').on("click", function (ev) {
+    var baseUrl = base + "Home/Index";
+    window.location.href = baseUrl;
+});
+//// change Event
+var buyer = $('#ddlBuyer');
+buyer.on("change", function() {
+    ClearDataBuyer();
+    var buyerId = $(this).val();
+    if (buyerId != "-1") {
+        $('#txtTrackingNo').val('');
+        $('#txtJobNo').val('');
+        var obj = {
+            "buyerId": buyerId
+        };
+        SetDropDownByBuyer(obj);        
+    }
+});
+//// Date Picker
+$(".Date").datepicker({ dateFormat: 'dd-M-yy', minDate: new Date() });
+//// Dropdown load
+function LoadDropdown(result, id) {
+    $(id).get(0).options.length = 0;
+    var content = '<option  value="-1">-- Select --</option>';
+    $.each(result, function (i, obj) {
+        content += '<option  value="' + obj.Value + '" >' + obj.DisplayName + '</option>';
+    });
+    id.append(content);
+    if (result.length == 1) {
+        id.val(result[0].Value).trigger('change');
+    }
+}
+$('#ddlBuyer').val("-1").trigger('change');
+$('#ddlDepartment').get(0).options.length = 0;
+$('#ddlTrackingNo').select2('data')[0].text
+$('#ddljobNo').val(data[0].JobNo).trigger('change.select2');
+///// auto name create
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+//// New Tab and Download
+function postForm(postedpage, params) {
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", postedpage);
+    form.setAttribute("target", "_blank");
+    $.each(params, function (i, param) {
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("name", param.Name);
+        hiddenField.setAttribute("value", param.Value);
+        hiddenField.setAttribute("type", "hidden");
+        form.appendChild(hiddenField);
+    });
+    document.body.appendChild(form);
+    form.submit();
+}
+$('#btnView').on("click", function (ev) {
+    var obj = GetobjectBeforeSave();
+    var urlpath = base + "HTMLReport/MasterOrderBookingOutlineInitial";
+    var postObjArray = new Array();
+    postObjArray.push({
+        "Name": "obj",
+        "Value": JSON.stringify(obj)
+    });
+    postObjArray.push({
+        "Name": "Page",
+        "Value": JSON.stringify("Entry")
+    });
+    postForm(urlpath, postObjArray);
+});
+
+
+//// if Image
+function SaveOrUpdate(obj) {
+    var data = new FormData();
+    data.append('data', JSON.stringify(obj));
+    var urlpath = base + "MasterOrderBookingInitial/Save";
+    $331.ajax({
+        beforeSend: function () { $.blockUI(); },
+        complete: function () { $.unblockUI(); },
+        type: "POST",
+        url: urlpath,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (result) {
+            if (result.IsSessionOut != null) {
+                notify('danger', "Your Session Is Over,Please Login Again");
+                return false;
+            } else if (result.Error != null && result.Error != "") {
+                notify('danger', result.Error);
+                return false;
+            } else {
+
+            }
+        }
+    });
+}
+ public ActionResult Save(string data)
+        {
+            List<MasterOrderBookingInitial> obj = new List<MasterOrderBookingInitial>();
+            obj = JsonConvert.DeserializeObject<List<MasterOrderBookingInitial>>(data);
+			}

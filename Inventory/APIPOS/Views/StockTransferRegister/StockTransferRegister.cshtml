@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "StockTransferRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    #demo-dtable-04 td, #demo-dtable-04 th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #demo-dtable-04 tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #demo-dtable-04 tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #demo-dtable-04 th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #4c86af !important;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainInventory").addClass("active open");
+        $("#childStockTransferRegister").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-bag"></i> <a href="@Url.Action("Index", "Inventory")">Inventory</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Stock Transfer Register
+        </li>
+    </ul>
+</div>
+
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title">
+                    <i class="icol-table"></i>Stock Transfer Register
+                </span>
+            </div>
+            <div>
+                <form class="form-horizontal" style="padding-top:10px;">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span4">
+                                <label class="control-label">Item</label>
+                                <div class="controls">
+                                    <select id="ddlHead" class="span12 select2"></select>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">From Site</label>
+                                <div class="controls">
+                                    <select id="ddlFromSite" class="span12 select2"></select>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">To Site</label>
+                                <div class="controls">
+                                    <select id="ddlToSite" class="span12 select2"></select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+                            <div class="span3">
+                                <label class="control-label">From Date</label>
+                                <div class="controls">
+                                    <input type="text" id="txtFromDate" class="required span12" style="width:115px;" />
+
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="margin-left: -20px;">To Date</label>
+                                <div class="controls">
+                                    <input type="text" id="txtToDate" class="required span12" style="width: 115px;margin-left: -30px;" />
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <input type="button" id="btnSearch" style="width:95px;" class="btn btn-info" value="Search" />
+                            </div>
+                            <div class="span4">
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="divTable" class="widget-content table-container">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        var jsonData = [], PaymentData = [],SalesData=[];
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/StockTransferRegister.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+
+    </script>
+}
+
+
+
+

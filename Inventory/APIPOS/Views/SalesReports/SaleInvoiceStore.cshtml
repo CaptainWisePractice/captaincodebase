@@ -1,0 +1,193 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script src="~/App_Theme/assets/js/libs/jquery-1.8.3.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    var $331 = $.noConflict(true);
+</script>
+<script src="~/Scripts/jquery.blockUI.js"></script>
+<script src="~/App_Theme/bootstrap/js/bootstrap.min.js"></script>
+
+<html>
+<head>
+    <style type="text/css">
+        .style1 {
+            font-weight: bold;
+        }
+
+        .style2 {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body style="">
+    <div id="divSaleReport">
+        @*<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                            <tbody>
+                                <tr>
+                                    <td width="60%" style="font-size:12px;">
+                                        <table width="95%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="19%"><img src="Reportlogo.png" width="70" height="70"></td>
+                                                    <td width="81%" valign="top">
+                                                        <span class="style1" style="font-size: 15px;font-weight: bold;">FURNHOUSE DANDENONG PTY LTD</span><br>
+                                                        A.B.N. 38 641 588 883<br>  <span style="font-size: 14px;">email: cs@melbourniansfurniture.com.au</span><br>
+                                                        <span style="font-size: 14px;">Website: www.furnhouse.com.au </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td align="right" valign="middle"> <span class="style1">Tax Invoice<br></span><table width="80%" border="0" cellspacing="0" cellpadding="2" style="font-size:12px;"> <tbody><tr> <td><strong>Invoice No </strong></td> <td align="right"><strong>00019734</strong></td> </tr> <tr> <td>Date</td> <td align="right">26-Jun-2020</td> </tr> <tr> <td>Order Place </td> <td align="right">Reservoir Store</td> </tr> <tr>  <td>Sales Person</td> <td align="right">Mary N</td> </tr> </tbody></table></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0px 0px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                            <tbody>
+                                <tr>
+                                    <td width="60%" style="font-size:12px;">
+                                        <span style="font-weight:bold;" class="style2">Customer Details:</span><br>
+                                        Yun Zhuang<br>
+                                        11 Carbine Place, Bundoora, Vic, 3083<br>
+                                        Phone: 0433995066 <br>
+                                    </td>
+                                    <td valign="bottom">   <table width="100%" border="0" cellspacing="0" cellpadding="5" style="font-size:12px;"> <tbody><tr>  <td width="47%" align="center" valign="middle">Delivery Via</td>  <td width="6%" align="center" valign="middle">&nbsp;</td> <td width="47%" align="center" valign="middle">Delivery Date</td>   </tr><tr> <td align="center" valign="middle" style="border:thin solid #000000;"><strong>Pick Up Store</strong></td> <td align="center" valign="middle">&nbsp;</td> <td align="center" valign="middle" style="border:thin solid #000000;">26-Jun-2020</td>  </tr>  </tbody></table> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="#808080" style="font-size:12px;">
+                            <tbody>
+                                <tr>
+                                    <th width="8%" align="center" valign="middle" bgcolor="#d3d3d3">QTY </th>
+                                    <th width="15%" align="center" valign="middle" bgcolor="#d3d3d3">ITEM NO.  </th>
+                                    <th valign="middle" bgcolor="#d3d3d3">DESCRIPTION </th>
+                                    <th width="15%" align="center" valign="middle" bgcolor="#d3d3d3">ITEM LOCATION </th>
+                                    <th width="15%" align="center" valign="middle" bgcolor="#d3d3d3">UNIT PRICE </th>
+                                    <th width="15%" align="center" valign="middle" bgcolor="#d3d3d3">DISC% </th>
+                                    <th width="15%" align="center" valign="middle" bgcolor="#d3d3d3">EXTENDED </th>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="top">2  </td>
+                                    <td align="center" valign="top">BS-BELA-BL</td>
+                                    <td align="center" valign="top">2x Bela Barstool Black</td>
+                                    <td align="center" valign="top">Reservoir Store </td>
+                                    <td align="center" valign="top">149.00</td>
+                                    <td align="center" valign="top">19.46</td>
+                                    <td align="center" valign="top">$ 240.00</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="top">1<br>  </td>
+                                    <td align="center" valign="top">BS-BELA-BL</td>
+                                    <td align="center" valign="top">1x Bela Barstool Black</td>
+                                    <td align="center" valign="top">Warehouse</td>
+                                    <td align="center" valign="top">60.00</td>
+                                    <td align="center" valign="top">0.00</td>
+                                    <td align="center" valign="top">$ 60.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px 10px 0 0;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td width="60%" valign="bottom" style="padding:0px 10px;"> <span class="style2">Comment: <br></span>  <table width="100%" border="0" cellspacing="0" cellpadding="5">  <tbody><tr> <td style="border:thin solid #000; font-size:12px;">  <br> <br> <br> </td>  </tr> </tbody></table>  </td>
+                                    <td width="3%">&nbsp;</td>
+                                    <td style="border:thin solid #000;" class="style2">
+                                        <table width="90%" border="0" align="center" cellpadding="2" cellspacing="0">
+                                            <tbody>
+                                                <tr>  <td>Subtotal</td>  <td align="right">$ 300.00 </td> </tr>
+                                                <tr>  <td>Freight</td>  <td align="right">$ 0.00 </td> </tr>
+                                                <tr>  <td>Additional Discount</td>  <td align="right">$ 0.00 </td> </tr>
+                                                <tr>  <td>GST</td>  <td align="right">$ 27.27 </td>  </tr>
+                                                <tr>
+                                                    <td>Total</td>
+                                                    <td align="right">$ 300.00 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Applied</td>
+                                                    <td align="right">$ 150.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Balance Due</strong></td>
+                                                    <td align="right"><strong>$ 150.00</strong></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; font-size:11px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:11px;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" align="left" valign="top">
+                                        <strong>Braeside Warehouse Address: </strong><br>
+                                        6-12 Crawford St, Braeside VIC 3195<br>
+                                        9am-5pm Monday - Friday<br>
+                                        7am-3pm Saturday<br>
+                                        Closed Sun &amp; Wed + Public Holidays
+                                    </td>
+                                    <td width="46%" align="left" valign="top">
+                                        <strong>Bank Deposit</strong><br>                  Account Name-FURNHOUSE DANDENONG PTY LTD<br>
+                                        BSB Number-063608<br>                  Account Number-11039223
+                                    </td>
+                                </tr>
+                                <tr> <td width="5%" align="left" valign="top">&nbsp;</td> <td width="49%" align="left" valign="top">&nbsp;</td> <td align="left" valign="top" style="border-bottom:thin solid #000000;">&nbsp;</td>  </tr>
+                                <tr>
+                                    <td align="left" valign="top">&nbsp;</td>
+                                    <td align="left" valign="top">&nbsp;</td>
+                                    <td align="left" valign="top" style="padding-top:5px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:11px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="33%" align="left" valign="top" style="padding-top:5px;">Invoice No: <strong>00019734</strong></td>
+                                                    <td width="33%" align="center" valign="top" style="padding-top:5px;">Amount Due: <strong>$ 150.00</strong> </td>
+                                                    <td width="33%" align="right" valign="top" style="padding-top:5px;">Due Date: <strong>26-Jul-2020</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr> <td><span class="style1" style="text-decoration:underline;">Terms &amp; Conditions</span> <br> <table width="100%" border="0" cellspacing="0" cellpadding="1" style="font-size:11px;"> <tbody><tr> <td width="5%" align="left" valign="top">1.</td>  <td align="left" valign="top">Any lay-by deposit is non-refundable. Change of mind or any cancellation of an order will be subject to a 20% cancellation fee.</td>   </tr>  <tr>  <td align="left" valign="top">2.</td> <td align="left" valign="top">   Returns not accepted unless the product is defected by manufacturing standards. Melbournians Furniture can arrange a replacement or repair after the item has been returned or store credit to the equivalent value of the return product in current condition.<br>  a. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Melbournian’s Furniture only will replace, repair, refund or allow store credit, if: <br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. The goods are not merchantable quality.<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. The goods do not match the description.<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iii. The goods are not fit for the purpose described.<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iv. The goods are returned within 7 days of the buyer receiving it.  </td>   </tr> <tr> <td align="left" valign="top">3.</td> <td align="left" valign="top">Returns are not accepted if item is soiled, stained, damaged or tainted in any way or misused.</td> </tr> <tr> <td align="left" valign="top">4.</td><td align="left" valign="top">Floor stock is sold as is. It is the buyer’s responsibility to inspect the items before purchase. No warranty is included on floor stock. </td> </tr> <tr>  <td align="left" valign="top">5.</td> <td align="left" valign="top"> If you have any complaints or issues, please email to cs@melbourniansfurniture.com.au – with a description of the alleged fault and include pictures of the area in question. These will be assessed by our complaints department, and forwarded to the manufacturer. You will be contacted approximately 24-48 hours / or after a decision has been made.<br>  <table width="100%" border="0" cellspacing="0" cellpadding="1" style="font-size:11px;"> <tbody><tr> <td width="5%" align="left" valign="top">a.</td> <td align="left" valign="top">Any manufacturing defect, missing parts or damages must be notified within 7 days of delivery or collection. A replacement/repair will be arranged according to clauses 4 and 5.</td>  </tr>  <tr>  <td align="left" valign="top">b.</td>  <td align="left" valign="top">If it is established that the item has been affected by fair wear and tear, misuse, negligence, wilful damage, or accident by you or a third party, Melbournians Furniture reserves the right to take no action.</td> </tr>  </tbody></table> </td> </tr>  <tr> <td align="left" valign="top">6.</td> <td align="left" valign="top">It is the buyer’s responsibility to measure a product to ensure it is a suitable size for their needs, as such a return will not be provided if the product is too big or small.</td> </tr> <tr><td align="left" valign="top">7.</td> <td align="left" valign="top">Melbournians Furniture will not provide a refund if: <br> a.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The goods arrived to you later than you’d expect. <br>   b.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The buyer changed their mind or their circumstances have changed. </td> </tr>  </tbody></table> <br>  </td> </tr>
+            </tbody>
+        </table>*@
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Report/SalesStoreInvoice.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+            });
+ </script>

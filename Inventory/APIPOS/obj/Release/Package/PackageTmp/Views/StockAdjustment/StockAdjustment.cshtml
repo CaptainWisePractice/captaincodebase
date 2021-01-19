@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "StockAdjustment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainInventory").addClass("active open");
+        $("#childStockAdjustment").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-bag"></i> <a href="@Url.Action("Index", "Inventory")">Inventory</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Stock Adjustment
+            @*<a href="@Url.Action("StockAdjustment", "StockAdjustment")">Stock Adjustment</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Stock Adjustment </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span2">
+                            </div>
+                            <div class="span8">
+                                <label class="control-label" for="ddlItemHead">Item Code <span class="required">*</span></label>
+                                <div class="controls">
+                                    <select id="ddlItemHead" class="span10"></select>
+                                </div>
+                            </div>
+                            <div class="span2">
+                            </div>
+                            @*<div class="span6">
+                                    <label class="control-label" for="ddlItemCode">Item Number <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select id="ddlItemCode" class="span10"></select>
+                                    </div>
+
+                                </div>*@
+                        </div>
+                        <div id="divTable" class="widget-content table-container" style="overflow:auto;max-height:330px;">
+                            <table class="table table-striped table-checkable" id="tbl">
+                                <thead style="background-color: #ebebeb">
+                                    <tr>
+                                        <th class="checkbox-column">
+                                            <input type="checkbox" class="uniform">
+                                        </th>
+                                        <th width="20%">Item Number</th>
+                                        <th width="15%">Location</th>
+                                        <th width="30%">Manufacturer</th>
+                                        <th width="10%">Stock Qty</th>
+                                        <th width="10%">Remove Qty</th>
+                                        <th width="10%">Physical Qty</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="txtNotes">Notes </label>
+                            <div class="controls">
+                                <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: both; height: 50px;"></textarea>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_layoutPageButton")
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/StockAdjustment.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}

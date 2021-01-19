@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "ItemHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSearchBoard").addClass("active open");
+        $("#childItemHistory").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>*@
+
+<style type="text/css">
+/*#demo-dtable-04 td, #demo-dtable-04 th {
+    border: 1px solid #ddd !important;
+    padding: 5px;
+}
+
+#demo-dtable-04 tr:hover {background-color: #ddd !important;}
+#demo-dtable-04 tr:nth-child(even){background-color: #f2f2f2 !important;}
+#demo-dtable-04 th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: left;
+    background-color: #4CAF50 !important;
+    color: black;
+}*/
+
+.table{
+    word-break:break-all;
+}
+ .table td, .table th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    .table tr:hover {
+        background-color: #ddd !important;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    .table th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #4CAF50 !important;
+        color: black;
+    }
+
+</style>
+
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#mainInventory").addClass("active open");
+            $("#childItemHistory").addClass("active");
+            $("#mainHome").removeClass("active open");
+            $("#childIndex").removeClass("active");
+        });
+
+</script>
+
+@*<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>Inventory
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            <a href="@Url.Action("ItemHistory", "ItemTransHistory")">Stock Details</a>
+        </li>
+    </ul>
+
+</div>*@
+<div class="page-content">
+
+    <div class="row-fluid">
+        @*<div class="span12 widget">*@
+            <div id="Iddiv" class="widget-content table-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Item Code</label>
+                                <div class="controls">
+                                    <select id="ddlHead" class="required span12 select2-select-00"></select>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <input type="button" id="btnSearch" class="btn btn-info" value="Search" style="width:90px;"/>
+                            </div>
+                            <div class="span2" style="float:left;">
+                                <input type="button" class="btn btn-inverse" id="btnExportToExcel" value="Export To Excel" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        @*</div>*@
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"> Stock List (Details)</span>
+            </div>
+            <div class="widget-content form-container">
+
+                <div id="divTable" class="widget-content table-container">
+                    @*<table id="demo-dtable-04" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="5%">Item Number</th>
+                                    <th>Item Description</th>
+                                    <th>Add Date</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Location</th>
+                                    <th>Lot</th>
+                                    <th>Supplier </th>
+                                    <th>Customer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>*@
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+   @* <div class="row-fluid">
+    <div class="span12 widget">
+        <div id="Iddiv" class="widget-content table-container">
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-actions">
+
+                       <a id="toExcel" onclick="window.open('data:application/vnd.ms-excel,' + document.getElementById('demo-dtable-04').outerHTML.replace(/ /g, '%20')); e.preventDefault();" href="javascript:void(0);">Excel</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>*@
+    </div>
+
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/SearchBoard/ItemTransHistory.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

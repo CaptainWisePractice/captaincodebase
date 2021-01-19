@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "ItemCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    #tbl tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #tbl td, #tbl th {
+        border: 1px solid #ddd !important;
+    }
+
+    #tbl th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #f2f2f2;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainHome").addClass("active open");
+        $("#childItemCategory").addClass("active");
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-accessibility"></i><a href="@Url.Action("Index", "Admin")">Administrator</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Item Category
+            @*<a href="@Url.Action("ItemCategory", "ItemCategory")">Item Category</a>*@
+        </li>
+    </ul>
+
+   @* <h1 id="main-heading">
+    <button data-target="#modal_Category" data-toggle="modal" class="btn btn-default">Add New</button>
+        Item Category <span>This page shows the Item Category</span>
+    </h1>*@
+
+    <div class="page-content">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title"><i class="icon-tag"></i>Category Setup</span>
+                </div>
+                <div class="widget-content form-container">
+                    <form class="form-horizontal">
+                        <fieldset>
+                           
+                            <div class="control-group">
+                                <label class="control-label" for="txtCode">Category Code</label>
+                                <div class="controls">
+                                    <input type="text" id="txtCode" class="span10">
+                                    <input type="hidden" id="idCategoty" value="" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="txtItemCategory">Category <span class="required">*</span> </label>
+                                <div class="controls">
+                                    <input type="text" id="txtItemCategory" class="span10">
+                                </div>
+                            </div>
+                            
+                            @*<div class="control-group">
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chkIsActive" value="" class="uniform" checked="checked">
+                                        IsActive
+                                    </label>
+                                </div>
+                            </div>*@
+                        </fieldset>
+                        <br />
+                        @Html.Partial("_layoutPageButton")
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title">
+                        <i class="icol-table"></i> Item Category List
+                    </span>
+                </div>
+                <div id="divTable" class="widget-content table-container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@*@Html.Partial("_ModalItemCategory");*@
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Basic/ItemCategory.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+

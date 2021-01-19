@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "WholeSalesDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    #demo-dtable-04 td, #demo-dtable-04 th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #demo-dtable-04 tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #demo-dtable-04 tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #demo-dtable-04 th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #00b9ccd1 !important;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainDespatch").addClass("active open");
+        $("#childDespatchRegister").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Whole Sales
+
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>Whole Sales </span>
+            </div>
+            <div class="widget-content form-container" style="overflow:scroll;">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">From Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtFrom" class="required span12 ftDate" />
+
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">To Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtTo" class="required span12 ftDate" />
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label"></label>
+                                    <div class="controls">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group">
+                                <div class="controls" style="margin-left: 0px">
+                                    <div id="divTable" class="widget-content table-container">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Sale/WholeSalesDetails.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}
+
+

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02F3F1D3-EDBF-4597-924B-155511108D4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RDLCReport</RootNamespace>
+    <AssemblyName>RDLCReport</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddressType.rdlc" />
+    <EmbeddedResource Include="AgedReceivablesSummary.rdlc" />
+    <EmbeddedResource Include="PriceAnalysisReport.rdlc" />
+    <EmbeddedResource Include="AvailableInventoryDetailsOld.rdlc" />
+    <EmbeddedResource Include="AvailableInventoryLocationOld.rdlc" />
+    <EmbeddedResource Include="AvailableInventorySummary.rdlc" />
+    <EmbeddedResource Include="GrossProfitLossStatement - Copy.rdlc" />
+    <EmbeddedResource Include="GrossProfitLossStatement.rdlc" />
+    <EmbeddedResource Include="ItemMovingReport.rdlc" />
+    <EmbeddedResource Include="ItemSellingPrice.rdlc" />
+    <EmbeddedResource Include="AvailableInventorySummaryOld.rdlc" />
+    <EmbeddedResource Include="AvailableInventoryDetails.rdlc" />
+    <EmbeddedResource Include="LandingWarehouseDetailOld.rdlc" />
+    <EmbeddedResource Include="LandingWarehouseDetail.rdlc" />
+    <EmbeddedResource Include="LandingWarehouseSummary.rdlc" />
+    <EmbeddedResource Include="AvailableInventoryLocation.rdlc" />
+    <EmbeddedResource Include="DeliveryRunSheet.rdlc" />
+    <EmbeddedResource Include="BookingStatus.rdlc" />
+    <EmbeddedResource Include="DailyInventoryReport.rdlc" />
+    <EmbeddedResource Include="LocalPickingList.rdlc" />
+    <EmbeddedResource Include="ItemPickingList.rdlc" />
+    <EmbeddedResource Include="ItemStockAvailableQty.rdlc" />
+    <EmbeddedResource Include="ItemStockHistory.rdlc" />
+    <EmbeddedResource Include="Location.rdlc" />
+    <EmbeddedResource Include="ItemFOBPrice.rdlc" />
+    <EmbeddedResource Include="TotalSalesandCOGSDetailsIncGST.rdlc" />
+    <EmbeddedResource Include="LocationWiseSalesReport.rdlc" />
+    <EmbeddedResource Include="PurchaseReceiveStatus.rdlc" />
+    <EmbeddedResource Include="AgedReceivablesDetail.rdlc" />
+    <EmbeddedResource Include="SalesSalespersonSummary.rdlc" />
+    <EmbeddedResource Include="SalesSalespersonDetail.rdlc" />
+    <EmbeddedResource Include="SalesRegisterDetailAllSales.rdlc" />
+    <EmbeddedResource Include="SalesItemSummary.rdlc" />
+    <EmbeddedResource Include="SalesItemDetail.rdlc" />
+    <EmbeddedResource Include="SalesCustomerSummary.rdlc" />
+    <EmbeddedResource Include="SalesCustomerDetail.rdlc" />
+    <EmbeddedResource Include="ShippingStatus.rdlc" />
+    <EmbeddedResource Include="PurchaseRegister.rdlc" />
+    <EmbeddedResource Include="Site.rdlc" />
+    <EmbeddedResource Include="BookingList.rdlc" />
+    <EmbeddedResource Include="WarehouseWiseStockList.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{3a54cecd-989a-4cca-9647-62244ad865d1}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\DAO.Basic.AddressType.datasource" />
+    <None Include="Properties\DataSources\DAO.Basic.Location.datasource" />
+    <None Include="Properties\DataSources\DAO.Basic.WareHouse.datasource" />
+    <None Include="Properties\DataSources\DAO.Inventory.ItemDispatch.datasource" />
+    <None Include="Properties\DataSources\DAO.Purchase.PurchaseOrder.datasource" />
+    <None Include="Properties\DataSources\DAO.Reports.CustomerReports.datasource" />
+    <None Include="Properties\DataSources\DAO.Reports.InventoryReport.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.AutoCompleteMultipleValue.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.CustomerAddress.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.CustomerDue.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.CustomerGetData.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.Invoice.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.NewCustomer.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.RegistrationSaleCustomer.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SaleApproval.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesDAO.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesDaoChildEdit.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesDaoMasterEdit.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesDetails.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesEdit.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesPaymentHistory.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.SalesPaymentHistoryList.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.salesReturnObj.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.Wrapper.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.WrapperAddress.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.WrapperAutoCompleteMultipleValue.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.wrapperCustomer.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.WrapperCustomerGetData.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.wrapperInvoice.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.WrapperRegistrationSaleCustomer.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.WrapperSaleApproval.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.WrapperSales.datasource" />
+    <None Include="Properties\DataSources\DAO.Sale.wrappersalesReturnObj.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

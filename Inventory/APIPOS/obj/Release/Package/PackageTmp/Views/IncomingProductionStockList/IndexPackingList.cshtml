@@ -1,0 +1,111 @@
+﻿
+@{
+    Layout = null;
+}
+<style type="text/css">
+    body, td, th {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 17px;
+      
+    }
+
+    .title1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        padding-bottom: 20px;
+        text-decoration: underline;
+        
+    }
+
+    .title2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        padding-bottom: 7px;
+    }
+    @@media print {
+        /* styles here */
+       
+        #printButton {
+            display: none;
+        }
+    }
+
+    @@page {
+        size:A4 landscape;
+    }
+</style>
+<script src="~/App_Theme/assets/js/libs/jquery-1.8.3.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+        var $331 = $.noConflict(true);
+</script>
+<script src="~/Scripts/jquery.blockUI.js"></script>
+<script src="~/App_Theme/bootstrap/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="DivPackingList">
+        @*<table width="850" border="0" align="center" cellpadding="5" cellspacing="0">
+            <tr>
+                <td align="center" valign="top" style="padding-top:25px;">
+
+                    <div class="title1" style="">Packing List</div>
+                    <div class="title2">Container No: UETU5146622</div>
+                    <div class="title2">Supplier Name: Foshan Congling Metal Furniture CO., LTD</div>
+                    <div class="title2">Product: [Description of Order] </div>
+                    <div class="title2">ETA Port: 27-Oct-2019</div>
+                    <div class="title2">ETA Warehouse: 31-Oct-2019</div>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table width="850" border="1" align="center" cellpadding="5" cellspacing="0">
+            <tr>
+                <th bgcolor="#CCCCCC"><strong>Item Code</strong></th>
+                <th bgcolor="#CCCCCC"><strong>Description</strong></th>
+                <th bgcolor="#CCCCCC"><strong>Size</strong></th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC"><strong> Colour </strong></th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC">
+                    <strong>Item<br />Qty</strong>
+                </th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC">
+                    <strong>Box<br /> Qty</strong>
+                </th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC">
+                    <strong>Unit <br />Box Weight</strong>
+                </th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC">
+                    <strong>Total<br />Box Weight</strong>
+                </th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC">
+                    <strong> Unit<br /> CBM </strong>
+                </th>
+                <th align="center" valign="middle" bgcolor="#CCCCCC">
+                    <strong> Total<br /> CBM </strong>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="4" align="right" valign="top" bgcolor="#CCCCCC"><strong>Total:</strong>
+                <td align="center" valign="middle"><strong>140</strong></td>
+                <td align="center" valign="top"><strong>140</strong></td>
+                <td align="center" valign="top">&nbsp;</td>
+                <td align="center" valign="top"><strong>3310</strong></td>
+                <td align="center" valign="top">&nbsp;</td>
+                <td align="center" valign="top"><strong>33.27</strong></td>
+            </tr>
+        </table>*@
+    </div>
+</body>
+</html>
+<script src="~/Scripts/Xlsx/xlsx.full.min.js"></script>
+<script src="~/Scripts/Xlsx/FileSaver.min.js"></script>
+<script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Purchase/PackingList.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+</script>

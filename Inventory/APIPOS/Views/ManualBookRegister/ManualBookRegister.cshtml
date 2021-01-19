@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "ManualBookRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #demo-dtable-04 td, #demo-dtable-04 th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #demo-dtable-04 tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #demo-dtable-04 tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #demo-dtable-04 th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #4c86af !important;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainDespatch").addClass("active open");
+        $("#childManualBookRegister").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-truck"></i><a href="@Url.Action("Home", "DespatchHome")">Despatch</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Manual Booking Register
+        </li>
+    </ul>
+</div>
+
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title">
+                    <i class="icol-table"></i>Manual Booking Register
+                </span>
+            </div>
+            <div id="divTable" class="widget-content table-container">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        var jsonData = [], PaymentData = [],SalesData=[];
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/ManualBookRegister.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+
+    </script>
+}
+

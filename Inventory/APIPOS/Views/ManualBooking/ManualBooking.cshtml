@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "ManualBooking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<script type="text/javascript" src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<script src="~/App_Js/CommonJs/jquery.inputpicker.js"></script>
+<link href="~/CSS/jquery.inputpicker.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.mcautocomplete.js"></script>
+<script src="~/App_Theme/custom-plugins/bootstrap-inputmask.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainDespatch").addClass("active open");
+        $("#childManualBooking").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-truck"></i><a href="@Url.Action("Home", "DespatchHome")">Despatch</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Manual Booking
+        </li>
+
+    </ul>
+    @*<h1 id="main-heading">
+            Manufacturer <span>This page shows the Site  </span>
+        </h1>*@
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget" style="margin-left: 0px; background: #8080ff url('/Images/ManualBookingbg.png') repeat-x; border: 1px solid #b8dbf9; color: #8080ff !important;">
+
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                @*<div class="control-group" style="border-top: 0px;">
+                                    <div class="span6">
+
+                                    </div>
+                                    <div class="span4">
+
+                                    </div>
+                                    <div class="span2">
+
+                                    </div>
+                                </div>*@
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="color: black">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px;">
+
+                                    <div class="span6">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td><label class="control-label">Customer Name</label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtRecvName" name="wizard[txtRecvName]" class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Address </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtRecvAddress" name="wizard[txtRecvAddress]" class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label">Suburb </label></td>
+                                                <td width="120px" class="controls"><input type="text" id="txtRecvSuburb" name="wizard[txtRecvSuburb]" class="required span12" style="width:100%;" /></td>
+                                                <td class="control-label"><label class="control-label" style="text-align:center;">Post Code </label></td>
+                                                <td width="120px" class="controls"><input type="text" id="txtPostalCode" name="wizard[txtRecvCity]" class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                    <td class="control-label"><label class="control-label">Mobile No </label></td>
+                                                    <td colspan="3" class="controls"><input type="text" id="txtRecvMobileNo" name="wizard[txtRecvMobileNo]" class="required span12" style="width:60%;" /></td>
+                                                </tr>
+                                            @*<tr>
+                                                <td><label class="control-label">Sales Outlet </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtSalesOutlet" name="wizard[txtSalesOutlet]" class="required span12" style="width:100%;" /></td>
+                                            </tr>*@
+                                        </table>
+                                    </div>
+
+
+                                    <div class="span6">
+                                        <table width="400" align="right" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td><label class="control-label">Booking Date &nbsp;&nbsp;<span class="required">★</span></label></td>
+                                                <td><input type="text" id="txtBookingDate" name="wizard[txtBookingDate]" readonly class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="136px"><label class="control-label">Invoice Sl &nbsp;&nbsp; <span class="required">★</span></label></td>
+                                                <td width="144px"><input type="text" id="txtInvoiceSl" name="wizard[txtInvoiceSl]" class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Reference No</label></td>
+                                                <td><input type="text" id="txtReferenceNo" class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label">Booking Type &nbsp;&nbsp; <span class="required">★</span></label></td>
+                                                <td>
+                                                    <select id="ddlBookingType" class="span12 select2">
+                                                        <option value="-1">---Select---</option>
+                                                        <option value="Delivery">Delivery</option>
+                                                        <option value="Display">Display</option>
+                                                        <option value="Stock">Stock</option>
+                                                        <option value="Collection">Collection</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span12" style="margin-left: 0px;">
+                                <div class="control-group">
+
+                                    <div class="controls" style="margin-left: 0px">
+                                        <div id="divTable" class="widget-content table-container" style="overflow: hidden;">
+                                            <table class="table table-bordered" id="tbl">
+                                                <thead style="background-color: #83a9ef">
+                                                    <tr>
+                                                        <th width="11%">Action</th>
+                                                        <th width="15%">Item Code<span style="color: red">*</span></th>
+                                                        <th width="18%">Item Description</th>
+                                                        <th width="6%">Qty<span style="color: red">*</span></th>
+                                                        <th width="6%">No of Box<span style="color: red">*</span></th>
+                                                        <th width="8%">Tracking</th>
+                                                        <th width="8%">Required Date</th>
+                                                        <th width="8%">Del. Date</th>
+                                                        <th width="8%">Del. Cost</th>
+                                                        <th width="13%">Point Of Sale</th> 
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="idtbody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span12" style="margin-left: 0px">
+                                <div class="control-group">
+                                    <div class="span1">
+                                    </div>
+                                    <div class="span5">
+                                        <label class="control-label" style="width: auto">Special Instruction</label>
+                                        <div class="controls">
+                                            <textarea class="required span12 " id="txtInstruction" rows="2" cols="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="span5">
+                                        <label class="control-label" style="width: auto">Notes</label>
+                                        <div class="controls">
+                                            <textarea class="required span12 " id="txtNotes" rows="2" cols="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="span1">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="span2">
+                                    </div>
+                                    <div class="span4">
+                                        <label class="control-label" for="ddlDespatchVia">Despatch Via <span class="required">★</span></label>
+                                        <div class="controls">
+                                            <select id="ddlDespatchVia" class="span12 select2">
+                                                <option value="-1">---Select---</option>
+                                                <option value="1">Customer Pick UP</option>
+                                                <option value="2">Freight Despatch</option>
+                                                <option value="3">Local Delivery</option>
+                                                <option value="4">Special Delivery</option>
+                                                <option value="5">WS Party Pickup</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="span4" id="dividfreight">
+                                        <label class="control-label" for="ddlMethod">Delivery Method <span class="required">★</span></label>
+                                        <div class="controls">
+                                            <select id="ddlMethod" class="span12 select2"></select>
+                                        </div>
+                                    </div>
+                                    <div class="span2">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px; background-color: initial; padding: 0px 20px 5px 20px;">
+                                    <div class="span12">
+                                        <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                                            <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width: 85px;" />
+                                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width: 85px;" />
+                                            <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width: 85px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/ManualBooking.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+
+
+

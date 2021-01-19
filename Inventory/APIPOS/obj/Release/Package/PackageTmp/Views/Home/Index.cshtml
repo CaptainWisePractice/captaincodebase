@@ -1,0 +1,124 @@
+﻿
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("span#sidebar-toggle").trigger('click');
+        $("#mainHome").addClass("active open");
+        $("#mainSales").removeClass("active open");
+        $("#mainInventory").removeClass("active open");
+        $("#mainReports").removeClass("active open");
+        $("#mainPurchase").removeClass("active open");
+        $("#mainDespatch").removeClass("active open");
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+
+    @*<p style="color:red; font-weight:bold; font-size:18px; font-family:Comic Sans MS;">captainwise.com.au</p>*@
+
+    <div id="main-content">
+        <div id="dividHome">
+
+        </div>
+
+        <!-- The Modal Add Presale Notify-->
+        <div id="header-modal" class="modal hide" style="left: 72% !important; width: 620px !important;" data-backdrop="false">
+            <div class="modal-header">
+                <button class="close btnClose" type="button" data-dismiss="modal">&times;</button>
+                Item Restock Notice
+            </div>
+            <div class="modal-body" style="padding: 5px !important;">
+                <form class="form-horizontal" style="margin: 0px !important;">
+                    <fieldset>
+                        <p style="font-weight:bold; margin-left:10px;">Sales Outlet : <span id="spnOutlet"></span></p>
+                        <label style="text-align:center;color:red; background-color:yellow;">
+                            <marquee width="90%" direction="left" height="15px">
+                                Presale Items are BACK IN STOCK. COMPLETE THE ORDER NOW
+                            </marquee>
+                        </label>
+                        <div class="control-group">
+                            <div class="controls" style="margin-left: 0px">
+                                <div id="divPresaleNotify" class="widget-content table-container" style="overflow:auto; max-height:300px;">
+                                    <table class="table table-bordered" id="tblPresaleNotify">
+                                        <thead style="background-color: #f4f4e3">
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>Invoice No</th>
+                                                <th>Despatch Date</th>
+                                                <th>Balance Due</th>
+                                                <th>Item Code</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="idNotifytbody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary btnClose" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+
+
+        <!-- The Modal Add Layby Notify-->
+        <div id="header-modal2" class="modal hide" style="left: 2% !important; width: 500px !important; margin-left:8px;" data-backdrop="false">
+            <div class="modal-header">
+                <button class="close btnCloseLayby" type="button" data-dismiss="modal">&times;</button>
+                Layby Overdue
+            </div>
+            <div class="modal-body" style="padding: 5px !important;">
+                <form class="form-horizontal" style="margin: 0px !important;">
+                    <fieldset>
+                        <p style="font-weight:bold; margin-left:10px;">Sales Outlet : <span id="spnOutletLayby"></span></p>
+                        <label style="text-align:center;color:red; background-color:#d9d5ee;">
+                            <marquee width="80%" direction="left" height="15px">
+                                Collect Payment and complete Invoice ASAP
+                            </marquee>
+                        </label>
+                        <div class="control-group">
+                            <div class="controls" style="margin-left: 0px">
+                                <div id="divLaybyNotify" class="widget-content table-container" style="overflow:auto; max-height:300px;">
+                                    <table class="table table-bordered" id="tblLaybyNotify">
+                                        <thead style="background-color: #f6f699">
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>Invoice No</th>
+                                                <th>Due Date</th>
+                                                <th>Balance Due</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="idLaybytbody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary btnCloseLayby" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/DashBoard/Dashboard.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}

@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "InventoryReports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainReports").addClass("active open");
+        $("#childInventoryReports").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>Reports
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            <a href="@Url.Action("InventoryReports", "InventoryReports")">Inventory Reports</a>
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Show Report</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label" for="ddlReportName">Report Name <span class="required">*</span></label>
+                                <div class="controls">
+                                    <select id="ddlReportName" class="span12"></select>
+                                </div>
+                            </div>
+                            <div class="span6" id="divSiteName">
+                                <label class="control-label">Site Name </label>
+                                <div class="controls">
+                                    <select id="ddlSiteName" class="span12"></select>
+                                </div>
+                            </div>
+                            @*<div class="span6" >
+                                <label class="control-label">Parameter Option</label>
+                                <div class="controls">
+                                    <select id="ddlItemMove" class="span12">
+                                        <option value="-1"> --- Select Option --- </option>
+                                        <option value="1"> Manufacture Wise</option>
+                                        <option value="2"> Item Wise</option>
+                                    </select>
+                                </div>
+                            </div>*@
+                        </div>
+                        <div class="control-group" id="divItemMove">
+                            <div class="span6">
+                                <label class="control-label">Manufacture Name </label>
+                                <div class="controls">
+                                    <select id="ddlManufacture" class="span12"></select>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Item Name </label>
+                                <div class="controls">
+                                    <select id="ddlItemHead" class="span12"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group" id="divDate">
+                            <div class="span6">
+                                <label class="control-label" for="txtFromDate">From Date </label>
+                                <div class="controls">
+                                    <input type="text" id="txtFromDate" class="span6" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label" for="txtToDate">To Date </label>
+                                <div class="controls">
+                                    <input type="text" id="txtToDate" class="span6" />
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="control-group">
+                            <div class="span6" id="divToDate">
+                                <label class="control-label" for="txtToDate">To Date </label>
+                                <div class="controls">
+                                    <input type="text" id="txtToDate" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span6">
+
+                            </div>
+                        </div>*@
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_ReportPageButtonRdlc")
+                </form>
+            </div>
+        </div>
+    </div>
+   
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Report/InventoryReports.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

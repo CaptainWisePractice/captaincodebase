@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "LaybyCentre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #demo-dtable-04 td, #demo-dtable-04 th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #demo-dtable-04 tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #demo-dtable-04 tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #demo-dtable-04 th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #4CAF50 !important;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainDespatch").addClass("active open");
+        $("#childLaybyCentre").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-truck"></i><a href="@Url.Action("Home", "DespatchHome")">Despatch</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Layby Centre
+           
+        </li>
+        @*<li>
+            <a href="@Url.Action("Home", "DespatchHome")">Layby Centre</a>
+        </li>*@
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>Layby Centre </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group">
+                                <div class="controls" style="margin-left: 0px">
+                                    <div id="divTable" class="widget-content table-container">
+                                        <table class="table table-bordered" id="demo-dtable-04">
+                                            <thead style="background-color: #ebebeb">
+                                                <tr>
+                                                    <th width="3%">SL</th>
+                                                    <th width="10%">Invoice Date</th>
+                                                    <th width="9%">Invoice No</th>
+                                                    <th width="9%">Ref. No</th>
+                                                    <th width="14%">Customer Name</th>
+                                                    <th width="10%">Suburb</th>
+                                                    <th width="7%">POSTCODE</th>
+                                                    <th width="10%">Item Code</th>
+                                                    <th width="3%">Qty</th>
+                                                    <th width="3%">Box</th>
+                                                    <th width="10%">Due Date</th>
+                                                    <th width="8%">Layby Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    @*<br />
+                    <div class="form-actions" style="padding-left: 370px;">
+                        <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:90px;" />
+                    </div>*@
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Inventory/LaybyCentre.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}
+

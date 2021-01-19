@@ -1,0 +1,118 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div id="modal_Category" class="modal hide">
+    <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal">&times;</button>
+        This is a modal header
+    </div>
+    <div class="modal-body">
+        <div class="modal-body">
+
+            <div class="row">
+                <div class="col-sm-10 col-md-10">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="txtCategory" class="col-lg-4 control-label"> Category Code :</label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="txtCode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-md-10">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="txtItemCategory" class="col-lg-4 control-label">Item Category :<span class="f_req">*</span></label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="txtItemCategory">
+                                <input type="hidden" id="idCategoty" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-md-10">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="chkIsActive" class="col-lg-4 control-label">Is Active :</label>
+                            <div class="col-lg-6">
+                                <input value="" id="chkIsActive" type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        @*<a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>*@
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="btnClose">Close</button>
+        <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
+    </div>
+</div>
+
+
+@*<div class="modal fade" id="modal_Category">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Item Category</h3>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-10 col-md-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="txtCategory" class="col-lg-4 control-label"> Category Code :</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="txtCode">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 col-md-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="txtItemCategory" class="col-lg-4 control-label">Item Category :<span class="f_req">*</span></label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="txtItemCategory">
+                                    <input type="hidden" id="idCategoty" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 col-md-10">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="chkIsActive" class="col-lg-4 control-label">Is Active :</label>
+                                <div class="col-lg-6">
+                                    <input value="" id="chkIsActive" type="checkbox" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnClose">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>*@

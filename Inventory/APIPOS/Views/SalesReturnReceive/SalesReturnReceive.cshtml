@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "SalesReturnReceive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childSalesReturnReceive").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Sales Return Receive
+
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget" style="margin-bottom: 0px;">
+            <div class="widget-header">
+                <span class="title">Sales Return Receive</span>
+            </div>
+            <div class="widget-content form-container">
+                <div>
+                    <form id="wizard55" class="form-horizontal" data-forward-only="false">
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Search All </label>
+                                <div class="controls">
+                                    <select id="ddlRegisCustomerType" class="span12 select2">
+                                        <option value="AllCustomer">All Customer</option>
+                                        <option value="Customer">Customer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="span6" style="display: none" id="customerNameDiv">
+                                <label class="control-label">Customer Name </label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtRegistrationCustomerName" placeholder="Search Customer" />
+                                    <input type="hidden" id="hdInvoiceCustomerId" value="" class="required span12" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Dated From </label>
+                                <div class="controls">
+                                    <input type="text" class="span12 sDate txtDated" id="txtDatedFrom" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">To </label>
+                                <div class="controls">
+                                    <input type="text" class="span12 sDate txtDated" id="txtDatedTo" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="span12 widget" style="margin-left: 0px;">
+            <div class="widget-header">
+                <span class="title">Despatch Invoice List</span>
+            </div>
+            <div class="widget-content form-container">
+                <div class="form-actions" id="btnGrid">
+                    <div id="divTableSale" class="widget-content table-container">
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/SaleReturn/SalesReturnReceive.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+
+    </script>
+}

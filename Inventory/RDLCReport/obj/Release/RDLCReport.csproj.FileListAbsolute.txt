@@ -1,0 +1,185 @@
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\21.07.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\13.08.2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\05-09-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\01-10-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\01-11-2018\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\01-01-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\001-07-2019\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\DAO.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\bin\Release\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojAssemblyReference.cache
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.csproj.CopyComplete
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\DAO.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\DAO.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\bin\Release\Common.pdb
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojAssemblyReference.cache
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\obj\Release\RDLCReport.csproj.CopyComplete
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+D:\Inventory_Project\Inventory Management System(API)\APIPOS\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\DAO.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Common.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\DAO.pdb
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\Get Smart\APIPOS\RDLCReport\bin\Release\Common.pdb
+G:\Working\Get Smart\APIPOS\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\Get Smart\APIPOS\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\Get Smart\APIPOS\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\Get Smart\APIPOS\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\Get Smart\APIPOS\RDLCReport\obj\Release\RDLCReport.pdb
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\RDLCReport.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\RDLCReport.pdb
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\DAO.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Common.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Microsoft.ReportViewer.Common.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Newtonsoft.Json.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\DAO.pdb
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Microsoft.ReportViewer.WebForms.xml
+G:\Working\Get Smart\LocalWork\RDLCReport\bin\Release\Common.pdb
+G:\Working\Get Smart\LocalWork\RDLCReport\obj\Release\RDLCReport.csprojResolveAssemblyReference.cache
+G:\Working\Get Smart\LocalWork\RDLCReport\obj\Release\RdlCompile.cache
+G:\Working\Get Smart\LocalWork\RDLCReport\obj\Release\RdlCompile.compiled
+G:\Working\Get Smart\LocalWork\RDLCReport\obj\Release\RDLCReport.dll
+G:\Working\Get Smart\LocalWork\RDLCReport\obj\Release\RDLCReport.pdb

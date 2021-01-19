@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style type="text/css">
+    .txtAmount {
+        text-align: right;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childSales").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Return Receive Amount Adjustment
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-arrow-in"></i>Return Receive Amount Adjustment</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Invoice No :</label>
+                                <div class="controls">
+                                    <select id="ddlInvoiceNo" class="span12"></select>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Return Receive No :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtRReceiveNo" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                           
+                            <div class="span4">
+                                <label class="control-label">Total Value :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtTotalValue" readonly />
+                                    <input type="hidden" class="span12" id="hfTotalInvoiceAmount" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">Paid Amount :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtPaidAmount" readonly />
+                                    <input type="hidden" class="span12" id="hfMRNo" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">Deduction Amount :</label>
+                                <div class="controls">
+                                    <input type="number" class="span12" id="txtAdjustmentAmount" />
+                                    <input type="hidden" class="span12" id="hfSaleId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span7">
+                                <label class="control-label" for="txtNotes">Notes </label>
+                                <div class="controls">
+                                    <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: none; height: 50px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="span5">
+                               
+                            </div>
+                        </div>
+
+                        <div class="control-group" id="divtabledata">
+                            <div class="span12" style="max-height:350px;">
+                                <table class="table table-bordered table-responsive" id="tblReceive">
+                                    <thead style="background-color:#a0a9e4">
+                                        <tr>
+                                            <th width="15%" style="text-align:center;">Item Code</th>
+                                            <th width="15%" style="text-align:center;">Item Number</th>
+                                            <th width="12%" style="text-align:center;">Deduction Amount</th>
+                                            <th width="10%" style="text-align:center;">Sale Quantity</th>
+                                            <th width="15%" style="text-align:center;">Receive Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <div class="form-actions" style="padding-left: 0px; text-align: center;">
+                        <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width:85px;" />
+                        @*<input type="button" class="btn btn-inverse" value="Back" id="btnBack" style="width:85px;" />
+                        <input type="button" class="btn btn-primary" value="Print" id="btnPrint" style="width:85px;" />*@
+                        <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:85px;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/SaleReturn/ReturnReceiveAmountAdjustment.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+
+
+

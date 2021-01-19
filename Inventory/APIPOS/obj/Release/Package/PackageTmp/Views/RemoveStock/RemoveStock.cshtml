@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "RemoveStock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/PapaParse/papaparse.js"></script>
+<script src="~/Scripts/PapaParse/papaparse.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainInventory").addClass("active open");
+        $("#childItemRemove").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<style>
+    .widget .form-container .control-group {
+        padding: 6px 20px;
+        border-top: 0px solid #ccc;
+    }
+</style>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-bag"></i> <a href="@Url.Action("Index", "Inventory")">Inventory</a>
+            <span class="divider">&raquo;</span>
+        </li>
+
+        <li>
+            Item Remove
+            @*<a href="@Url.Action("RemoveStock", "RemoveStock")">Item Remove</a>*@
+        </li>
+    </ul>
+    @*<h1 id="main-heading">
+             <span>This page shows the Customer  </span>
+        </h1>*@
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-wand"></i>Remove</span>
+            </div>
+            <div class="widget-content form-container">
+                <form id="frmRemoveStock" class="form-horizontal" data-forward-only="false">
+                    <fieldset class="wizard-step">
+                        <legend class="wizard-label"><i class="icon-business-card"></i> Data </legend>
+                        <div class="control-group" style="margin-top:10px;">
+                            <div class="span2">
+                            </div>
+                            <div class="span2">
+                                <label class="radio">
+                                    Manual Entry
+                                    <input type="radio" name="r1" value="Manual" id="rdManual" checked>
+                                </label>
+                            </div>
+                            <div class="span2">
+                                <label class="radio">
+                                    CSV  Upload
+                                    <input type="radio" name="r1" id="rdExcel" value="Excel">
+                                </label>
+                            </div>
+                            <div class="span6">
+                            </div>
+                        </div>
+                        <div id="iddivManual">
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">Item Number : </label>
+                                    <div class="controls" style="position: relative">
+                                        <select id="ddlItemNumber" class="span12 select2"></select>
+                                    </div>
+                                </div>
+                                <div class="span5">
+                                    <label class="control-label">Description : </label>
+                                    <div class="controls">
+                                        <input type="text" id="txtDescription" class="form-control span12" disabled />
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">Remove Date : </label>
+                                    <div class="controls">
+                                        <input type="text" id="txtRemoveDate" class="form-control span12" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">Location : </label>
+                                    <div class="controls" style="position: relative">
+                                        <select id="ddlLocation" class="span12 select2"></select>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">Stock Qty : </label>
+                                    <div class="controls" style="position: relative">
+                                        <input type="text" id="txtStockQty" class="form-control span12" disabled />
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label" style="text-align: center;">Qty : </label>
+                                    <div class="controls" style="position: relative">
+                                        <input type="number" id="txtQty" class="form-control span12" />
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span5">
+                                    <label class="control-label">Notes : </label>
+                                    <div class="controls">
+                                        <textarea id="txtAreaNotes" class="span12 autosize" style="height:50px; overflow: hidden; word-wrap: break-word; resize: both;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="span3" style="text-align:center;vertical-align:bottom;">
+                                    <input type="button" class="btn btn-success" value="Save" id="btnSave" style="width:85px;" />
+                                </div>
+                                <div class="span4">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="iddivExcel">
+                            <div class="control-group">
+                                <div class="span6">
+                                    <label for="file" class="control-label">Choose CSV File</label>
+                                    <div class="controls">
+                                        <input type="file" id="file" name="file" class="success">
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    
+                                </div>
+                                <div class="span4">
+                                </div>
+                            </div>
+                             <div class="control-group">
+                                 <div class="span2">
+                                 </div>
+                                 <div class="span4">
+                                     <input type="button" class="btn btn-success" value="Upload" id="btnUpload" style="width:85px;" />
+                                 </div>
+                                <div class="span6">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="control-group">
+                                <div class="span6">
+                                    <input type="button" class="btn btn-success" value="Save" id="btnSave" style="width:85px;" />
+                                </div>
+                            </div>*@
+                    </fieldset>
+                    <fieldset class="wizard-step">
+                        <legend class="wizard-label"><i class="icon-shopping-cart"></i> Pending Transaction List : <span style="display:inline; color: red;" id="spnPendingTransactionCount"></span></legend>
+
+                        <div class="control-group">
+                            <div class="span12">
+                                <div id="divTable" class="widget-content table-container">
+                                    <table class="table table-striped table-responsive table-checkable" id="tbl">
+                                        <thead style="background-color: #ebebeb">
+                                            <tr>
+                                                <th width="12%" class="checkbox-column">
+                                                    <input type="checkbox" id="chkCheckAll" value="CheckAll" class="uniform">
+                                                    All
+                                                </th>
+                                                <th width="15%">Item Number</th>
+                                                <th width="35%">Item Description</th>
+                                                <th width="15%">Site</th>
+                                                <th width="15%">Location</th>
+                                                <th width="10%">Qty</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <input type="button" class="btn btn-warning" value="Remove" id="btnRemove" style="width:85px;" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                            </div>
+                            <div class="span6" style="text-align:right;">
+                                <input type="button" class="btn btn-danger" value="Commit" id="btnCommit" style="width:85px;" />
+                                <input type="button" class="btn btn-info" value="Discard" id="btnDiscard" style="width:85px;" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    @*<div class="control-group">
+                            <div class="span6">
+                            </div>
+                            <div class="span6" style="text-align:right;">
+                                <input type="button" class="btn btn-danger" value="Commit" id="btnCommit" style="width:85px;" />
+                                <input type="button" class="btn btn-info" value="Discard" id="btnDiscard" style="width:85px;" />
+                            </div>
+                        </div>*@
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/RemoveStock.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+

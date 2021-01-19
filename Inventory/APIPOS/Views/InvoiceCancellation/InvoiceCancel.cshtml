@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "InvoiceCancel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .txtAmount {
+        text-align: right;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childInvoiceCancellation").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Invoice Cancel
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-arrow-in"></i>Invoice Cancel</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span3">
+                                <label class="control-label">Sale Invoice :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtInvoice" readonly />
+                                    <input type="hidden" class="span12" id="hfSaleId" />
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label">Total Amount :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtTotalValue" readonly />
+                                    <input type="hidden" class="span12" id="hfTotalInvoiceAmount" />
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label">Total Qty :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtInvoiceQty" readonly />
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label">Paid Amount :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtPaymentAmount" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span4">
+                                <label class="control-label">Customer Name :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtCustomerName" readonly />
+                                    <input type="hidden" class="span12" id="hfCustomerId" />
+                                </div>
+
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">Cancel Reason :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtReason" />
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label" for="txtNotes" style="text-align:center;" >Notes :</label>
+                                <div class="controls">
+                                    <textarea id="txtNotes" class="span12 autosize" style="overflow: hidden; word-wrap: break-word; resize: none; height: 50px;"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="control-group" style="margin-bottom: 10px;">
+                            <div class="span1">
+                            </div>
+                            <div class="span2">
+                                <label class="radio">
+                                    Full Refund
+                                    <input type="radio" id="r1" value="FullRefund" checked>
+                                </label>
+                            </div>
+                            <div class="span2">
+                                <label class="radio">
+                                    Partial
+                                    <input type="radio" id="r2" value="Partial">
+                                </label>
+                            </div>
+                            <div class="span2">
+                                <label class="radio">
+                                    Restocking fee 
+                                    <input type="radio" id="r3" value="Restocking">
+                                </label>
+                            </div>
+                            <div class="span2">
+                                <label class="radio">
+                                    Store Credit
+                                    <input type="radio" id="r4" value="StoreCredit">
+                                </label>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="text-align:right;"> Date :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtCancelDate" />
+                                </div>
+                                
+                            </div>
+                          
+                        </div>
+                        <div class="control-group" id="divIdHide">
+                            <div class="span3">
+                                <label class="control-label">Deduction (%) :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 numeric" id="txtPercentage"/>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <label class="control-label" style="text-align:center;"> Deduction Amount:</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 numeric" id="txtCancelAmount"/>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Refund Method :</label>
+                                <div class="controls">
+                                    <select id="ddlPaymentMethod" class="span12"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group" style="background-color:#ffaec9;">
+                            <div class="span12" style="min-height:150px;">
+                                <table class="table table-bordered table-responsive" id="tblReceive">
+                                    <thead style="background-color:#a0a9e4">
+                                        <tr>
+                                            <th width="5%" style="text-align:center;">#SL</th>
+                                            <th width="20%" style="text-align:center;">Item Code</th>
+                                            <th width="20%" style="text-align:center;">Item Description</th>
+                                            <th width="10%" style="text-align:center;">Sale Quantity</th>
+                                            <th width="10%" style="text-align:center;">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <div class="form-actions" style="padding-left: 0px; text-align: center;">
+                        <input type="button" class="btn btn-primary" value="Sale Cancel" id="btnSave" style="width:90px;" />
+                        <input type="button" class="btn btn-inverse" value="Back" id="btnBack" style="width:85px;" />
+                        @*<input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:80px;" />*@
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Sale/InvoiceCancel.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+
+    </script>
+}
+

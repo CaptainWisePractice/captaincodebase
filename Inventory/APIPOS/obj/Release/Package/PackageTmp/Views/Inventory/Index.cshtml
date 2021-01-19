@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+     $(document).ready(function () {
+
+        debugger;
+        $("span#sidebar-toggle").trigger('click');
+        $("#mainHome").removeClass("active open");
+        $("#mainSales").removeClass("active open");
+        $("#mainAdministrator").removeClass("active open");
+        $("#mainReports").removeClass("active open");
+        $("#mainPurchase").removeClass("active open");
+        $("#mainInventory").addClass("active open");
+        $("#mainReports").removeClass("active open");
+    });
+
+</script>
+
+
+<div id="main-header" class="page-header">
+    <div id="main-content">
+        <div id="dividInventory">
+
+        </div>
+
+     
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/DashBoard/Inventory.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}

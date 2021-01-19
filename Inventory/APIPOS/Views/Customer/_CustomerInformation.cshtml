@@ -1,0 +1,388 @@
+﻿<form id="wizard-demo-2" class="form-horizontal" data-forward-only="false">
+    <fieldset class="wizard-step">
+        <legend class="wizard-label"><i class="icon-book"></i> Profile</legend>
+        <!-- LEFT --->
+        <div class="control-group span6">
+            <div class="control-group span12">
+                <label class="control-label">Customer No </label>
+                <div class="controls">
+                    <input type="text" class="span12" id="txtCustCode" readonly />
+                    <input type="hidden" id="txtCustomerId" value="0" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Designation </label>
+                <div class="controls">
+                    <select id="ddlDesignation" class="span12 select2">
+                        <option value="Individual">Individual</option>
+                        <option value="Company">Company</option>
+                       
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label" id="lblName">Name <span class="required">*</span></label>
+                <div class="controls">
+                    <input type="text" id="txtName" name="wizard[Name]" class="required span12">
+                </div>
+            </div>
+            <div class="control-group span12" id="divLastName">
+                <label class="control-label">Last Name <span class="required"></span></label>
+                <div class="controls">
+                    <input type="text" id="txtLastName" name="wizard[LastName]" class="required span12">
+                </div>
+            </div>
+            <div class="control-group span12">
+                <label class="control-label">Location <span class="required">*</span></label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlCusLocation" class="span12 select2 ss"></select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label id="lblBilToAddress" class="control-label">Address <span class="required">*</span></label>
+                <div id="divBilToAddress" class="controls">
+                    <input type="text" id="txtBilToAddress" class="span12" />
+                </div>
+                <label id="lblShipToAddress" class="control-label">Address </label>
+                <div id="divShipToAddress" class="controls">
+                    <input type="text" id="txtShipToAddress" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label id="lblBilToCity" class="control-label">Suburb <span class="required">*</span></label>
+                <div id="divBilToCity" class="controls">
+                    <input type="text" id="txtBilToCity" class="span12" />
+                </div>
+                <label id="lblShipToCity" class="control-label">Suburb </label>
+                <div id="divShipToCity" class="controls">
+                    <input type="text" id="txtShipToCity" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label id="lblBilToState" class="control-label">State </label>
+                <div id="divBilToState" class="controls">
+                    <input type="text" id="txtBilToState" class="span12" />
+                </div>
+                <label id="lblShipToState" class="control-label">State </label>
+                <div id="divShipToState" class="controls">
+                    <input type="text" id="txtShipToState" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label id="lblBilToPostCode" class="control-label">PostCode <span class="required">*</span></label>
+                <div id="divBilToPostCode" class="controls">
+                    <input type="text" id="txtBilToPostalCode" class="span12" />
+                </div>
+                <label id="lblShipToPostCode" class="control-label">PostCode </label>
+                <div id="divShipToPostCode" class="controls">
+                    <input type="text" id="txtShipToPostalCode" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label id="lblBilToCountry" class="control-label">Country </label>
+                <div id="divBilToCountry" class="controls" style="position: relative">
+                    <select id="ddlBilToCountry" class="span12 Country select2 ss"></select>
+                </div>
+                <label id="lblShipToCountry" class="control-label">Country </label>
+                <div id="divShipToCountry" class="controls" style="position: relative">
+                    <select id="ddlShipToCountry" class="span12 Country select2 ss"></select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label id="lblShipToCountry" class="control-label"></label>
+                <label class="checkbox">
+                    <input type="checkbox" id="chkShippingAddressSame" value="option1" class="uniform">
+                    Shipping address is same as billing address
+                </label>
+            </div>
+
+            <div class="control-group span12">
+                <label class="checkbox">
+                    <input type="checkbox" id="chkInactiveCard" value="option1" class="uniform">
+                    Inactive Card
+                </label>
+            </div>
+
+        </div>
+        <!-- RIGHT --->
+        <div class="control-group span6">
+            <div class="control-group span12">
+                <label class="control-label">Card Id </label>
+                <div class="controls">
+                    <input type="text" class="span12" id="txtCardId" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                @*<label class="control-label">Phone No. 1 </label>
+                    <div class="controls">
+                        <input type="text" id="txtPhone1" class="span12" />
+                    </div>*@
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Phone No. 1 <span class="required">*</span></label>
+                <div class="controls">
+                    <input type="text" id="txtPhone1" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Phone No. 2 </label>
+                <div class="controls">
+                    <input type="text" id="txtPhone2" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Phone No. 3 </label>
+                <div class="controls">
+                    <input type="text" id="txtPhone3" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Fax </label>
+                <div class="controls">
+                    <input type="text" id="txtFax" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Email <span class="required">*</span></label>
+                <div class="controls">
+                    <input type="text" id="txtEmail" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Website </label>
+                <div class="controls">
+                    <input type="text" id="txtWebsite" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Salutation </label>
+                <div class="controls">
+                    <input type="text" id="txtSalutation" class="span12" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Contact </label>
+                <div class="controls">
+                    <input type="text" id="txtContact" class="span12" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+
+
+    <fieldset class="wizard-step">
+        <legend class="wizard-label"><i class="icon-business-card"></i> Selling Details</legend>
+        <div class="control-group span6">
+            <div class="control-group span12">
+                <label class="control-label">Printed Form </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlPrintedForm" class="span12 select2 ss">
+                        <option value="Item - MPowered Tax Exclusive Invoice">Item - MPowered Tax Exclusive Invoice</option>
+                        <option value="Pre-Printed Invoice">Pre-Printed Invoice</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Invoice Delivery </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlInvoiceDelivery" class="span12 select2 ss">
+                        <option value="To Be Printed">To Be Printed</option>
+                        <option value="To Be Emailed">To Be Emailed</option>
+                        <option value="To Be Printed and Emailed">To Be Printed and Emailed</option>
+                        <option value="Already Printed or Sent">Already Printed or Sent</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">A.B.N </label>
+                <div class="controls">
+                    <input type="text" id="txtABN" class="form-control span12" data-mask="99 999 999 999" maxlength="14" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">A.B.N Branch </label>
+                <div class="controls">
+                    <input type="text" id="txtABNBranch" class="form-control span12 numeric" maxlength="11" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <h5>Customer Terms Information </h5>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Payment is Due </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlPaymentDue" class="span12 select2 ss"></select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label" id="lblDiscountDate" style="display:none">Discount Date </label>
+                <div class="controls" id="divDiscountDate" style="display: none;position: relative">
+                    <select id="ddlDiscountDate" class="span12 select2 ss"></select>
+                </div>
+                <label class="control-label" id="lblDiscountDays">Discount Days </label>
+                <div class="controls" id="divDiscountDays">
+                    <input type="text" id="txtDiscountDays" class="form-control span12 numeric" maxlength="3" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label" id="lblBalanceDueDate">Balance Due Date</label>
+                <div class="controls" id="divBalanceDueDate" style="display: none;position: relative">
+                    <select id="ddlBalanceDueDate" class="span12 select2"></select>
+                </div>
+
+                <label class="control-label" id="lblBalanceDueDays">Balance Due Days</label>
+                <div class="controls" id="divBalanceDueDays">
+                    <input type="text" id="txtBalanceDueDays" class="form-control span12 numeric" maxlength="3" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="control-group span6">
+            <div class="control-group span12">
+                <label class="control-label">Tax ID Number </label>
+                <div class="controls">
+                    <input type="text" id="txtTaxIdNumber" class="form-control span12" maxlength="19" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Tax Code </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlTaxCode" class="span12 select2 ss"></select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Freight Tax Code </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlFreightTaxCode" class="span12 select2 ss"></select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">GST Type </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlGSTType" class="span12 select2 ss">
+                        <option value="IncGST">Inc-GST</option>
+                        <option value="ExGST">Ex-GST</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label"></label>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">% Discount for Early Payment</label>
+                <div class="controls">
+                    <input type="text" id="txtDiscountEarlyPayment" class="form-control span12 numeric" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">% Monthly Charge for Late Payment</label>
+                <div class="controls">
+                    <input type="text" id="txtMonthlyChargeLatePayment" class="form-control span12 numeric" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Volume Discount %</label>
+                <div class="controls">
+                    <input type="text" id="txtVolumeDiscount" class="form-control span12 numeric" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+
+
+
+
+    <fieldset class="wizard-step">
+        <legend class="wizard-label"><i class="icon-shopping-cart"></i> Payment Details</legend>
+        <div class="control-group span6">
+            <div class="control-group span12">
+                <label class="control-label">Payment Method </label>
+                <div class="controls" style="position: relative">
+                    <select id="ddlPaymentMethod" class="span12 select2"></select>
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Card No.(4 last digits) </label>
+                <div class="controls">
+                    <input type="text" id="txtCardNolast4Digit" class="form-control span12 numeric" maxlength="4" />
+                </div>
+            </div>
+
+            <div class="control-group span12">
+                <label class="control-label">Name of Card </label>
+                <div class="controls">
+                    <input type="text" id="txtNameofCard" class="form-control span12" />
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group span6">
+
+            <div class="control-group span12">
+                <label class="control-label">Notes </label>
+                <div class="controls">
+                    <textarea id="txtAreaNotes" class="span12 autosize" style="overflow: hidden; word-wrap: break-word; resize: both;"></textarea>
+
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="wizard-step">
+        <legend class="wizard-label"><i class="icon-attachment"></i> Attachments</legend>
+        <div class="control-group">
+            <label for="file" class="control-label">Choose file to upload</label>
+            <div class="controls">
+                <input type="file" id="file" name="file" onchange="fileSelected();" class="success">
+            </div>
+        </div>
+        <div class="control-group">
+            <div id="divImgPreview" class="controls">
+
+            </div>
+        </div>
+        @*<div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox" id="chkIsActive" value="option1" class="uniform" checked>
+                        IsActive
+                    </label>
+                </div>
+            </div>*@
+    </fieldset>
+</form>

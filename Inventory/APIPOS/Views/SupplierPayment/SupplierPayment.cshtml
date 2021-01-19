@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "SupplierPayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainPurchase").addClass("active open");
+        $("#childSupplierPayment").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-shopping-cart"></i><a href="@Url.Action("Index", "Purchase")">Purchase</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Supplier Payment
+            @*<a href="@Url.Action("Index", "Purchase")">Purchase Order Consumption</a>*@
+        </li>
+    </ul>
+</div>
+
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i>  Supplier Payment </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                <div class="span5">
+                                    <label class="control-label">Manufacturer Name</label>
+                                    <div class="controls">
+                                        <select id="ddlManufacturer" class="required span12"></select>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">PI Number</label>
+                                    <div class="controls">
+                                        <select id="ddlPINumber" class="required span12"></select>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">Deposit Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtDepositDate" readonly class="required span12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span3">
+                                    <label class="control-label">Deposited (USD)</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtDepedUSD" readonly class="required span12">
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">Deposited (AUD)</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtDepedAUD" readonly class="required span12">
+                                    </div>
+
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label" style="color: black;"> Due Amount</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtDueAmount" class="required span12" readonly>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label" style="color: black;"> Order Value</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtOrderValue" class="required span12" readonly>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label" style="color: black;">BOP(USD)</label>
+                                    <div class="controls">
+                                        <div class="input-append input-prepend">
+                                            <span class="add-on" style="color: black;">$</span><input type="text" id="txtDepUSD" class="number span12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label" style="color: black;">BOP(AUD)</label>
+                                    <div class="controls">
+                                        <div class="input-append input-prepend">
+                                            <span class="add-on" style="color: black;">$</span><input type="text" id="txtDepAUD" class="number span12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label" style="color: black;"> Conversion Rate</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtConversionRate" class="required span12" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span1">
+                                   
+                                </div>
+                                <div class="span8">
+                                    <label class="control-label" for="txtNotes">Notes </label>
+                                    <div class="controls">
+                                        <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: none; height: 50px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">Payment Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtPaymentDate" class="required span12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                        <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width:85px;" />
+                        <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width:85px;" />
+                        <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:85px;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Purchase/SupplierPayment.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}

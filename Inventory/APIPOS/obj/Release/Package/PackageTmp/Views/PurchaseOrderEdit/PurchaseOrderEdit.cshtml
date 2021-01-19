@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "PurchaseOrderEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #demo-dtable-04 td, #demo-dtable-04 th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #demo-dtable-04 tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #demo-dtable-04 tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #demo-dtable-04 th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #2da3bf !important;
+        color: black;
+    }
+
+     .table-bordered tr td {
+        padding: 3px !important;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainPurchase").addClass("active open");
+        $("#childPurchaseRegister").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-shopping-cart"></i><a href="@Url.Action("Index", "Purchase")">Purchase</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Purchase Register
+            @*<a href="@Url.Action("Index", "Purchase")">Purchase Register</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Purchase Order List </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">From Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtFrom" class="required span12" />
+
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">To Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtTo" class="required span12" />
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label"></label>
+                                    <div class="controls">
+                                        <input type="button" class="btn btn-info" value="Search" id="btnSearch" style="width: 105px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group">
+                                <div class="controls" style="margin-left: 0px">
+                                    <div id="divTable" class="widget-content table-container">
+                                        @*<table class="table table-bordered" id="demo-dtable-04">
+                                            <thead style="background-color: #ebebeb">
+                                                <tr>
+                                                    <th width="15%">Supplier Name</th>
+                                                    <th width="8%">PI No</th>
+                                                    <th width="8%">Order Value</th>
+                                                    <th width="8%">Order Date</th>
+                                                    <th width="8%">Dep. Amount</th>
+                                                    <th width="8%">Dep. Date</th>
+                                                    <th width="6%">CBM</th>
+                                                    <th width="10%">Prod. Finish Date</th>
+                                                    <th width="8%">Balance Due</th>
+                                                    <th width="10%">Order Status</th>
+                                                    <th width="10%">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ></tbody>
+                                        </table>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    @*@Html.Partial("_layoutPageButton")*@
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Purchase/PurchaseOrderEdit.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}
+

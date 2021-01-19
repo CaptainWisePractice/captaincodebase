@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "DespatchReports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainReports").addClass("active open");
+        $("#childDespatchReports").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-list"></i><a href="@Url.Action("Reports", "Index")">Reports</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Despatch Reports
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Show Report</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label" for="ddlReportName">Report Name <span class="required">*</span></label>
+                                <div class="controls">
+                                    <select id="ddlReportName" class="span12"></select>
+                                </div>
+                            </div>
+                            <div class="span6" id="divBookmethod">
+                                <label class="control-label">Booking Method</label>
+                                <div class="controls">
+                                    <select id="ddlBookingMethod" class="span12"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span4" id="divFromDate">
+                                <label class="control-label" for="txtFromDate">From Date </label>
+                                <div class="controls">
+                                    <input type="text" id="txtFromDate" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span4" id="divToDate">
+                                <label class="control-label" for="txtToDate">To Date </label>
+                                <div class="controls">
+                                    <input type="text" id="txtToDate" class="span12" />
+                                </div>
+                            </div>
+                            <div class="span4">
+
+                            </div>
+                        </div>
+                       
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_ReportPageButtonRdlc")
+                </form>
+            </div>
+        </div>
+    </div>
+  
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Report/DespatchReports.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

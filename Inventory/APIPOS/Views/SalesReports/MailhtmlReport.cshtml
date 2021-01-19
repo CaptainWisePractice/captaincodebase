@@ -1,0 +1,226 @@
+﻿@model DAO.Reports.WrapperSalesReports
+@{
+    Layout = null;
+}
+
+<html>
+<body>
+    <div>
+        @if (Model.listSalesReports != null)
+        {
+
+            <table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                            <tr>
+                                <td width="70%" valign="top" style="font-size:12px;">
+                                    <table width="95%" border="0" cellspacing="0" cellpadding="5">
+                                        <tr>
+
+                                            <td width="25%" valign="top"><img src="https://www.captainwise.com.au/Uploads/Employee/5c2118e8-e53e-4f81-bf6f-53cd82ea8226.png" alt="Logo" width="113" height="38" /></td>
+                                            <td width="75%" valign="top">
+                                                <span class="style1" style="color:#005a96;">Melbournians Furniture PTY LTD</span><br />
+                                                A.B.N. 73 149 511 508<br />
+                                                <span class="style1 style3" style="color:#005a96;">6-12 Crawford Street Braeside Vic 319</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br />
+                                    <br />
+                                    <span class="style2">Tax Invoice</span><br />
+                                </td>
+                                <td align="right" valign="bottom">
+                                    <br />
+                                    <table width="90%" border="0" cellspacing="0" cellpadding="5">
+                                        <tr>
+                                            <td style="border:thin solid #000;">
+                                                <table width="100%" border="0" cellspacing="3" cellpadding="2" style="font-size:12px;">
+                                                    <tr>
+                                                        <td align="right"><strong>Invoice No.</strong></td>
+                                                        <td><strong>:</strong></td>
+                                                        <td align="right">@Model.listSalesReports[0][0].InvoiceNo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><strong>Date</strong></td>
+                                                        <td><strong>:</strong></td>
+                                                        <td align="right">@Model.listSalesReports[0][0].SaleDate </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><strong>Your Ref</strong></td>
+                                                        <td><strong>:</strong></td>
+                                                        <td align="right">@Model.listSalesReports[0][0].ReferenceNo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><strong>Terms</strong></td>
+                                                        <td><strong>:</strong></td>
+                                                        <td align="right">@Model.listSalesReports[0][0].SalesType</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px 0px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                            <tr>
+                                <td width="60%" style="font-size:12px; border:thin solid #000;">
+                                    @Model.listSalesReports[0][0].Website<br />
+                                    @Model.listSalesReports[0][0].Name<br />
+                                    @Model.listSalesReports[0][0].ShipTo<br />
+                                    @Model.listSalesReports[0][0].City<br />
+                                </td>
+                                <td width="3%" style="font-size:12px;">&nbsp;</td>
+                                <td width="37%" valign="top" style="border:thin solid #000;">
+                                    <table width="100%" border="1" cellpadding="2" cellspacing="0" bordercolor="#bfbfbf" style="font-size:12px;">
+                                        <tr>
+                                            <td width="10%" align="left" valign="middle" bgcolor="#ededed"><strong>Delivery Address:</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                @Model.listSalesReports[0][0].FirstName<br />
+                                                @Model.listSalesReports[0][0].LastName<br />
+                                                @Model.listSalesReports[0][0].Phone2 <br />
+                                                @Model.listSalesReports[0][0].MobileNo
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <table width="100%" border="1" cellpadding="2" cellspacing="0" bordercolor="#808080" style="font-size:12px;">
+                            <tr>
+                                <td width="10%" align="center" valign="middle" bgcolor="#d3d3d3">QUANTITY </td>
+                                <td width="10%" align="center" valign="middle" bgcolor="#d3d3d3">ITEM CODE</td>
+                                <td valign="middle" bgcolor="#d3d3d3">DESCRIPTION</td>
+                                <td width="18%" align="center" valign="middle" bgcolor="#d3d3d3">UNIT PRICE(ex-GST)</td>
+                                <td width="9%" align="center" valign="middle" bgcolor="#d3d3d3">DISC%</td>
+                                <td width="18%" align="center" valign="middle" bgcolor="#d3d3d3">TOTAL PRICE(ex-GST)</td>
+                            </tr>
+                            @foreach (var obj in Model.listSalesReports[1])
+                            {
+                                <tr>
+                                    <td align="right" valign="top">
+                                        @obj.SaleQty
+                                    </td>
+                                    <td align="right" valign="top">@obj.IHeadCode</td>
+                                    <td align="left" valign="top">@obj.IHeadName</td>
+                                    <td align="center" valign="top">$ @obj.SalePrice</td>
+                                    <td align="center" valign="top">@obj.discount&nbsp;</td>
+                                    <td align="center" valign="top"><strong>$ @obj.WithDiscount</strong></td>
+                                </tr>
+                            }
+                        </table>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:15px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="60%" valign="top">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                        <tr>
+                                            <td valign="top" style="border:thin solid #000; font-size:12px;">
+                                                <br />
+                                                <span class="style4">
+                                                    <strong>Delivery via:</strong> @Model.listSalesReports[0][0].DeliveryMethod<br />
+                                                    <strong>Delivery Date: </strong> @Model.listSalesReports[0][0].DateFrom<br />
+                                                    <strong>Sales Person: </strong>@Model.listSalesReports[0][0].SalesPersonName
+                                                </span><br />
+                                                <br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br />
+                                    <br />
+                                    <span style="font-family:'Times New Roman', Times, serif; font-size:15px; color:#666666;">We appreciate your business.</span>
+                                </td>
+                                <td width="3%">&nbsp;</td>
+                                <td valign="top" style="font-size:12px; line-height:18px;">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                        <tr>
+                                            <td style="border-top:thin solid #000; border-left:thin solid #000; border-right:thin solid #000; padding-left:25px;">
+                                                Subtotal:<br />
+                                                Freight (ex-GST):<br />
+                                                GST:<br />
+                                            </td>
+                                            <td align="right" valign="top" style="border-top:thin solid #000; border-right:thin solid #000;">
+                                                $ @Model.listSalesReports[0][0].SubTotal<br />
+                                                $ @Model.listSalesReports[0][0].Freight<br />
+                                                $ @Model.listSalesReports[0][0].Tax
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-top:thin solid #000; border-left:thin solid #000; border-right:thin solid #000; padding-left:25px;">
+                                                Total (inc-GST):<br />
+                                                Paid to Date
+                                            </td>
+                                            <td align="right" valign="top" style="border-top:thin solid #000; border-right:thin solid #000;">
+                                                $ @Model.listSalesReports[0][0].TotalAmount<br />
+                                                $ @Model.listSalesReports[0][0].PaidToday
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" bgcolor="#ededed" style="border-top:thin solid #000; border-bottom:thin solid #000; border-left:thin solid #000; border-right:thin solid #000;">
+                                                <strong>
+                                                    Balance Due: $ @Model.listSalesReports[0][0].Due <br />
+                                                </strong>
+                                            </td>
+                                            <td align="right" bgcolor="#ededed" style="border-top:thin solid #000; border-bottom:thin solid #000; border-right:thin solid #000;"><strong>$622.93</strong></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:11px;">
+                            <tr>
+                                <td width="5%" align="left" valign="top"><img src="https://www.captainwise.com.au/App_Theme/assets/images/visa-logo.png" width="23" height="25" /></td>
+                                <td width="55%" align="left" valign="top"><strong>How to Pay</strong><br />by credit card<br />To pay via MasterCard or VISA<br />By Phone-03 9794 5383, 03 9471 1523<br />Minimum payment $10.00. Maximum payment $10,000.<br /><br />2% surcharge will be applied in case of credit card  payment </td>
+                                <td colspan="2" align="left" valign="top"><strong>Bank Deposit</strong><br />Account Name-Melbournians Furniture Pty Ltd<br />BSB Number-033090<br />Account Number-395341 </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top">&nbsp;</td>
+                                <td align="left" valign="top">&nbsp;</td>
+                                <td colspan="2" align="left" valign="top" style="border-bottom:thin solid #000000;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top">&nbsp;</td>
+                                <td align="left" valign="top">&nbsp;</td>
+                                <td align="left" valign="top">Invoice No: <strong>  @Model.listSalesReports[0][0].InvoiceNo</strong></td>
+                                <td align="left" valign="top">Amount Due: <strong>$ @Model.listSalesReports[0][0].Due</strong> </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

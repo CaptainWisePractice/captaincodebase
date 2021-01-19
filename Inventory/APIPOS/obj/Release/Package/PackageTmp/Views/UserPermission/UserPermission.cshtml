@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "UserPermission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainHome").addClass("active open");
+        $("#childAdmin").addClass("active");
+       // $("#mainHome").removeClass("active open");
+       // $("#childIndex").removeClass("active");
+    });
+</script>
+<style type="text/css">
+    #tbl td, #tbl th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #tbl tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #tbl tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #tbl th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: center;
+        /*background-color: #4CAF50 !important;*/
+        color: black;
+    }
+</style>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-accessibility"></i><a href="@Url.Action("Index", "Admin")">Admin</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            User Permission
+            @*<a href="@Url.Action("Index", "Admin")">User Permission</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> User Permission </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span2">
+                            </div>
+                            <div class="span4">
+                                <label class="control-label" for="ddlUserName">User Name <span class="required">*</span></label>
+                                <div class="controls">
+                                    <select id="ddlUserName" class="span12"></select>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <label class="control-label">Full Name </label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtFullName" readonly />
+                                </div>
+                            </div>
+                            <div class="span2">
+                            </div>
+                        </div>
+                        <br />
+                        <div  class="widget-content table-container">
+                            <div class="span2">
+                            </div>
+                            <div id="divTable" class="span8" style="max-height:350px; overflow:auto;">
+                                <table class="table table-striped table-checkable" id="tbl">
+                                    <thead  style="background-color: #f7e5e6">
+                                        <tr>
+                                            <th width="20%">Main Menu</th>
+                                            <th width="40%">Menu Name</th>
+                                            <th class="checkbox-column">
+                                                Check All  <input type="checkbox" class="uniform">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div class="span2">
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br />
+                    <div class="form-actions" style="padding-left: 330px;">
+                        <input type="button" class="btn btn-primary" value="Save" id="btnMenuSave" style="width:85px;" />
+                        <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width:85px;" />
+                        <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" style="width:85px;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Admin/UserPermission.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

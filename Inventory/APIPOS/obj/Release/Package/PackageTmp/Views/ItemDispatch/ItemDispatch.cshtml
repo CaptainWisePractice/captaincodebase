@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "ItemDispatch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #tbl tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #tbl td, #tbl th {
+        border: 1px solid #ddd !important;
+    }
+
+    #tbl th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #f2f2f2;
+    }
+</style>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>Inventory
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            <a href="@Url.Action("ItemDispatch", "ItemDispatch")">Item Despatch</a>
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Item Despatch </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                <div class="span6">
+                                    <label class="control-label">Sale Invoice <span class="required">*</span></label>
+                                    <div class="controls">
+                                        @*<select id="ddlSalesInvoice" class="span12 select2-select-00"></select>*@
+                                        <input type="text" id="SalesInvoice" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                                <div class="span2">
+
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Dispatch Date </label>
+                                    <div class="controls">
+                                        <input type="text" id="txtApprovalDate" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">Customer Name</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtCustomer" readonly="readonly" class="required span12" />
+                                        <input type="hidden" id="hfCustomerId" value=""  />
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Ship To</label>
+                                    <div class="controls">
+                                        <textarea rows="2" cols="2" id="txtShipTo" readonly="readonly"></textarea>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <label class="control-label">Ship Via</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtShipVia" readonly="readonly" class="required span12" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group"  style="background-color:#94dbff33;">
+                                <div class="controls" style="margin-left: 0px;">
+                                    <div id="divTable" class="widget-content table-container" style="min-height:150px;">
+                                        <table class="table table-bordered" id="tbl">
+                                            <thead style="background-color: #ebebeb">
+                                                <tr>
+                                                    <th width="5%">SL#</th>
+                                                    <th width="15%">Item</th>
+                                                    <th width="25%">Item Description</th>
+                                                    <th width="7%">Sale Qty</th>
+                                                    <th width="20%">Location</th>
+                                                    <th width="7%">Stock Qty</th>
+                                                    <th width="10%">Despatch Qty</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <div class="form-actions">
+                        <input type="button" class="btn btn-primary" value="Dispatch" id="btnSave" />
+                        <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" />
+                        <input type="button" class="btn btn-danger" value="Cancel" id="btnCancel" />
+                        <input type="button" class="btn btn-inverse" value="Back To Despatch " id="btnFind" />
+                    </div>
+                    @*@Html.Partial("_layoutPageButton")*@
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Inventory/ItemDispatch.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}
+
+

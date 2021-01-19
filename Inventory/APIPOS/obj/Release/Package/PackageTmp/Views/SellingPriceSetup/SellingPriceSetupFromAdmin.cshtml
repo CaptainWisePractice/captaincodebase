@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "SellingPriceSetup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/PapaParse/papaparse.js"></script>
+<script src="~/Scripts/PapaParse/papaparse.min.js"></script>
+<style type="text/css">
+    /* Modal Css*/
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        padding-top: 0px;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        margin: 0px !important;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 83%;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        top: 10%;
+    }
+
+    /* Add Animation */
+
+
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+        min-height: 530px !important;
+        overflow: hidden;
+    }
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+</style>
+<!-- Uniform Stylesheet -->
+<link rel="stylesheet" href="~/App_Theme/plugins/uniform/css/uniform.default.css" media="screen">
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainHome").addClass("active open");
+        $("#childSellingPriceSetup").addClass("active");
+
+        //  $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+
+<div class="row-fluid">
+    <div class="span12 widget">
+        <div class="widget-header">
+            <span class="title">
+                <i class="icol-table"></i>Price List
+            </span>
+        </div>
+        <div id="divTable" class="widget-content table-container">
+        </div>
+    </div>
+</div>
+<!-- The Modal Add POD-->
+<div id="SellPriceModal" class="modal" data-backdrop="false">
+
+    <!-- Modal content -->
+    @Html.Partial("../SellingPriceSetup/_SellPriceModal")
+   
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+
+        var p1 =1;
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Admin/Retail.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
+
+
+

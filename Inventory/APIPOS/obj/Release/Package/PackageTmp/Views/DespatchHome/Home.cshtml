@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+     $(document).ready(function () {
+        $("span#sidebar-toggle").trigger('click');
+        $("#mainHome").removeClass("active open");
+        $("#mainSales").removeClass("active open");
+        $("#mainAdministrator").removeClass("active open");
+        $("#mainReports").removeClass("active open");
+        $("#mainPurchase").removeClass("active open");
+        $("#mainInventory").removeClass("active open");
+        $("#mainDespatch").addClass("active open");
+        $("#mainReports").removeClass("active open");
+    });
+
+</script>
+
+
+<div id="main-header" class="page-header">
+    <div id="main-content">
+        <div id="dividDespatch">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/DashBoard/DespatchHome.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

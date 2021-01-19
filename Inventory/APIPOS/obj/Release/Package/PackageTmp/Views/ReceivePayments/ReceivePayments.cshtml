@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "ReceivePayments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .txtAmount {
+        text-align: right;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childReceivePayments").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Receive Payments
+            @*<a href="@Url.Action("ReceivePayments", "ReceivePayments")">Receive Payments</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icol-arrow-in"></i> Receive Payments</span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label" for="ddlCustomer">Customer :</label>
+                                <div class="controls">
+                                    <select id="ddlCustomer" class="span12 select2"></select>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">ID No :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtIdNo" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label" for="txtAmountReceived">Amount Received :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 numeric" id="txtAmountReceived" />
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label">Date :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtDate" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="span6">
+                                <label class="control-label">Payment Method :</label>
+                                <div class="controls">
+                                    <select id="ddlPaymentMethod" class="span12 select2"></select>
+                                </div>
+                            </div>
+                            <div class="span6">
+                                <label class="control-label" for="txtMemo">Memo :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" id="txtMemo" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group" style="background-color:#94dbff33;">
+                            <div class="span12" style="min-height:150px;">
+                                <table class="table table-bordered table-responsive" id="tbl">
+                                    <thead style="background-color: #ebebeb">
+                                        <tr>
+                                            <th>Invoice No.</th>
+                                            <th>Date</th>
+                                            <th>Sell Amount</th>
+                                            <th>Due</th>
+                                            <th>Discount</th>
+                                            <th>Total Due</th>
+                                            <th>Amount Applied</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*<tr>
+                                                <td class="InvoiceNo"></td>
+                                                <td class="Status"></td>
+                                                <td class="Date"></td>
+                                                <td class="Amount">120</td>
+                                                <td><input type="text" class="span12 Discount numeric" /></td>
+                                                <td class="TotalDue">120</td>
+                                                <td><input type="text" class="span12 AmountApplied numeric" /></td>
+                                            </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="span2">
+                                <label class="checkbox">
+                                    <input type="checkbox" id="chkReceiveAll" value="ReceiveAll" class="uniform">
+                                    Receive All
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="chkAdvance" value="Advance" class="uniform">
+                                    Applied Advance
+                                </label>
+                            </div>
+                            <div class="span4"></div>
+                            <div class="span6">
+                                <label class="control-label" for="txtTotalApplied">Total Applied :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 txtAmount" id="txtTotalApplied" readonly />
+                                </div>
+                                <label class="control-label" for="txtFinanceCharge">Finance Charge :</label>
+                                <div class="controls" style="margin-top:2px;margin-bottom:2px;">
+                                    <input type="text" class="span12 txtAmount" id="txtFinanceCharge" />
+                                </div>
+                                <label class="control-label" for="txtTotalReceived">Total Received :</label>
+                                <div class="controls">
+                                    <input type="text" class="span12 txtAmount numeric" id="txtTotalReceived" readonly />
+                                </div>
+                                <label class="control-label" for="txtOutofBalance">Out of Balance :</label>
+                                <div class="controls" style="margin-top:2px;">
+                                    <input type="text" class="span12 txtAmount" id="txtOutofBalance" readonly />
+                                </div>
+                                <label class="control-label" for="txtAdvanceBalance">Advance Balance :</label>
+                                <div class="controls" style="margin-top:2px;">
+                                    <input type="text" class="span12 txtAmount" id="txtAdvanceBalance" readonly />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    @Html.Partial("_layoutPageButton")
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Inventory/ReceivePayments.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

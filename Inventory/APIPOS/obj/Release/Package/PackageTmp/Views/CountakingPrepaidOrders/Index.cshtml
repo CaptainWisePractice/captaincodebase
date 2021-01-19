@@ -1,0 +1,595 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #demo-dtable-04 td, #demo-dtable-04 th {
+        border: 1px solid #ddd !important;
+        padding: 5px;
+    }
+
+    #demo-dtable-04 tr:hover {
+        background-color: #ddd !important;
+    }
+
+    #demo-dtable-04 tr:nth-child(even) {
+        background-color: #f2f2f2 !important;
+    }
+
+    #demo-dtable-04 th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #2da3bf !important;
+        color: black;
+    }
+
+    .ui-pnotify {
+      /*position:absolute !important;
+      height:auto !important;*/
+      z-index:10000 !important
+    }
+</style>
+<style type="text/css">
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        padding-top: 0px;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        margin: 0px !important;
+    }
+
+    /* Modal 2 Content */
+    .modal-content-modal2 {
+        position: relative !important;
+        margin: auto !important;
+        padding: 0 !important;
+        width: 95% !important;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        top: 10% !important;
+    }
+
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 75%;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        top: 10%;
+    }
+
+    /* Add Animation */
+
+
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+        min-height: 650px !important;
+        overflow: hidden;
+    }
+
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .select2-drop {
+        z-index: 99999;
+        width: auto !important;
+        /*width: 120%;*/
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childSales").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+</script>
+
+<!-- DataTables -->
+@*<script src="~/App_Theme/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/TableTools/js/TableTools.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/FixedColumns/FixedColumns.min.js"></script>
+    <script src="~/App_Theme/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/App_Theme/plugins/datatables/jquery.dataTables.columnFilter.js"></script>*@
+
+
+
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Take Count on Prepaid Orders
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> Take Count on Prepaid Orders </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                <div class="span4">
+                                    <label class="control-label">Outlet</label>
+                                    <div class="controls">
+                                        <select id="ddlOutlet" class="required span12 select2-select-00"></select>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">From Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtFrom" class="required span12 ftDate" />
+
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">To Date</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtTo" class="required span12 ftDate" />
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <label class="control-label"><input type="button" class="btn btn-info" value="Search" id="btnSearch" /></label>
+                                    <div class="controls">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group">
+                                <div class="controls" style="margin-left: 0px">
+                                    <div id="divTable" class="widget-content table-container" style="overflow:auto; max-height:375px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                </form>
+            </div>
+        </div>
+
+
+        <!-- The Modal Add Countaken-->
+        <div id="myModal" class="modal" data-backdrop="false">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                @*<div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>*@
+                <div class="modal-body">
+                    <div class="page-content countakenModel" id="countakenModel">
+                        <div class="row-fluid">
+                            <div class="span12 widget">
+                                <div class="widget-header">
+                                    <span class="title">Take Count By</span>
+                                </div>
+                                <div class="widget-content form-container">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <div class="control-group">
+                                                <div class="span5">
+                                                    <label class="control-label">Date</label>
+                                                    <div class="controls">
+                                                        <input type="text" id="txtCountakenDate" readonly class="span12" />
+                                                    </div>
+                                                </div>
+                                                <div class="span5">
+                                                    <label class="control-label">Outlet</label>
+                                                    <div class="controls">
+                                                        <input type="text" id="txtOutlet" readonly class="span12" />
+                                                        <input type="hidden" id="hfCoOutletId" value="" />
+                                                        <input type="hidden" id="hfCoDate" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="span2">
+                                                    @*<label class="control-label">Countaken Amount</label>
+                                                            <div class="controls">
+                                                                <input type="hidden" id="txtCountakenAmount" value="0" />
+                                                        </div>*@
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <div class="controls" style="margin-left: 0px">
+                                                    <div id="divTblTakeCount" class="widget-content table-container" style="overflow:auto; max-height:360px;">
+                                                        <table class="table table-bordered" id="tblTakeCount">
+                                                            <thead style="background-color: #e3e47a">
+                                                                <tr>
+                                                                    <th style="width: 110px;">Payment Method</th>
+                                                                    <th>EFTPOS</th>
+                                                                    <th>Cash</th>
+                                                                    <th>Cheque</th>
+                                                                    <th>Paypal</th>
+                                                                    <th>Bank Transfer</th>
+                                                                    <th>Other</th>
+                                                                    <th>After Pay</th>
+                                                                    <th>Humm</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="idTaketbody"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <div class="span2">
+                                                </div>
+                                                <div class="span8">
+
+                                                    <label class="control-label" for="txtNotes">Notes </label>
+                                                    <div class="controls">
+                                                        <input type="text" id="txtNotes" class="span12">
+                                                    </div>
+                                                </div>
+                                                <div class="span2">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <br />
+                                        <div class="form-actions" style="padding-left: 32%;">
+                                            <input type="button" class="btn btn-primary" value="Save" id="btnCSave" style="width:90px;" />
+                                            <input type="button" class="btn btn-danger" value="Cancel" id="btnCCancel" style="width:90px;" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- The Modal Add Money Collection-->
+        <div id="collectionModal" class="modal" data-backdrop="false">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                @*<div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>*@
+                <div class="modal-body">
+                    <div class="page-content moneyModel" id="moneyModel">
+                        <div class="row-fluid">
+                            <div class="span12 widget">
+                                <div class="widget-header">
+                                    <span class="title">Money Collection</span>
+                                </div>
+                                <div class="widget-content form-container">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <div class="control-group">
+                                                <div class="controls" style="margin-left: 0px">
+                                                    <div id="divTblCollection" class="widget-content table-container" style="overflow:auto; max-height:360px;">
+                                                        <table class="table table-bordered" id="tblCollection">
+                                                            <thead style="background-color: #a6a5d8">
+                                                                <tr>
+                                                                    <th>Date</th>
+                                                                    <th>Cash</th>
+                                                                    <th>Collected Amount</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="idColltbody"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <div class="span2">
+                                                </div>
+                                                <div class="span4">
+                                                    <label class="control-label" for="txtCollDate">Collection Date </label>
+                                                    <div class="controls">
+                                                        <input type="text" id="txtCollDate" class="span12">
+                                                        <input type="hidden" id="hfCollOutletId" value="" />
+                                                        <input type="hidden" id="hfCollDate" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="span4">
+                                                    <label class="control-label" for="ddlEmployee">Collected By </label>
+                                                    <div class="controls">
+                                                        <select id="ddlEmployee" class="required span12 select2-select-00"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="span2">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <div class="span2">
+                                                </div>
+                                                <div class="span8">
+                                                    <label class="control-label" for="txtMNotes">Notes </label>
+                                                    <div class="controls">
+                                                        <input type="text" id="txtMNotes" class="span12">
+                                                    </div>
+                                                </div>
+                                                <div class="span2">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <br />
+                                        <div class="form-actions" style="padding-left: 32%;">
+                                            <input type="button" class="btn btn-primary" value="Save" id="btnMSave" style="width:90px;" />
+                                            <input type="button" class="btn btn-danger" value="Cancel" id="btnMCancel" style="width:90px;" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- The Modal Add  Date Wise Details-->
+        <div id="detailsModal" class="modal modal2" data-backdrop="false">
+
+            <!-- Modal content -->
+            <div class="modal-content-modal2" style="top:2px !important">
+                @*<div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>*@
+                <div class="modal-body">
+                    <div class="page-content detsModel" id="detsModel">
+                        <div class="row-fluid">
+                            <div class="span12 widget">
+                                <div class="widget-header">
+                                    <span class="title">Date Wise Details</span>
+                                </div>
+                                <div class="widget-content form-container" style="overflow:auto; max-height:600px;">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <div class="span12">
+                                                <div class="control-group">
+                                                    <div class="span3">
+
+                                                    </div>
+                                                    <div class="span5">
+                                                        <label class="control-label">Date</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtDate" class="required span12" readonly />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="span4">
+                                                        <label class="control-label"></label>
+                                                        <div class="controls">
+                                                            <input type="button" class="btn btn-danger" value="Close" id="btnDetClose" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <div class="controls" style="margin-left: 0px">
+                                                        <div id="divTblDetail" class="widget-content table-container" style="overflow:auto; max-height:320px;">
+                                                            <table class="table table-bordered" id="tbl">
+                                                                <thead style="background-color: #f7e5e6">
+                                                                    <tr>
+                                                                        <th>Invoice Date</th>
+                                                                        <th>Payment Date</th>
+                                                                        <th>Invoice no</th>
+                                                                        <th>Total Invoice Amount</th>
+                                                                        <th>EFTPOS</th>
+                                                                        <th>Cash</th>
+                                                                        <th>Cheque</th>
+                                                                        <th>Paypal</th>
+                                                                        <th>Bank Transfer</th>
+                                                                        <th>Other</th>
+                                                                        <th>After Pay</th>
+                                                                        <th>Humm</th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="2"></td>
+                                                                        <td style="font-weight: bold; text-align: right;"> Total : &nbsp;</td>
+                                                                        <td><label id="totInvoice"></label></td>
+                                                                        <td><label id="totEFTPOS"></label></td>
+                                                                        <td><label id="gtotCash"></label></td>
+                                                                        <td><label id="totCheque"></label></td>
+                                                                        <td><label id="totPaypal"></label></td>
+                                                                        <td><label id="totTransfer"></label></td>
+                                                                        <td><label id="totOther"></label></td>
+                                                                        <td><label id="totAfterPay"></label></td>
+                                                                        <td><label id="totHumm"></label></td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                                <tbody id="idtbody"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- for Day Close History-->
+                                                <div class="control-group">
+                                                    <h3 style="color:green;margin-top: -15px;">Count Taken History</h3>
+                                                    <div class="controls" style="margin-left: 0px;">
+                                                        <div id="divTblTakeCountHistory" class="widget-content table-container">
+                                                            <table class="table table-bordered" id="tblTakeCountHistory">
+                                                                <thead style="background-color: #e3e47a">
+                                                                    <tr>
+                                                                        <th style="width: 110px;">Payment Method</th>
+                                                                        <th>EFTPOS</th>
+                                                                        <th>Cash</th>
+                                                                        <th>Cheque</th>
+                                                                        <th>Paypal</th>
+                                                                        <th>Bank Transfer</th>
+                                                                        <th>Other</th>
+                                                                        <th>After Pay</th>
+                                                                        <th>Humm</th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="idTaketbodyHistory"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group" style="border-top: 0px solid #ccc !important;margin-top: -20px;">
+                                                    <div class="span3">
+                                                        <label class="control-label" for="txtTakeDateHistory">Count Taken Date </label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtTakeDateHistory" class="span12" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span3">
+                                                        <label class="control-label" for="txtTakeByHistory">Count Taken By </label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtTakeByHistory" class="span12" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <label class="control-label" for="txtNotesHistory">Notes </label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtNotesHistory" readonly class="span12">
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+
+
+                                                <!-- for money collection History-->
+
+                                                <div class="control-group" style="margin-top: -10px;">
+                                                    <h3 style="color:green; margin-top: -15px;">Collection History</h3>
+                                                    <div class="controls" style="margin-left: 0px">
+                                                        <div id="divTblCollectionHistory" class="widget-content table-container">
+                                                            <table class="table table-bordered" id="tblCollectionHistory">
+                                                                <thead style="background-color: #a6a5d8">
+                                                                    <tr>
+                                                                        <th>Date</th>
+                                                                        <th>Cash</th>
+                                                                        <th>Collected Amount</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="idColltbodyHistory"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group" style="border-top: 0px solid #ccc !important;margin-top: -20px;">
+                                      
+                                                    <div class="span3">
+                                                        <label class="control-label" for="txtCollDateHistory">Collection Date </label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtCollDateHistory" readonly class="span12">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span3">
+                                                        <label class="control-label" for="txtEmployeeHistory">Collected By </label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtEmployeeHistory" readonly class="span12">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <label class="control-label" for="txtMNotesHistory">Notes </label>
+                                                        <div class="controls">
+                                                            <input type="text" id="txtMNotesHistory" readonly class="span12">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Demo Scripts -->
+@*<script src="~/App_Theme/assets/js/demo/dataTables.js"></script>*@
+
+@section scripts
+{
+    <script type="text/javascript">
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Sale/CountakingPrepaidOrders.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+

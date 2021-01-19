@@ -1,0 +1,293 @@
+﻿
+@{
+    ViewBag.Title = "POConsumption";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    .table-bordered tr td {
+        padding: 3px !important;
+    }
+
+    .page-break {
+      page-break-after: always;
+      page-break-inside: avoid;
+      clear:both;
+    }
+    .page-break-before {
+      page-break-before: always;
+      page-break-inside: avoid;
+      clear:both;
+    }
+    #html-2-pdfwrapper{
+      position: absolute; 
+      left: 20px; 
+      top: 50px; 
+      bottom: 0; 
+      overflow: auto; 
+      width: 600px;
+    }
+
+     a.tooltip {
+        outline: none;
+    }
+
+        a.tooltip strong {
+            line-height: 30px;
+        }
+
+        a.tooltip:hover {
+            text-decoration: none;
+        }
+
+        a.tooltip span {
+            z-index: 10;
+            display: none;
+            padding: 14px 20px;
+            margin-top: -10px;
+            margin-left: 28px;
+            width: 120px;
+            line-height: 12px;
+        }
+
+        a.tooltip:hover span {
+            display: inline;
+            position: absolute;
+            color: red;
+            border: 1px solid #DCA;
+            background: #fffAF0;
+        }
+
+    .callout {
+        z-index: 20;
+        position: absolute;
+        top: 30px;
+        border: 0;
+        left: -12px;
+    }
+
+    /*CSS3 extras*/
+    a.tooltip span {
+        border-radius: 4px;
+        box-shadow: 5px 5px 8px #CCC;
+    }
+
+    tr > td .spnTooltip {
+        z-index: 10;
+        display: none;
+        padding: 14px 20px;
+        margin-top: -10px;
+        margin-left: 28px;
+        width: 140px;
+        line-height: 12px;
+    }
+
+    tr > td:hover .spnTooltip {
+        display: inline;
+        position: absolute;
+        color: red;
+        border: 1px solid #DCA;
+        background: #fffAF0;
+    }
+
+    .callout {
+        z-index: 20;
+        position: absolute;
+        top: 30px;
+        border: 0;
+        left: -12px;
+    }
+
+/*.scroll {
+  border: 0;
+  border-collapse: collapse;
+}
+
+.scroll tr {
+  display: flex;
+}*/
+
+/*.scroll td {
+  padding: 3px;
+  flex: 1 auto;
+  border: 1px solid #aaa;
+  width: 1px;
+  word-wrap: break;
+}*/
+/*
+.scroll thead tr:after {
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+.scroll thead th {
+  flex: 1 auto;
+  display: block;
+}
+
+.scroll tbody {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
+  height: 300px;
+}
+*/
+</style>
+<script src="~/App_Theme/JsPDF/dist/jspdf.min.js"></script>
+<script src="~/App_Theme/JsPDF/dist/jspdf.debug.js"></script>
+<script>
+//Global Variable Declaration
+var base64Img = null;
+margins = {
+  top: 70,
+  bottom: 40,
+  left: 30,
+  width: 550
+};
+
+/* append other function below: */
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainPurchase").addClass("active open");
+        $("#childPOConsumption").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+
+    });
+
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-shopping-cart"></i><a href="@Url.Action("Index", "Purchase")">Purchase</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            New Order Estimate
+            @*<a href="@Url.Action("Index", "Purchase")">Purchase Order Consumption</a>*@
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12 widget">
+            <div class="widget-header">
+                <span class="title"><i class="icon-tag"></i> New Order Estimate </span>
+            </div>
+            <div class="widget-content form-container">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group">
+                                
+                                <div class="span6">
+                                    <label class="control-label">Manufacturer Name</label>
+                                    <div class="controls">
+                                        <select id="ddlManufacturer" class="required span12 select2-select-00"></select>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <label class="control-label">PO Number</label>
+                                    <div class="controls">
+                                        <input type="text" id="txtPONumber" class="required span12">
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                        <label class="control-label">Order Estimate Date</label>
+                                        <div class="controls">
+                                            <input type="text" id="txtOrderEstimateDate" readonly class="required span12">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="span12" style="margin-left: 0px;">
+                            <div class="control-group" >
+                                <div class="controls" style="margin-left: -15px; margin-right: -15px;">
+                                    <div id="divTable" class="widget-content table-container" style="max-height:370px; overflow:auto;">
+                                        <table class="table table-bordered" id="tbl">
+                                            <thead style="background-color: #f7e5e6">
+                                                <tr>
+                                                    <th width="2%">#SL</th>
+                                                    <th width="8%">Item Code</th>
+                                                    <th width="16%">Item Description</th>
+                                                    <th width="6%">Colour</th>
+                                                    <th width="5%">Size</th>
+                                                    <th width="6%">CBM</th>
+                                                    <th width="8%">Sale Stock</th>
+                                                    <th width="6%">Stock(W)</th>
+                                                    <th width="6%">InComing</th>
+                                                    <th width="6%">Production</th>
+                                                    <th width="6%">Order Qty</th>
+                                                    <th width="6%" style="display:none">Order Qty</th>
+                                                    <th width="6%">Unit Price</th>
+                                                    <th width="6%" style="display:none">Unit Price</th>
+                                                    <th width="6%">Total Price</th>
+                                                    <th width="6%">T. CBM</th>
+                                                    <td style="display:none">Head Id</td>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="font-weight: bold; text-align: right;"> Sub Total : &nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><label id="totalqt"></label></td>
+                                                    <td style="display:none"></td>
+                                                    <td><label id="totalpr"></label></td>
+                                                    <td style="display:none"></td>
+                                                    <td><label id="totalval"></label></td>
+                                                    <td><label id="gtotalcbm"></label></td>
+                                                    <td style="display:none"></td>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody id="idtbody"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="txtNotes">Notes </label>
+                                <div class="controls">
+                                    <textarea id="txtNotes" class="span10 autosize" style="overflow: hidden; word-wrap: break-word; resize: both; height: 50px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br />
+                    <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                        <input type="button" class="btn btn-primary" value="Save" id="btnSave" style="width:80px;" />
+                        <input type="button" class="btn btn-info" value="Refresh" id="btnRefresh" style="width:80px;" />
+                        <input type="button" class="btn btn-default" value="Back" id="btnBack" style="width:80px;" />
+                        @*<input type="button" class="btn btn-inverse" onclick="tableToExcel('tbl', 'New Order Estimate')" value="Export" style="width:80px;" />*@
+                        <input type="button" class="btn btn-inverse" id="btnExportToExcel" value="Export To Excel" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+            var base = '@Url.Content("~/")';
+            $.getScript('@Url.Content("~/App_Js/Purchase/POConsumption.js")',
+                function (data, textStatus, jqxhr) {
+                    console.log('Script File Load Status=' + jqxhr.status);
+                });
+    </script>
+}
+

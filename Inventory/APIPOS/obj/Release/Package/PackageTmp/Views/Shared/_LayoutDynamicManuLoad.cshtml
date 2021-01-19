@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<style type="text/css">
+        .collapse > li:hover, .nav > li:hover > a {
+            border-bottom-color: orange !important;
+        }
+
+        .collapse li:hover > a {
+            color: orange !important;
+        }
+
+        .collapse > li:first-child {
+            border-radius: 4px 0 0 4px !important;
+        }
+
+            .collapse > li:first-child > a {
+                border-radius: 4px 0 0 0 !important;
+            }
+
+        .collapse > li:last-child {
+            border-radius: 0 0 4px 0 !important;
+            margin-right: 0;
+        }
+
+            .collapse > li:last-child > a {
+                border-radius: 0 4px 0 0 !important;
+            }
+
+        .collapse li li a {
+            margin-top: 1px !important;
+        }
+
+
+
+        .collapse li a:first-child:nth-last-child(2):before {
+            content: "";
+            position: absolute;
+            height: 0;
+            width: 0;
+            border: 5px solid transparent;
+            top: 50%;
+            right: 5px;
+        }
+</style>
+
+
+<aside id="sidebar">
+    <nav id="navigation" class="collapse">
+        <ul>
+            @{ var index = 0;}
+            @foreach (DAO.UserOperation.MainMenuOperation objUser in Model)
+            {
+                if (index == 0)
+                {
+
+                    <li class="active" id='@string.Concat("main", objUser.MenuName)'>
+                        <span title="General">
+                            <a href="@Url.Action(@objUser.ViewName, @objUser.ControllerName)">
+                                <i class=@objUser.IconClass></i>
+                                <span class="nav-title">@objUser.MenuName</span>
+                            </a>
+                        </span>
+                        <ul class="inner-nav">
+                            @foreach (var item in @objUser.ChildMenuNameList)
+                            {
+                                <li id='@string.Concat("child", item.ViewName)'>
+                                    <a href="@Url.Action(@item.ViewName, @item.ControllerName)">
+                                        @*<i class="icol-plugin"></i>*@
+                                        <i><img src="~/App_Theme/assets/MenuIcon/@item.ChildIconClass" style="width:30px;" /></i>
+                                        @item.ManuName_Child
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li id='@string.Concat("main", objUser.MenuName)'>
+                        <span title="General">
+                            <a href="@Url.Action(@objUser.ViewName, @objUser.ControllerName)">
+                                <i class=@objUser.IconClass></i>
+                                <span class="nav-title">@objUser.MenuName</span>
+                            </a>
+                        </span>
+
+                        <ul class="inner-nav">
+                            @foreach (var item in @objUser.ChildMenuNameList)
+                            {
+                                <li id='@string.Concat("child", item.ViewName)'>
+                                    <a href="@Url.Action(@item.ViewName, @item.ControllerName)">
+                                        <i><img src="~/App_Theme/assets/MenuIcon/@item.ChildIconClass" style="width:30px;" /></i>
+                                        @item.ManuName_Child
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                index += 1;
+            }
+        </ul>
+    </nav>
+</aside>

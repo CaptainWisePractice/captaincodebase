@@ -1,0 +1,828 @@
+﻿﻿
+@{
+    ViewBag.Title = "Sales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<script type="text/javascript" src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/App_Js/CommonJs/jquery.inputpicker.js"></script>
+<link href="~/CSS/jquery.inputpicker.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.mcautocomplete.js"></script>
+
+<script src="~/App_Theme/custom-plugins/bootstrap-inputmask.min.js"></script>
+<script src="~/App_Js/Basic/NewCust.js"></script>
+<script src="~/App_Js/Sale/RegisterSale.js"></script>
+
+<style type="text/css">
+    .ui-dialog-titlebar {
+        background-color: #1cc9a7;
+        color: #000;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane button {
+        cursor: pointer;
+        width: 100px;
+        height: 40px;
+        background-color: #1cc9a7;
+        border: none;
+        color: white;
+    }
+
+    .ui-dialog-title {
+        font-size: 21px !important;
+        text-align: center;
+    }
+
+    .ui-dialog-titlebar {
+        background-color: #1cc9a7;
+        color: #000;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane button {
+        cursor: pointer;
+        width: 100px;
+        height: 40px;
+        background-color: #1cc9a7;
+        border: none;
+        color: white;
+    }
+
+    /* multiple select*/
+    .multiddl .ui-selectmenu-category {
+        color: #5F5F5F;
+        padding: .5em .25em;
+    }
+
+    .ui-menu-item {
+    }
+
+    .multiddl .ui-menu-item .ui-menu-item-wrapper {
+        display: inline-block;
+        padding: 1em 2px;
+    }
+
+        .multiddl .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+            border-width: 1px 0 1px 0;
+            border-color: #CCCCCC;
+            background-color: #E4EBF1;
+            color: #000;
+        }
+
+            .multiddl .ui-menu-item .ui-menu-item-wrapper.ui-state-active.short {
+                color: #2E6D99;
+            }
+
+    .multiddl .ui-menu-item div.ui-menu-item-wrapper {
+        width: 295px;
+    }
+
+    .multiddl .ui-menu-item .short {
+        color: #2E6D99;
+        font-weight: strong;
+        width: 30px;
+        padding-left: .5em;
+    }
+
+    .multiddl .ui-menu-item .price {
+        font-weight: strong;
+        width: 75px;
+        margin-right: -6px;
+    }
+
+    .multiddl .ui-menu-item .short .headingddl {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    #txtCustomerNameSale .ui-menu-item .ui-menu-item-wrapper {
+        display: inline-block;
+        padding: 1px;
+    }
+
+    .ui-widget-header {
+        /*border: 1px solid #dddddd;
+        background: #e9e9e9;
+        color: #333333;
+        font-weight: bold;*/
+        padding: 5px !important;
+    }
+
+        .ui-widget-header span {
+            padding: 10px 0px 10px 10px !important;
+            width: auto;
+            font-weight: bold;
+            min-width: 50px;
+        }
+
+    .ui-menu .ui-menu-item a {
+        padding: 10px 5px 10px 10px !important;
+        line-height: 10px;
+    }
+
+    .inputpicker-wrapped-list .inputpicker-active {
+        cursor: pointer !important;
+    }
+</style>
+<style>
+    .widget .form-container .control-group {
+        padding: 6px 20px;
+        border-top: 0px solid #ccc;
+    }
+</style>
+
+<style type="text/css">
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        padding-top: 0px;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        margin: 0px !important;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 83%;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        top: 5%;
+    }
+
+    /* Add Animation */
+
+
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+        min-height: 650px !important;
+        overflow: hidden;
+    }
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .select2-drop {
+        z-index: 99999;
+        width: auto !important;
+        /*width: 120%;*/
+    }
+</style>
+
+<style type="text/css">
+    /*  Modal table */
+    .tabeledata {
+        width: 100%;
+        border-collapse: collapse !important;
+    }
+
+    .zelle {
+        padding: 3px;
+        background-color: SkyBlue !important;
+        font-family: Verdana;
+        font-size: 12px;
+        text-align: center;
+        color: Black;
+    }
+
+    .tabeledata th {
+        background-color: SteelBlue !important;
+        padding: 3px;
+        color: White;
+        font-size: 12px;
+        font-family: Verdana;
+    }
+
+    .separate {
+        border-spacing: 0;
+        border-collapse: separate;
+    }
+
+        .separate td, table.separate th {
+            border-bottom: 1px solid Gray;
+            border-right: 1px solid Gray;
+        }
+
+        .separate tr th:first-child, table.separate tr td:first-child {
+            border-left: 1px solid Gray;
+            height: 30px;
+            text-align: center;
+        }
+
+        .separate tr:first-child th, table.separate tr:first-child td {
+            border-top: 1px solid Gray;
+            height: 15px;
+            text-align: center;
+        }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#mainSales").addClass("active open");
+        $("#childSales").addClass("active");
+        $("#mainHome").removeClass("active open");
+        $("#childIndex").removeClass("active");
+    });
+</script>
+
+<div id="main-header" class="page-header">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-graph"></i><a href="@Url.Action("Index", "Sale")">Sales</a>
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            Sales
+            @*<a href="@Url.Action("Sales", "Sales")">Sales</a>*@
+            <span class="divider">&raquo;</span>
+        </li>
+        <li>
+            <a href="#" id="Registraton">Register</a>
+        </li>
+    </ul>
+    @*<h1 id="main-heading">
+            Manufacturer <span>This page shows the Site  </span>
+        </h1>*@
+</div>
+<div class="page-content">
+    <div class="row-fluid">
+        <div class="span12" style="margin-left: 0px; margin-top: 10px;">
+            <div class="widget-content form-container">
+                <form class="form-horizontal" style="margin: 0px">
+                    <fieldset>
+                        <div class="span12">
+                            <div class="control-group" style="margin-bottom: 10px;">
+                                <div class="span4" style="margin-left: 10px;">
+                                    <label class="control-label" style="float: left; color: black;width: auto">Sales Type <span class="required">*</span></label>
+                                    <div class="controls" style="margin-left: 80px;">
+                                        <select id="ddlSalesType" class="span12 select2-select-00">
+                                            <option value="Invoice">Invoice</option>
+                                            <option value="Quotes">Quotes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="span4" style="margin-left: 10px;">
+                                    <input type="button" class="btn btn-warning" value="Replacement Invoice" id="btnSaleReturn" style="width:150px;" />
+                                </div>
+                                <div class="span4" id="divQuote">
+                                    <label style="text-align:center;color:red;font-weight:bold; font-size: larger;">THIS QUOTES WAS EXPIRED</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="span12 widget" style="margin-left: 0px; background: #b8dbf9 url('/Images/SaleDesignbg.png') repeat-x; border: 1px solid #b8dbf9; color: #ffffff !important;">
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px;">
+                                    <div class="span6">
+                                        <label style="float: left; color: black;" class="control-label" id="lblCustomerName">Customer Name&nbsp;&nbsp; <span class="required">★</span></label>
+                                        <div class="controls">
+                                            <input type="text" id="txtCustomerNameSale" name="wizard[CustomerName]" class="required span6" />
+                                            <input type="hidden" id="hdCustomerName" value="0" />
+                                            <input type="hidden" id="hfCustomerMail" value="" />
+                                            <button class="btn btn-success customerModel" id="addCust" type="button">Add New Customer</button>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <label class="control-label" style="color: black;">Terms :</label>
+                                        <div class="controls">
+                                            <input type="text" id="txtTerms" readonly="readonly" name="wizard[txtTerms]" style="color: black; width: auto !important" value="Prepaid" class="required span12" />
+                                            <input type="hidden" id="hdPaymentTerms" />
+                                        </div>
+                                    </div>
+                                    <div class="span2">
+                                        <label class="checkbox" style="color: black;">
+                                            <span class="uniform-checked"><input type="checkbox" id="chkIsActive" value="option1" class="uniform" checked="checked" style="opacity: 0;"></span>
+                                            Tax Inclusive
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div style="padding: 0px 20px 5px 20px">
+                <div class="widget-content form-container" style="color: black">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px;">
+
+                                    <div class="span6">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td><label class="control-label" id="lblReceiverName">Receiver Name</label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtRecvName" name="wizard[txtRecvName]" class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label" id="lblAddress">Address </label></td>
+                                                <td colspan="3" class="controls"><input type="text" id="txtRecvAddress" name="wizard[txtRecvAddress]" class="required span12" style="width:100%;" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label" id="lblSuburb">Suburb </label></td>
+                                                <td width="120" class="controls"><input type="text" id="txtRecvSuburb" name="wizard[txtRecvSuburb]" class="required span12" /></td>
+                                                <td class="control-label"><label class="control-label" id="lblPostCode">Post Code </label></td>
+                                                <td width="120" class="controls"><input type="text" id="txtPostalCode" name="wizard[txtRecvCity]" class="required span12" /></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="control-label"><label class="control-label" id="lblState">State </label></td>
+                                                <td class="controls"><input type="text" id="txtState" class="required span12" /></td>
+                                                <td class="control-label"><label class="control-label" id="lblMobileNo">Mobile No </label></td>
+                                                <td class="controls"><input type="text" id="txtRecvMobileNo" name="wizard[txtRecvMobileNo]" class="required span12" /></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                    <div class="span6">
+                                        <table width="400" align="right" border="0" cellspacing="0" cellpadding="5">
+                                            <tr id="tridInvoice">
+                                                <td width="136"><label class="control-label">Invoice Sl &nbsp;&nbsp; <span class="required">★</span></label></td>
+                                                <td width="144"><input type="number" id="txtInvoiceSl" name="wizard[txtInvoiceSl]" class="required span12"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label" id="lblInvoiceDate">Invoice Date &nbsp;&nbsp;<span class="required">★</span></label></td>
+                                                <td><input type="text" id="txtInvoiceDate" name="wizard[txtInvoiceDate]" class="required span12" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="control-label" id="lblReferenceNo">Reference No</label></td>
+                                                <td><input type="text" id="txtReferenceNo" class="required span12" /></td>
+                                            </tr>
+                                        </table>
+                                        <!--table align="left" border="0" cellspacing="0" cellpadding="5">
+                                            <tr>
+                                                <td><label style="width: 50px;" class="control-label" id="lblState">State</label></td>
+                                                <td><input type="text" id="txtState" class="required span12" /></td>
+                                            </tr>
+                                        </table-->
+                                        <input type="hidden" id="hfSalesId" value="0" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="span12" style="margin-left: 0px;">
+                                <div class="control-group">
+
+                                    <div class="controls" style="margin-left: 0px">
+                                        <div id="divTable" class="widget-content table-container" style="overflow: hidden;">
+                                            <table class="table table-bordered" id="tbl">
+                                                <thead style="background-color: #ebebeb">
+                                                    <tr>
+                                                        <th width="10%">Action</th>
+                                                        <th width="16%">Item Code<span style="color: red">*</span></th>
+                                                        <th width="1%" id="comboHeader"></th>
+                                                        <th width="19%">Item Description</th>
+                                                        <th width="15%">Location<span style="color: red">*</span></th>
+                                                        <th width="8%">In Hand Qty</th>
+                                                        <th width="7%">Ship<span style="color: red">*</span></th>
+                                                        <th width="9%">Price<span style="color: red">*</span></th>
+                                                        <th width="6%">Disc(%)</th>
+                                                        <th width="11%">Total<span style="color: red">*</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="idtbody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span12" style="margin-left: 0px">
+                                <div class="control-group">
+                                    <div class="span5">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="width: auto">Sales Person &nbsp;&nbsp;<span class="required">*</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlSalesPerson" class="span12 select2-select-00"></select>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width: auto">Sales Outlet &nbsp;&nbsp;<span class="required">*</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlSalesOutlet" class="span12 select2-select-00"></select>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width: auto">Comments</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <textarea class="required span12 " id="txtComments" rows="3" cols="3"></textarea>
+                                                </div>
+
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width: auto">Ship Via&nbsp;&nbsp; <span class="required">*</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlShipVia" class="span12 select2-select-00"></select>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Despatch Date&nbsp;<span class="required">*</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtIDueDate" name="wizard[DueDate]" class="required span12 sDate" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <div class="control-group" style="border-top: 0px;padding: 0px 16px 0px 16px;">
+                                            <div class="span12">
+                                                <label class="control-label">Sub Total</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtTotal" name="wizard[Total]" readonly="readonly" class="required span12 calculation">
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Freight</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="number" id="txtFright" name="wizard[Fright]" class="required span12">
+                                                    <input type="hidden" id="hfFright" class="span12">
+                                                </div>
+                                            </div>
+
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Manager Discount</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="number" id="txtManagerDiscount" class="ManagerDiscount span12">
+                                                </div>
+                                            </div>
+
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Tax</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtTax" name="wizard[Tax]" readonly class="required span12 calculation">
+                                                </div>
+                                            </div>
+
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Total Amount</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="hidden" id="hfNetPay" value="" />
+                                                    <input type="text" id="txtNetPay" name="wizard[NetPay]" tabindex="1000" readonly="readonly" class="required span12">
+                                                </div>
+                                            </div>
+                                            @*<div class="span12" style="margin-left: 0px">
+                                                    <label class="control-label">Promised Date&nbsp;<span class="required">*</span></label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input type="text" id="txtIDueDate" name="wizard[DueDate]" class="required span12 sDate" />
+                                                    </div>
+                                                </div>*@
+
+                                        </div>
+                                    </div>
+                                    <div class="span3" style="margin-top: 3%; margin-left: 0px;">
+                                        <div class="span12">
+                                            <div class="control-group" style="border-top: 0px; padding: 0px 16px 0px 16px;">
+                                                <div class="span12">
+                                                    <label class="control-label">Tax&nbsp;<span class="required">*</span></label>
+                                                    <div class="controls" style="margin-bottom: 5px">
+                                                        <input id="ddlTax" class="required span12" />
+                                                    </div>
+                                                </div>
+                                                @*<div class="controls" style="margin-left: 30%">
+                                                        <input id="ddlTax" class="required span12"/>
+                                                        @*<input type="text" id="ddlTax" name="wizard[NetPay]"  class="required span12">
+
+                                                    </div>*@
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="background-color: #e9f6ff;padding: 0px 16px 0px 16px;color: black;">
+                                    <div class="span5">
+                                        <div class="control-group" style="border-top: 0px;">
+                                            <div class="span12">
+                                                <label class="control-label" style="width: auto">Journal Memo <span class="required">*</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    @*<select id="ddlSalesPerson" class="span12 select2-select-00"></select>*@
+                                                    <input type="text" id="txtJournalMemo" name="wizard[SalesPerson]" readonly class="required span12" />
+                                                    @*<input type="hidden" id="hdSalesPerson" class="required span12" />*@
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label" style="width: auto">Referral Source</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlReferralSource" class="span12 select2-select-00"></select>
+                                                    @*<input type="text" id="txtReferralSource" name="wizard[SalesPerson]" class="required span12" />*@
+                                                </div>
+
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Inv. Devlivery Status</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlDeliveryStatus" class="span12 select2-select-00">
+                                                        <option value="To Be Printed">To Be Printed</option>
+                                                        <option value="To Be Emailed">To Be Emailed</option>
+                                                        <option value="To Be Printed and Emailed">To Be Printed and Emailed</option>
+                                                        <option value="Already Printed or Sent">Already Printed or Sent</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="span12" style="margin-left: 0px" id="divOrderStatus">
+                                                <label class="control-label">Order Status</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlOrderStatus" class="span12 select2-select-00">
+                                                        <option value="1">Awaiting Booking</option>
+                                                        <option value="2">Awaiting Dispatch</option>
+                                                        <option value="3">Dispatched</option>
+                                                        <option value="4">Aw Pick up Dispatch</option>
+                                                        <option value="5">Partial Booking</option>
+                                                        <option value="6">Partial Dispatched</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <div class="control-group" style="border-top: 0px;">
+                                            <div class="span12">
+                                                <label class="control-label" id="lblPaidToday">Paid Today</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="number" id="txtPaidToday" name="wizard[Total]" class="required span12">
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Payment Method<span class="required">*</span></label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <select id="ddlPaymentMethodSale" class="span12"></select>
+                                                </div>
+                                            </div>
+                                            <div class="span12" style="margin-left: 0px">
+                                                <label class="control-label">Balance Due</label>
+                                                <div class="controls" style="margin-bottom: 5px">
+                                                    <input type="text" id="txtRemaining" name="wizard[Rec]" readonly="readonly" class="required span12">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span3" style="margin-top: 0px; margin-left: 0px;">
+                                        <div class="span12">
+                                            <div class="control-group" style="border-top: 0px;">
+                                                <div class="controls" style="margin-left: 0px;">
+                                                    <button type="button" class="btn btn-link" id="btnHistory"> History </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span12">
+                                            <div class="control-group" style="border-top: 0px;">
+                                                <div class="controls" style="margin-left: 0px;">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span12" style="margin-left: 0px">
+                                            <label class="control-label" style="text-align: center;"> Due Date</label>
+                                            <div class="controls" style="margin-bottom: 5px">
+                                                <input type="text" id="txtPrepaidDueDate" name="wizard[txtPrepaidDueDate]" class="required span12 sDate" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+            <div style="padding: 0px 20px 5px 20px;">
+                <div class="widget-content form-container" style="background-color: initial !important; border: none">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="span12">
+                                <div class="control-group" style="border-top: 0px; background-color: initial; padding: 0px 20px 5px 20px;">
+                                    <div class="span12">
+                                        <div class="form-actions" style="background-color: initial; border-top: none; padding-left: 0px; text-align: center;">
+                                            <input type="button" class="btn btn-primary" value="Save" id="btnSaveSale" style="width: 85px;" />
+                                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefreshSale" style="width: 85px;" />
+                                            @*<input type="button" class="btn btn-danger" value="Cancel" id="btnCancelSale" style="width: 85px;" />*@
+                                            <input type="button" class="btn btn-inverse" value="Payment" id="btnPayment" style="width: 85px;" />
+                                            <input type="button" class="btn btn-primary" value="Print" id="btnPrint" style="width:85px;" />
+                                            <input type="button" class="btn btn-info" value="Send Mail" id="btnMail" style="width:85px;" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- The Modal Add New Customer-->
+        <div id="myModal" class="modal" data-backdrop="false">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                @*<div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>*@
+                <div class="modal-body">
+                    <div class="page-content customerModel" id="customerModel">
+                        <div class="row-fluid">
+                            <div class="span12 widget">
+                                <div class="widget-header">
+                                    <span class="title"><i class="icol-wand"></i>Customer Setup</span>
+                                </div>
+                                <div class="widget-content form-container">
+                                    <div>
+                                        @Html.Partial("../Customer/_CustomerInformation")
+                                    </div>
+
+                                    <br />
+                                    @Html.Partial("_layoutPageButton")
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- The Modal Add New Customer-->
+        <div id="myModalForRegistraton" class="modal" data-backdrop="false">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+
+                <div class="modal-body" style="min-height: 800px !important;">
+                    <div class="page-content RegistratonModel" id="RegistratonModel">
+                        <div class="row-fluid">
+                            <div class="span12 widget" style="margin-bottom: 0px;">
+                                <div class="widget-header">
+                                    <span class="title"><i class="icol-wand"></i>Sales Registraton Information</span>
+                                </div>
+                                <div class="widget-content form-container">
+                                    <div>
+                                        <form id="wizard55" class="form-horizontal" data-forward-only="false">
+                                            <div class="control-group">
+                                                <div class="span6">
+                                                    <label class="control-label">Search All </label>
+                                                    <div class="controls">
+                                                        <select id="ddlRegisCustomerType" class="span12 select2">
+                                                            <option value="AllCustomer">All Customer</option>
+                                                            <option value="Customer">Customer</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="span6" style="display: none" id="customerNameDiv">
+                                                    <label class="control-label">Customer Name </label>
+                                                    <div class="controls">
+                                                        <input type="text" class="span12" id="txtRegistrationCustomerName" placeholder="Search Customer" />
+                                                        <input type="hidden" id="hdInvoiceCustomerId" value="" class="required span12" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="span6">
+                                                    <label class="control-label">Dated From </label>
+                                                    <div class="controls">
+                                                        <input type="text" class="span12 sDate registrationData" id="txtDatedFrom" />
+                                                    </div>
+                                                </div>
+                                                <div class="span6">
+                                                    <label class="control-label">To </label>
+                                                    <div class="controls">
+                                                        <input type="text" class="span12 sDate registrationData" id="txtDatedTo" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="span12 widget" style="margin-left: 0px;">
+                                <div class="widget-header">
+                                    <span class="title"><i class="icol-wand"></i>Search Result</span>
+                                </div>
+                                <div class="widget-content form-container">
+                                    <div>
+                                        @Html.Partial("_SalesRegistraton")
+                                    </div>
+
+                                    <br />
+                                    <div class="form-actions" id="btnGrid">
+                                        @*<input type="button" class="btn btn-primary" value="Save" id="btnSaveRegistration" />
+                                            <input type="button" class="btn btn-info" value="Refresh" id="btnRefreshRegistration" />
+                                            <input type="button" class="btn btn-danger" value="Cancel" id="btnCancelRegistration" />*@
+                                    </div>
+                                    @*@Html.Partial("_layoutPageButton")*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        var jsonData = [], PaymentData = [], SalesData = [];
+        var myReviseobj = '@ViewData.Model';
+        if (myReviseobj != '') {
+            jsonData = $.parseJSON(decodeURIComponent(myReviseobj));
+        }
+
+        var myPayment = '@ViewData["PaymentMethod"]';
+        if (myPayment != '') {
+            PaymentData = $.parseJSON(decodeURIComponent(myPayment));
+        }
+
+        var mySalesData = '@ViewData["SalesEdit"]';
+        if (mySalesData != '') {
+            SalesData = $.parseJSON(decodeURIComponent(mySalesData));
+        }
+        var base = '@Url.Content("~/")';
+        $.getScript('@Url.Content("~/App_Js/Sale/Sales.js")',
+            function (data, textStatus, jqxhr) {
+                console.log('Script File Load Status=' + jqxhr.status);
+            });
+    </script>
+}
+
